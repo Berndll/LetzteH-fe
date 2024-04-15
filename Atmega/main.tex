@@ -1,0 +1,184 @@
+\chapter{ATMega32u4}
+\section{Register beschreiben}
+\textbf{"1" in Register schreiben:}
+\begin{lstlisting}[language=C]
+// REGISTER = REGISTER | (1 << POSITION IM REGISTER)
+// Beispiel:
+DDRD = DDRD | (1 << 3);
+\end{lstlisting}
+
+\textbf{"0" in Register schreiben:}
+\begin{lstlisting}[language=C]
+// REGISTER = REGISTER &~ (0 << POSITION IM REGISTER)
+// Beispiel:
+DDRD = DDRD &~ (1 << 3);
+\end{lstlisting}
+
+Es können \textbf{jeweils} mehrere Bits eines Registers in einer Zeile auf 1 \textbf{oder} 0 gesetzt werden. Allerdings darf in einer Zeile ein Bit nicht auf 0, während ein anderes auf 1 gesetzt werden.\\
+
+\textbf{Beispiel}
+\begin{itemize}
+    \item \underline{Erlaubt:} \\
+    \verb|DDRD = DDRD &~ (1 << 3) &~ (1 << 3) &~ (1 << 3);|
+    \item \underline{Nicht erlaubt:} \\
+    \verb$DDRD = DDRD | (1 << 3) | (1 << 3) &~ (1 << 3);$
+\end{itemize}
+\todo{Ergibt keinen Sinn, dass das gleiche Bit beschrieben wird oder? Sollte zB (1<<3) und (1<<2) sein.}
+
+\newpage
+
+\section{Takt}
+Der Takt des ATMega32u4 kann per Software verringert werden und wird über das \verb|CLKPR|-Register getan. Bevor dieses beschrieben werden kann, muss \verb|0x80| in das Register geschrieben werden.
+\todo{Kann Taktgeschwindigkeit nicht auch erhöht werden?}
+\todo{Insert Pics}
+
+\textbf{Beispiel}
+Externer Takt ist 16MHz und soll auf 8MHz heruntergesetzt werden.
+\begin{lstlisting}[language=C]
+    CLKPR = 0x80;
+    CLKPR = 0x01;
+\end{lstlisting}
+
+\section{GPIO}
+\todo{Wdym Features?}
+
+\todo{Insert Pics}
+
+\textbf{Beispiel}
+Pin-D7 auf HIGH setzen.
+\begin{lstlisting}[language=C]
+    DDRD = DDRD | (1 << DDD7);
+    PORTD = PORTD | (1 << PORTD7);
+\end{lstlisting}
+
+\textbf{Wichtig:} Bei der Verwendung von Hardwareeinheiten (Timer, UART, etc.) muss GPIO immer \underline{zuerst} auf Input bzw. Output eingestellt werden.
+
+\section{ADC}
+\begin{itemize}
+    \item \underline{Single-Ended:} \\
+    Spannung von ADC-Pin zu GND wird gemessen.
+    \item \underline{Differenziell:} \\
+    Spannung zwischen zwei ADC-Pins wird gemessen. (Siehe Kapitel \ref{})
+    \item \underline{Referenzspannung:} \\
+    Es gibt drei verschiedene Spannungsreferenzen:
+    \begin{itemize}
+        \item Interne 2,56V Referenz
+        \item Externer \verb|AREF|-Pin
+        \item Externer \verb|AVCC|-Pin
+    \end{itemize}
+    \item \underline{Auto-Trigger Mode} \\
+    Es wird periodisch gemessen, wofür die Taktquelle eingestellt werden muss. (Siehe Kapitel \ref{Atmega/AutoTrigger})
+\end{itemize}
+
+\subsection{Differenziell} \label{Atmega/Differenziell}
+Wenn differenziell gemessen wird, ist das Ergebnis im Zweierkomplement dargestellt - ein Zahlensystem um negative Zahlen (in binär) darzustellen.
+\textbf{Beispiel} \\
+"$-2_d$" im Zweierkomplement \\
+\begin{enumerate}
+    \item Zunächst wird der Binärwert des Betrags der Zahl invertiert: $2_d=0010_b\Rightarrow 1101_b$ \\
+    \item Danach wird zu diesem Wert $1_d$ addiert: $1101_b + 1_b = 1110_b = -2_d$
+\end{enumerate}
+
+\subsection{Auto-Trigger Mode} \label{Atmega/AutoTrigger}
+Die Taktquelle wird folgendermaßen eingestellt:
+\todo[inline]{Insert Pic}
+
+\textbf{Ergebnis} \\
+Das Messergebnis des ADC befindet sich in zwei Registern: \verb|ADCL| (ADC-Low) und \verb|ADCH| (ADC-High). Der Messwert kann in zwei Arten dargestellt werden:
+\begin{enumerate}
+    \item \underline{Linksbündig:}
+    \item \underline{Rechtsbündig:}
+\end{enumerate}
+
+\verb|ADCL| muss immer vor \verb|ADCH| ausgelesen werden; folgende Beispiele verwenden Linksbündigkeit.\\
+
+\subsection{Messdauer berechnen}
+Die ADC Messdauer muss eingestellt werden: kurze Messdauern führen zu ungenaueren Erbenissen, bei zu langen kann die Dauer zwischen Abtastpunkten zu groß werden. Generell sollte die Messfrequenz des ATMega32u4 zwischen $50kHz$ und $200kHz$ sein (wenn die Messgeschwindigkeit realisierbar ist.)
+
+\todo{Insert Pic}
+
+Der Wert des obigen Diagramms muss in die gemessene Spannung umgerechnet werden.
+
+\textbf{Single-Ended}
+\begin{align}
+    V_{IN} = \frac{ADC \cdot V_{REF}}{1023}
+\end{align}
+
+Und der entsprechende Code um die gemessene Spannung zurückzubekommen:
+\begin{lstlisting}[language=C]
+// SETUP:
+DDRF = DDRF &~ (1 << DDF0);	 // PF0-Input
+ADMUX = ADMUX | (1 << ADLAR) | (1 << REFS0); // Left adjust ADC result; Voltage reference
+
+// Uncomment for Auto trigger mode; 
+// ADCSRA = ADCSRA | (1 << ADATE);
+// ADCSRB = ADCSRB | (1 << ADTS1) | (1 << ADTS0); // Auto trigger mode Taktquelle (Timer0)
+
+// Enable Interrupt
+// Enable ADC
+// Prescaler = 64: ADC_f = 8M/64
+ADCSRA = ADCSRA | (1 << ADEN) | (1 << ADSC) | (1 << ADPS2) | (1 << ADPS1);
+DIDR0 = DIDR0 | (1 << ADC0D); // Disable digital function of PF0
+
+// READ:
+adcRead() {
+    uint16_t adc_value;
+    float out;
+    unsigned char adcl, adch;
+
+    // Start conversation
+    // Put in comment in auto trigger mode
+    ADCSRA = ADCSRA | (1 << ADSC);
+
+    // Wait for ADC to finish
+    while(ADCSRA & (1 << ADSC))  {}
+
+    adcl = ADCL;
+    adch = ADCH;
+    adc_value = (adcl >> 6) + (adch << 2);
+    out = (float)((adc_value * 5) / 1023.0);
+    return out;
+}
+\end{lstlisting}
+\todo{No return type?}
+
+\textbf{Differenziell}
+\begin{align}
+    V_{POS} - V_{NEG} = \frac{ADC \cdot V_{REF}}{GAIN \cdot 512}
+\end{align}
+
+Und auch der Code dazu, um die Spannung returniert zu bekommen:
+\begin{lstlisting}[language=C]
+// SETUP:
+DDRF = DDRF &~ (1 << DDF0) &~ (1 << DDF1); // PF0-Input
+ADMUX = ADMUX | (1 << ADLAR) | (1 << REFS0); // Left adjust ADC result; Voltage reference
+ADMUX = ADMUX | (1 << MUX4); // PINS(P:ADC0; N: ADC1); GAIN: 1
+
+// Uncomment for auto trigger mode
+// ADCSRA = ADCSRA | (1 << ADATE);	
+// ADCSRB = ADCSRB | (1 << ADTS1) | (1 << ADTS0); // Auto trigger mode Taktquelle (Timer0)
+
+// Enable interrupt enable
+// Enable ADC
+// Prescaler = 64: ADC_f = 8M/64
+ADCSRA = ADCSRA | (1 << ADEN) | (1 << ADSC) | (1 << ADPS2) | (1 << ADPS1);
+    
+// READ:
+adcRead() {
+    uint16_t adc_value;
+    float out;
+    unsigned char adcl, adch;
+    
+    // Start conversation
+    // Put in comment in auto trigger mode
+    ADCSRA = ADCSRA | (1 << ADSC);
+
+    // Wait for ADC to finish
+    while(ADCSRA & (1 << ADSC)) {}
+    adcl = ADCL;
+    adch = ADCH;
+    adc_value = (adcl >> 6) + (adch << 2);
+    out = (float)((adc_value * 5) / (1.0 * 1023.0));
+    return out;
+}
+\end{lstlisting}
