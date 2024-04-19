@@ -2,10 +2,291 @@
 
 \section{Verstärker}
 
+\subsection{Leerlaufverstärkung}
+Merke, dass kein Strom in den OPV fließt; es gilt:
+\begin{align}
+    V = \frac{U_a}{U_d}
+\end{align}
+\begin{itemize}
+    \item $V$ ist die Verstärkung
+    \item $U_a$ ist die Ausgangsspannung
+    \item $U_d$ ist die Differenzspannung (zwischen dem "+"- und "-"-Eingang).
+\end{itemize}
+\begin{center}
+\begin{circuitikz}
+    \coordinate (opAmp) at (0,0);
+    \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
+    \coordinate (opIn+Label) at ($(opIn+) + (-0.25,0)$);
+    \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
+    \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0)$);
+    \coordinate (opOut) at ($(opAmp) + (1.25,0)$);
+
+    \draw(opAmp) node[op amp, yscale=-1] {};
+        
+    \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_D$};
+    \draw[->, thick, blue] (opOut) -- +(0,-1) node[above right, blue] {$U_a$};
+\end{circuitikz}
+\end{center}
+\subsection{Impedanzwandler}
+Ist dazu da, um dem folgenden System mehr Strom liefern zu können.\\
+Beachte, dass die Verstärkung hier $V=0$ ist weil $U_a=U_e$.
+\begin{center}
+\begin{circuitikz}
+    \coordinate (opAmp) at (3,-0.5);
+    \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
+    \coordinate (opIn+Label) at ($(opIn+) + (-0.25,0)$);
+    \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
+    \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0)$);
+    \coordinate (opOut) at ($(opAmp) + (1.25,0)$);
+
+    \draw(opAmp) node[op amp, yscale=-1] {};
+
+    \draw[black] (0,0) -- (opIn+);
+    \draw[black] (opOut) -- +(1,0);
+    \draw[black] (opOut) -- +(0,-1.5) -- +(-2.5,-1.5) -- (opIn-);
+
+    \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue]    {$U_d$};
+    \draw[->, thick, blue] ($(opOut) + (1.25,0)$) -- +(0,-2) node[above right, blue] {$U_a$};
+    \draw[->, thick, blue] (-0.25,0) -- +(0,-2.5) node[above right, blue] {$U_e$};
+
+    \filldraw[black]
+        (opIn+) circle (1.5pt)
+        (opIn-) circle (1.5pt)
+        (opOut) circle (1.5pt);
+\end{circuitikz}
+\end{center}
+
+\subsection{Invertierender Verstärker}
+
+\begin{center}
+\begin{circuitikz}
+        \coordinate (opAmp) at (4,-0.5);
+        \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
+        \coordinate (opIn+Label) at ($(opIn+) + (-0.25,0)$);
+        \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
+        \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0)$);
+        \coordinate (opOut) at ($(opAmp) + (1.25,0)$);
+    
+        % OpAmp
+        \draw(opAmp) node[op amp] {};
+        
+        % Resistors
+        \draw(0,0) to[R, l=$R_1$] (opIn+);
+        \draw($(opIn+) + (0,1.5)$) to[R, l=$R_2$] ($(opIn+) + (2.5,1.5)$);
+ 
+        % Wires
+        \draw[black] (opOut) -- +(1,0);
+        \draw[black] (opIn+) -- ($(opIn+) + (0,1.5)$);
+        \draw[black] ($(opIn+) + (2.5,1.5)$) -- (opOut);
+
+        \draw[black] (opIn-) -- +(0,-1);
+        
+        % Ground
+        \draw[ultra thick, black] ($(opIn-) +(-0.25,-1)$) -- +(0.5,0);
+
+        % Voltages
+        \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_d$};
+\end{circuitikz}
+\end{center}
+
+$R_e$ ist der Eingangswiderstand der Schaltung.\\
+
+Hier gilt: $R_e=R_1$
+
+\begin{align}
+    V = \frac{U_a}{U_d}=-\frac{R_2}{R_1}
+\end{align}
+
+\subsection{Nicht-Invertierender Verstärker}
+\begin{center}
+\begin{circuitikz}
+        \coordinate (opAmp) at (2,-0.5);
+        \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
+        \coordinate (opIn+Label) at ($(opIn+) + (-0.25,0)$);
+        \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
+        \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0)$);
+        \coordinate (opOut) at ($(opAmp) + (1.25,0)$);
+    
+        % OpAmp
+        \draw(opAmp) node[op amp, yscale=-1] {};
+
+        % Resistors
+        \draw(opOut) to[R, l=$R_1$] ($(opOut) + (0,-2)$);
+        \draw($(opOut) + (0,-2)$) to[R, l=$R_2$] ($(opOut) + (0,-4)$);
+
+        % Wires
+        \draw[black] (opOut) -- +(1,0);
+        \draw[black] (opIn+) -- ($(opIn+) + (-1,0)$);
+        \draw[black] (opIn-) -- ($(opIn+) + (0,-2.5)$) -- ($(opOut) + (0,-2)$);
+
+        % Voltages
+        \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_d$};
+\end{circuitikz}
+\end{center}
+
+$R_e$ ist der Eingangswiderstand der Schaltung.\\
+
+Hier gilt: $R_e=\infty$
+
+\begin{align}
+    V = \frac{U_a}{U_d}=\frac{R_1+R_2}{R_2}
+\end{align}
+
 \section{Schmitttrigger}
 
-\section{Addierer \and Subtrahierer}
+\subsection{Invertierender Schmitttrigger}
+\begin{align}
+    \frac{U_a}{U_e}=\frac{R_1+R_2}{R_2}
+\end{align}
 
-\section{Integrator \and Differenzierer}
+\begin{center}
+\begin{circuitikz}
+    \coordinate (opAmp) at (2,-0.5);
+    \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
+    \coordinate (opIn+Label) at ($(opIn+) + (-0.25,0)$);
+    \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
+    \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0)$);
+    \coordinate (opOut) at ($(opAmp) + (1.25,0)$);
 
-\section{Instrumentation Amplifier}
+    % OpAmp
+    \draw(opAmp) node[op amp] {};
+
+    % Resistors
+    \draw(opOut) to[R, l=$R_1$] ($(opOut) + (0,-2)$);
+    \draw($(opOut) + (0,-2)$) to[R, l=$R_2$] ($(opOut) + (0,-4)$);
+
+    % Wires
+    \draw[black] (opOut) -- +(1,0);
+    \draw[black] (opIn+) -- ($(opIn+) + (-1,0)$);
+    \draw[black] (opIn-) -- ($(opIn+) + (0,-2.5)$) -- ($(opOut) + (0,-2)$);
+
+    % Voltages
+    \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_d$};
+\end{circuitikz}
+\end{center}
+
+\subsection{Nicht-Invertierender Schmitttrigger}
+\begin{align}
+    \frac{U_a}{U_e}=\frac{R_2}{R_1}
+\end{align}
+
+\begin{center}
+\begin{circuitikz}
+        \coordinate (opAmp) at (4,-0.5);
+        \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
+        \coordinate (opIn+Label) at ($(opIn+) + (-0.25,0)$);
+        \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
+        \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0)$);
+        \coordinate (opOut) at ($(opAmp) + (1.25,0)$);
+    
+        % OpAmp
+        \draw(opAmp) node[op amp, yscale=-1] {};
+        
+        % Resistors
+        \draw(0,0) to[R, l=$R_1$] (opIn+);
+        \draw($(opIn+) + (0,1.5)$) to[R, l=$R_2$] ($(opIn+) + (2.5,1.5)$);
+    
+        % Wires
+        \draw[black] (opOut) -- +(1,0);
+        \draw[black] (opIn+) -- ($(opIn+) + (0,1.5)$);
+        \draw[black] ($(opIn+) + (2.5,1.5)$) -- (opOut);
+
+        \draw[black] (opIn-) -- +(0,-1);
+        
+        % Ground
+        \draw[ultra thick, black] ($(opIn-) +(-0.25,-1)$) -- +(0.5,0);
+
+        % Voltages
+        \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_d$};
+\end{circuitikz}
+\end{center}
+
+\newpage
+
+\section{Addierer}
+Wenn $R_1=R_2=R_3$ dann gilt $U_a=-(U_{R_1}+U_{R_2})$.
+
+\textbf{Berechnung mit Teilströmen}
+\begin{align}
+    I_1&=\frac{U_{e_1}}{R_1} \\
+    I_2&=\frac{U_{e_2}}{R_2}
+\end{align}
+\begin{align}   
+    U_{R_g}&=R_g\cdot(I_1+I_3) \\
+    U_{R_g}&=R_g\cdot(\frac{U_{e_1}}{R_1}+\frac{U_{e_2}}{R_2}) \\
+    U_{R_g}&=R_g\cdot(\frac{U_{e_1}\cdot R_g}{R_1}+\frac{U_{e_2}\cdot R_g}{R_2})
+\end{align}
+\todo{Woher das Minus auf einmal?}
+
+\textbf{Berechnung mit Überlagerungsprinzip} \\
+
+\underline{$U_{e_1}$ wirkt, $U_{e_2}=0$:} \hspace{2cm} $U_a'=\frac{R_g}{R_1}\cdot U_{e_1}$ \\
+
+\underline{$U_{e_2}$ wirkt, $U_{e_2}=1$:} \hspace{2cm} $U_a''=\frac{R_g}{R_2}\cdot U_{e_2}$ \\
+
+\underline{Gesamt:}
+\begin{align}  
+    U_a&=U_a'+U_a''  \\
+    U_a&=\frac{R_g}{R_1}\cdot U_{e_1}+\frac{R_g}{R_2}\cdot U_{e_2} \\
+    U_a&=-(U_{e_1}\cdot\frac{R_g}{R_1}+U_{e_2}\cdot\frac{R_g}{R_2})
+\end{align}
+
+\section{Subtrahierer}
+\subsection{Typ 1}
+\begin{align}
+    U_a=(U_{e_2}-U_{e_1}\cdot{\frac{R_2}{R_1}})
+\end{align}
+
+\subsection{Typ 2}
+\begin{align}
+    U_a=(\sum B - \sum A)\cdot\frac{R_2}{R_1}
+\end{align}
+
+\subsection{Typ 3}
+\underline{Berechnung mit Überlagerungsprinzip} \\
+\underline{$U_{e_1}$ wirkt, $U_{e_2}=0$:}
+\begin{align}
+    U_a'=\frac{R_4+R_2}{R_2}\cdot U_{e_1}\cdot\frac{R_3}{R_1+R_3}
+\end{align}
+
+\underline{$U_{e_2}$ wirkt, $U_{e_2}=1$:}
+\begin{align}
+    U_a''=-U_{e_2}\cdot \frac{R_4}{R_2}
+\end{align}
+
+\underline{Gesamt}
+\begin{align}
+    U_a&=U_a'+U_a'' \\
+    U_a&=U_{e_1}\cdot (\frac{R_4+R_2}{R_2}\cdot\frac{R_3}{R_1+R_3})-U_{e_2}\cdot\frac{R_4}{R_2}
+\end{align}
+
+Wenn alle $R$ gleich groß sind, gilt: $U_a=U_{e_1}-U_{e_2}$
+
+\todo{Berechnung mit Teilspannungen}
+
+\section{Integrator \and Differentiator}
+
+
+\section{Pegelwandler}
+Hier gilt:
+\begin{align}
+    V=-\frac{R_2}{R_1}=\frac{\Delta U_a}{\Delta U_e}
+\end{align}
+
+\textbf{Beispiel}\\
+Das Eingangssignal von $U_e=-1V$ bis $+1V$ soll am Ausgang zu $U_a=0V$ bis $+5V$ gewandelt werden.
+\begin{align}
+    &V=-\frac{R_2}{R_1}=\frac{\Delta U_a}{\Delta U_e}   \\
+    &V=-\frac{5V-0V}{1V-(-1V)}=\frac{5V}{2V}            \\
+    &V=-\frac{5k\Omega}{2k\Omega}
+\end{align}
+
+\begin{align}
+    \frac{U_{R_2}}{U_e-U_a}&=\frac{R_2}{R_1+R_2}                \\
+    U_{R_2}&=(U_e-U_a)-\frac{R_2}{R_1+R_2}                      \\
+    U_{R_2}&=(1V-0V)-\frac{5k\Omega}{2k\Omega+5k\Omega}         \\
+    U_{R_2}&\approx 0,715V                                      \\
+    \Rightarrow U_+=U_a+U_{R_2}&=0V+0,714V=0,714V
+\end{align}
+
+\section{Instrumentation-Amplifier}

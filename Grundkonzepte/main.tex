@@ -1,38 +1,93 @@
 \chapter{Grundkonzepte}
 
 \section{Grundeinheiten}
+
+\setlength{\tabcolsep}{4pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
 \begin{table}[!htb]
     \centering
     \begin{tabular}{|c|c|c|c|}
         \hline
-        \textbf{Symbol} & \textbf{Bedeutung}        & \textbf{Einheit} & \textbf{Zusammenhang} \\ \hline
-        U               & Spannung                  & Volt (V)         & -                     \\
-        I               & Strom                     & Ampere (A)       & -                     \\
-        R               & Widerstand                & Ohm ($\Omega$)   & -                     \\
-        G               & Leitwert                  & Siemens (S)      & $\frac{1}{R}$         \\
-        P               & Leistung                  & Watt (W)         & $U\cdot I$            \\
-        C               & Kapazität                 & Farad (F)        & $C\cdot s$            \\
-        Q               & Ladung                    & Coloumb (C)      & $C \cdot U$           \\
-        L               & Induktivität              & Henry (H)        & -                     \\ \hline
-        E               & Elektrische Feldstärke    & $\frac{V}{m}$    & $\frac{F}{Q}$         \\
-        $\Psi$          & Elektrischer Fluss        & $C$              & -                     \\
-        D               & Elektrische Flussdichte   & $\frac{C}{m^2}$  & $\frac{\Psi}{A^2}$    \\ \hline
+        \textbf{SI-Einheiten}   & \textbf{Bedeutung}        & \textbf{Einheit}                  & \textbf{Zusammenhang}              \\ \hline
+        U                       & Spannung                  & Volt (V)                          & -                                  \\
+        I                       & Strom                     & Ampere (A)                        & -                                  \\
+        R                       & Widerstand                & Ohm ($\Omega$)                    & -                                  \\
+        G                       & Leitwert                  & Siemens (S)                       & $\frac{1}{R}$                      \\
+        P                       & Leistung                  & Watt (W)                          & $U\cdot I$                         \\
+        C                       & Kapazität                 & Farad (F)                         & $C\cdot s$                         \\
+        Q                       & Ladung                    & Coulomb (C)                       & $C \cdot U$                        \\
+        L                       & Induktivität              & Henry (H)                         & -                                  \\
+        f                       & Frequenz                  & Hertz (Hz)                        & $s^{-1}$                           \\ 
+        $\omega$                & Kreisfrequenz             & (rad/s)                           & -                                  \\
+        W                       & Arbeit                    & Joule (J)                         & $N \cdot m$                        \\
+        F                       & Kraft                     & Newton (N)                        & $V \cdot A \cdot s \cdot m^{-1}$   \\ 
+        p                       & Druck                     & Pascal (Pa)                       & $N \cdot m^2$                      \\
+        $\varphi$               & Potenzial                 & Volt (V)                          & $\frac{W}{A}$                      \\
+        \hline
+        H                       & magnetische Feldstärke    & Strom pro Meter ($\frac{A}{m}$)   & -                                  \\ 
+        E                       & Elektrische Feldstärke    & $\frac{V}{m}$                     & $\frac{F}{Q}$                      \\
+        $\Psi$                  & Elektrischer Fluss        & Coulomb $C$                       & -                                  \\
+        $\phi$                  & magnetischer Fluss        & Weber (Wb)                        & $V \cdot s$                        \\
+        D                       & Elektrische Flussdichte   & $\frac{C}{m^2}$                   & $\frac{\Psi}{A^2}$                 \\
+        B                       & magnetische Flussdichte   & Tesla (T)                         & $C \cdot U$                        \\
+        \hline
     \end{tabular}
     \caption{Grundeinheiten}
-    \label{Grundkonzepte/Einheiten/Tabelle}
 \end{table}
+
+\newpage
 
 \section{Konstanten}
+
+\setlength{\tabcolsep}{4pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
 \begin{table}[!htb]
     \centering
-    \begin{tabular}{|c|c|c|}
+    \begin{tabular}{|c|c|c|c|}
         \hline
-        \textbf{Symbol} & \textbf{Bedeutung}        & \textbf{Wert}                     \\ \hline
-        $\epsilon_0$    & Permittivitätskonstante   & $8,854\cdot10^{-12}\frac{F}{m}$   \\
-        $\mu_0$         & Permeabilitätskonstante   &                                   \\ \hline
+        \textbf{Konstanten} & \textbf{Bedeutung}    & \textbf{Einheit} & \textbf{Wert teilweise gerundet} \\ \hline
+        c               & Lichtgeschwindigkeit (Vakuum)   & $\frac{m}{s}$  & 299 792 458    \\
+        e               & Elementarladung    & C  & $1,602 \cdot 10^{-19}$    \\
+        $\mu \textsubscript{0}$               & Magnetische Feldkonstante   & $\frac{H}{m}$  & $4\cdot \pi \cdot 10^{-7}$  \\
+        $\epsilon \textsubscript{0}$    & Permittivität   & $\frac{F}{m}$  & $8,854 \cdot 10^{-12}$  \\
+        Cu    & Leitfähigkeit Kupfer    & $\frac{S \cdot m}{mm^{2}}$  & 56  \\
+        \hline
+
     \end{tabular}
     \caption{Konstanten}
-    \label{Grundkonzepte/Konstanten/Tabelle}
+    % \label{Grundkonzepte/Einheiten/Tabelle}
 \end{table}
 
-\pagebreak
+\newpage
+
+\section{Präfixe}
+
+\setlength{\tabcolsep}{4pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Vorsatz} & \textbf{Vorsatzzeichen}        & \textbf{Faktor} & \textbf{Wert} \\ \hline
+        Exa                & E                    & $10^{18}$           & 1 000 000 000 000 000 000  \\
+        Peta               & P                    & $10^{15}$           & 1 000 000 000 000 000      \\
+        Tera               & T                    & $10^{12}$           & 1 000 000 000 000          \\
+        Giga               & G                    & $10^{9}$            & 1 000 000 000              \\
+        Mega               & M (meg)              & $10^{6}$            & 1 000 000                  \\
+        Kilo               & k                    & $10^{3}$            & 1 000                      \\
+        Hekto              & h                    & $10^{2}$            & 100                        \\
+        Deka               & da                   & $10^{1}$            & 10                         \\
+        Dezi               & d                    & $10^{-1}$           & 0,1                        \\ 
+        Zenti              & c                    & $10^{-2}$           & 0,01                       \\
+        Milli              & m                    & $10^{-3}$           & 0,001                      \\
+        Mikro              & $\mu$                & $10^{-6}$           & 0,000 001                  \\ 
+        Nano               & n                    & $10^{-9}$           & 0,000 000 001              \\
+        Piko               & p                    & $10^{-12}$          & 0,000 000 000 001          \\
+        Femto              & f                    & $10^{-15}$          & 0,000 000 000 000 001      \\
+        \hline
+
+        \hline
+    \end{tabular}
+    \caption{Präfixe}
+    % \label{Grundkonzepte/Einheiten/Tabelle}
+\end{table}

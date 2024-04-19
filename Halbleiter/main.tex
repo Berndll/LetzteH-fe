@@ -1,9 +1,45 @@
 \chapter{Halbleiter}
 
-\section{Dioden}
-\subsection{Sperrkennlinie}
-\subsection{Durchbruchsspannung}
+\section{PN-Übergang}
+Ein PN-Übergang ist ein grundlegendes Modell in elektronischen Bauteilen wie Dioden. Er besteht aus \textbf{zwei Halbleiterschichten}: einer \textbf{n-dotierten} Schicht mit \textbf{Elektronenüberschuss} und einer \textbf{p-dotierten} Schicht mit \textbf{Löcherüberschuss}. Beim Zusammenfügen diffundieren Elektronen in die p-Schicht und Löcher in die n-Schicht, was eine \textbf{Raumladungszone} erzeugt.\\
 
-\section{MOSFET}
+Der PN-Übergang steuert den Stromfluss:\\
+\begin{itemize}
+    \item In \textbf{Durchlassrichtung fließt Strom}, wenn eine positive Spannung auf die p-Seite und eine negative auf die n-Seite angelegt wird.
+    \item In \textbf{Sperrrichtung blockiert} die Raumladungszone den Stromfluss.
+\end{itemize}
+Er ist entscheidend für die Umwandlung von elektrischer Energie in Licht (wie in LEDs) oder von Licht in elektrische Energie (wie in Solarzellen).
+
+\section{Dioden}
+Eine Diode ist ein elektronisches Element, das Strom in einer Richtung passieren lässt und in der anderen Richtung blockiert. Sie besteht aus einem PN-Übergang und hat wichtige Kenngrößen wie die \textbf{Durchlassspannung}, die \textbf{Sperrspannung} und den \textbf{Durchlassstrom}. Dioden finden in Gleichrichtern, Schutzschaltungen und in der Signalverarbeitung Anwendung. In der Elektronik bestehen die meisten Dioden aus dem Halbleitermaterial \textbf{„Silizium“}.
+
+\todo{Add Pic}
+Das obere Diagramm zeigt das Diodenspannungsdiagramm. Rechts von der y-Achse liegt der Durchlassbereich. Dieser liegt für gewöhnlich zwischen 0,6V und 0,8V. Normalerweise werden für handelsübliche Dioden \textbf{0,7V Sperrspannung} angenommen. Bei einer Spannung, die in Sperrrichtung angelegt ist, bricht die Diode laut dem oberen Diagramm bei 100V durch.
+
+\subsection{Schottky-Dioden}
+Normale Dioden und Schottky-Dioden unterscheiden sich in ihrer Funktionsweise und Struktur. Während normale Dioden aus einem \textbf{PN-Übergang} bestehen, besteht bei Schottky-Dioden der Übergang aus einem Metall-Halbleiter-Kontakt. Dadurch haben Schottky-Dioden eine \textbf{niedrigere Durchlassspannung} (ca. \textbf{0,4V}) und eine \textbf{schnellere Schaltgeschwindigkeit} im Vergleich zu normalen Dioden. Sie eignen sich besonders gut für Anwendungen, die schnelle Schaltzeiten erfordern, wie Hochfrequenzschaltungen und Leistungsverstärker.
+
+Im Diagramm ist eine typische Spannungskennlinie einer Schottky-Diode ersichtlich.
+
+\subsection{Zener-Dioden}
+Während normale Dioden den Strom in einer Richtung leiten und in der anderen blockieren, können Zener-Dioden in Durchlassrichtung auch bei einer bestimmten Sperrspannung betrieben werden, wodurch sie als Spannungsreferenz oder Spannungsregler fungieren. Diese charakteristische Sperrspannung ermöglicht es der Zener-Diode, eine stabile Ausgangsspannung zu liefern, selbst wenn die Eingangsspannung variiert. Zener-Dioden werden häufig in Spannungsregelschaltungen, Spannungsteilern und Schutzschaltungen eingesetzt.
+
+
+Im oberen Diagramm ist die Durchlasskennlinie der verschiedenen Z-Diodentypen zu sehen. Um die genaue Durchlassspannung zu ermitteln, muss im Datenblatt nachgelesen werden.
 
 \section{Bipolartransistor}
+Es gibt zwei Arten: PNP und NPN. Bei einem PNP-Transistor liegen zwischen einem positiv geladenen Material (P-Typ) zwei negativ geladene Materialien (N-Typ). Bei einem NPN-Transistor ist es umgekehrt: Zwischen zwei positiv geladenen Materialien befindet sich ein negativ geladenes Material. Wenn eine kleine Strommenge an einem der Anschlüsse (Emitter) angelegt wird, kann der Transistor den größeren Stromfluss zwischen den anderen beiden Anschlüssen (Kollektor und Basis) kontrollieren. Diese Fähigkeit macht Bipolartransistoren sehr nützlich in vielen elektronischen Geräten, wie z.B. Verstärkern und Schaltern.
+
+Bipolartransistoren können den Strom "verstärken", indem sie einen kleinen Basisstrom in einen größeren Kollektorstrom umwandeln. Für einen NPN-Transistor ist die Formel für den Stromverstärkungsfaktor $V = \frac{I_C}{I_B}$, wobei $IC$ der Kollektorstrom und $IB$ der Basis-Strom ist. Für einen PNP-Transistor wäre es $V = \frac{I_C}{I_E}$, wobei {IE} der Emitter-Strom ist.
+
+\subsection{Treiberschaltung}
+Typischerweise besteht eine solche Treiberschaltung aus einem Bipolartransistor, der als Schalter fungiert, und einem Eingangssignal, das die Basis dieses Transistors steuert. Wenn das Eingangssignal anliegt, fließt ein kleiner Basisstrom, der den Bipolartransistor aktiviert und es ermöglicht, einen größeren Strom an den Ausgang zu leiten. Diese Schaltung kann anschließend beispielsweise einen MOSFET treiben.
+
+Für $R_1$ sind rund $10k\Omega$ angemessen, um nicht zu viel Strom zu verbrauchen. $R_2$ kann typischerweise XΩ haben.
+% \subsection{Sperrkennlinie}
+% \subsection{Durchbruchsspannung}
+
+\section{MOSFET}
+Ein MOSFET nutzt einen \textbf{PN-Übergang}, der zwischen \textbf{Source} und \textbf{Drain} liegt, um den Stromfluss zu kontrollieren. Das Besondere ist jedoch das \textbf{Gate}, das eine isolierte Metall- oder Dotierschicht über dem Halbleiter bildet. Wenn eine Spannung am Gate angelegt wird, entsteht ein elektrisches Feld im Halbleiter, das die Ladungsträger beeinflusst und den Stromfluss zwischen Source und Drain steuert. Diese Fähigkeit, den Stromfluss mit einer kleinen Spannung am Gate zu kontrollieren, macht den MOSFET zu einem vielseitigen Bauteil in elektronischen Schaltungen.\\
+
+Dazu wird noch in N-Kanal und P-Kanal-MOSFETs unterschieden. Die \textbf{N-Kanal} sind als \textbf{Low-Side-Switches} und die \textbf{P-Kanal} sind als \textbf{High-Side-Switches} zu verwenden. Um den MOSFET leitend zu machen, muss eine \textbf{Spannungsdifferenz} von rund \textbf{5V zwischen Gate und Source} angelegt werden, da diese ansonsten heiß werden können, weil sie nicht komplett leiten. Sogenannte \textbf{Logic-Level-MOSFETs} leiten bereits ab einer Spannung von \textbf{2,5V}.

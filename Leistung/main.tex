@@ -1,6 +1,92 @@
 \chapter{Leistung}
-\section{Blindleistung}
+\begin{itemize}
+    \item \underline{Wirkleistung $P$} \\
+    Tatsächlich umgesetzte Energie in Watt [W]
+    \item \underline{Blindleistung $Q$} \\
+    Unerwünschte bzw. nicht nutzbare Energie in Volt-Ampere Relativ [var]
+    \item \underline{Scheinleistung $S$} \\
+    Gesamtleistung in Volt-Ampere [VA]
+\end{itemize}
+
+\section{Leistung bei Gleichstrom}
+Allgemein gilt:
+
+\begin{align}
+    P&=U\cdot I \\
+    P&=\frac{U^2}{R} \\
+    P&=I^2\cdot R    
+\end{align}
+
+\begin{itemize}
+    \item $P$ ... Leistung
+    \item $U$ ... Spannung
+    \item $I$ ... Strom
+    \item $R$ ... Widerstand
+\end{itemize}
+
+\newpage
+
+Ebenso: \\
+\underline{Wirkleistung $P$}
+\begin{align}
+    P = U_w \cdot I = U \cdot I \cdot cos(\varphi)
+\end{align}
+\begin{itemize}
+    \item $P$ ... Wirkleistung in [W]
+    \item $U_w$ ... Wirkkomponente der Spannung in [V]
+\end{itemize}
+
+\underline{Blindleistung $Q$}
+\begin{align}
+    Q = U_b \cdot I = U \cdot I \cdot sin(\varphi)
+\end{align}
+\begin{itemize}
+    \item $Q$ ... Blindleistung in [var]
+    \item $U_b$ ... Blindkomponente der Spannung in [V]
+\end{itemize}
+Die induktive Blindleistung ist positiv: $sin(\varphi) > 0 \rightarrow Q_L > 0$
+Die kapazitive Blindleistung ist negativ: $sin(\varphi) < 0 \rightarrow Q_C < 0$
+
+\underline{Scheinleistung $S$}
+\begin{align}
+    S = U \cdot I
+\end{align}
+\begin{itemize}
+    \item $S$ ... Scheinleistung in [VA]
+\end{itemize}
+
+\newpage
+
+\section{Leistung bei Wechselstrom}
+Bei einem sinusförmigen Verlauf der Spannung $u$ und des Stroms $i$ gelten folgende Gleichungen:
+\begin{align}
+    u = \hat{U} \cdot sin(\omega \cdot t) \hspace{1cm} i = \hat{I} \cdot sin(\omega \cdot t - \varphi)
+\end{align}
+Werden die Momentanwerte von $u$ und $i$ miteinander multipliziert, erhält man den Momentanwert der Leistung $p$:
+\begin{align}
+    p = u \cdot i = \hat{U} \cdot sin(\omega \cdot t) \cdot \hat{I} \cdot sin(\omega \cdot t - \varphi)
+\end{align}
+oder:
+\begin{align}
+    p = U_{eff} \cdot I_{eff} \cdot cos(\varphi) - U_{eff} \cdot I_{eff} \cdot (2\cdot \omega \cdot t - \varphi)
+\end{align}
+
+\begin{itemize}
+    \item $p$ ... Momentanwert der Wechselstromleistung in [W]
+    \item $U$ ... Effektivwert der Spannung in [V]
+    \item $I$ ... Effektivwert des Stromes in [A]
+\end{itemize}
+
+\underline{Leistsungsfaktor} \\
+Der Leistungsfaktor $cos(\varphi)$ gibt an, welchen Anteil die Wirkleistung an der Scheinleistung hat. Er erreicht bei ohmschen Lasten den maximalen Wert $1$:
+\begin{align}
+    P &= U \cdot I \cdot cos(\varphi) = S \cdot cos(\varphi) \\
+    cos(\varphi) &= \frac{P}{S} 
+\end{align}
+\begin{itemize}
+    \item $P$ ... Wirkleistung in [W]
+    \item $S$ ... Scheinleistung in [VA]
+    \item $cos(\varphi)$ ... Leistungsfaktor
+\end{itemize}
+
 \subsection{Kompensation}
-\section{Scheinleistung}
-\section{Wirkleistung}
-\section{Wirkungsgrad}

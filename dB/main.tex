@@ -1,4 +1,80 @@
 \chapter{dB-Rechnung}
-\section{dBV}
-\section{dB}
-\section{dBm}
+Die Darstellung in Dezibel (dB) findet man in der Elektronik beispielsweise bei \textbf{Bodediagrammen} und vor allem in der \textbf{Hochfrequenztechnik} Verwendung. 
+Bei der Umrechnung und Darstellung in dB muss darauf geachtet werden, dass in \textbf{Leistungs-} und \textbf{Spannungsgrößen} unterteilt wird. Zu den sogenannten Leistungsgrößen gehören die Watt bzw. die Milliwatt. Ein häufiges Beispiel für Spannungsgrößen ist die Darstellung von Volt.\\
+
+\textbf{Spannungsgrößen} werden mit dem \textbf{Faktor 20} multipliziert; \textbf{Leistungsgrößen} lediglich mit dem \textbf{Faktor 10}.
+
+\section{Rechenregeln}
+Im Generellen werden alle Rechenoperatoren um eine Stufe herabgesetzt:
+
+\begin{itemize}
+    \item \textbf{Faltung}($*$) $\rightarrow$ \textbf{Multiplikation}($\cdot$)
+    \item \textbf{Multiplikation}($\cdot$) $\rightarrow$ \textbf{Addition}($+$)
+    \item \textbf{Addition}($+$) $\rightarrow$ undefiniert
+\end{itemize}
+
+\underline{Beispiele}
+\begin{itemize}
+    \item $2\cdot 1000\Rightarrow 3[dBW]+30[dBW]$
+    \item $f_1 * f_2 \Rightarrow f_1[dB]\cdot f_2[dB]$
+\end{itemize}
+
+\section{Besonderheiten bei Leistungsgrößen}
+Bei Leistungsgrößen können je nach Aufgabengebiet die sogenannten \textbf{dB-Watt (dBW)} oder die \textbf{dB-Milliwatt (dBm)} benötigt werden.\\
+Diese dBm werden hauptsächlich in der Hochfrequenztechnik eingesetzt, um kleine Leistungen angemessen darstellen zu können.\\
+
+Dadurch, dass bei dBm mit dem Faktor 1.000 multipliziert wird, liegt \textbf{1dBm} um \textbf{30dB unter 1dBW}.\\ 
+
+\underline{Beispiele}
+\begin{itemize}
+    \item $3[dBW] = 33[dBm]$
+    \item $0[dBm] = -30[dBW]$
+\end{itemize}
+
+\section{Allgemeine Formeln}
+Hier sind allgemeine Formeln für Spannungs- und Leistungsgrößen angegeben. Der Folgepfeil zeigt eine \underline{vereinfachte} Form.
+
+\subsection{Spannungsgrößen}
+\begin{align}
+    U[dBV]=20\cdot log_{10}(\frac{U[V]}{U_0[V]}) &\Rightarrow U[dBV]=20\cdot log_{10} U[V] \\
+    U[V]=10^{\frac{U[dBV]}{20}}\cdot U_0[V] &\Rightarrow 10^{\frac{U[dBV]}{20}}
+\end{align}
+
+\subsection{Leistungssgrößen}
+\begin{align}
+    P[dBW]=10\cdot log_{10}(\frac{P[W]}{1[W]}) &\Rightarrow P[dBW]=10\cdot log_{10} P[W] \\
+    P[W]=10^{\frac{P[dBW]}{10}}\cdot 1[W] &\Rightarrow 10^{\frac{P[dBW]}{10}}
+\end{align}
+
+\section{Spezielle Formeln}
+\begin{align}
+    U[dBV]=20\cdot log_{10}(\frac{U_a[V]}{U_e[V]})
+\end{align}
+Oben ist die Formel zum Umrechnen der \textbf{Übertragungsfunktion} für das \textbf{Bodediagramm} in dB angegeben. Da es sich bei der Übertragungsfunktion um \textbf{Spannungsgrößen} handelt wird mit dem \textbf{Faktor 20} multipliziert.
+
+\begin{align}
+    P[dBm]&=10\cdot log_{10}(\frac{P[W]}{1[mW]}) \\
+    P[W]&=1[mW]\cdot 10^{\frac{P[dBm]}{10}}
+\end{align}
+Oben ist die Formel zum Umrechnen von \textbf{Watt} und \textbf{dBm} (siehe Unterkapitel „Besonderheiten bei Leistungsgrößen“).
+
+\section{Häufige Zahlenwerte}
+
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Normalraum} & \textbf{dBW}  & \textbf{dBV}  \\ \hline
+        $0,001$             & $-30$         & $-60$         \\
+        $0,01$              & $-20$         & $-40$         \\
+        $0,1$               & $-10$         & $-20$         \\
+        $0,5$               & $\approx-3$   & $\approx-6$   \\
+        $1$                 & $0$           & $0$           \\
+        $2$                 & $\approx 3$   & $\approx 6$   \\
+        $10$                & $10$          & $20$          \\
+        $100$               & $20$          & $40$          \\
+        $1000$              & $30$          & $60$          \\ \hline
+    \end{tabular}
+\end{table}
+
+\todo[inline]{Vllt. Beispiel wo "im Kopf" gerechnet wird?}

@@ -1,5 +1,95 @@
 \chapter{Simulation}
 
 \section{Altium}
+Es muss beachtet werden, dass nicht alle BAuteile simmuliert werden können, sondern nur die der "Simulation Generic Components" Library.\\
+
+Außerdem ist es besonders wichtig, dass bei \textbf{OPV-Schaltungen} die einen \textbf{Verstärker} implementieren, der \textbf{OPV} benutzt werden muss.\\
+Bei Schaltungen die den OPV als \textbf{Schmitttrigger} (oder etwas Ähnliches) verwenden, muss der Komperator verwendet werden.
+
+\subsection{Quellen}
+Ab AltiumDesigner21 sind alle Quellen gleich; unter \verb|Simulate| $\rightarrow$ \verb|Sources| können Quellen platziert werden:
+
+\subsection{Probes}
+Es können unter \verb|Simulate| $\rightarrow$ \verb|Place Probes| Probes platziert werden, mit denen Spannungen und Ströme gemessen werden können. In AD17 war bzw. ist dies mit Netlabels möglich.
+
+\subsection{Simulation}
+Unter \verb|Simulate| $\rightarrow$ \verb|Simulation Dashboard| kann die Simulation eingestellt und gestartet werden. \\
+Zunächst wird die Schaltung verifiziert; um die Verifikation zu aktualisieren, muss im Drop-Down-Menü ein anderes Dokument ausgewählt werden und dann zurückgewechselt werden. \\
+
+Danach werden die Quellen und Probes ausgewählt: Mit einem Häkchen können diese entsprechend deaktiviert werden. Mit dem gefärbten Kästchen kann die Farbe der Probe im Plot verändert werden. \\
+
+Als Nächstes wird die Simulation eingestellt, wobei \verb|Transient| und \verb|AC-Sweep| besonders wichtig sind:
+\begin{itemize}
+    \item \underline{Transient-Analyse} \\
+    Bei der Transienten-Analyse wird die Schaltung in einem bestimmen Zeitbereich simuliert. Dieser kan sowohl in Zeit, als auch in Perioden angegeben werden (wobei diese nur bei Quellen mit periodischen Signalen funktioniert). Die zuvor ausgewählten Probes werden automatisch in einem Plot angezeigt. Mit dem "\verb|+ Add|"-Knopf können weiter Plots bzw. Signale hinzugefügt werden (siehe \todo{Add Reference}). \\
+    Mit dem Häkchen "\verb|Use Initial Conditions|" können Anfangsspannungen festgelegt werden, welche in der Schematik über \verb|Simulate| $\rightarrow$ \verb|Place Initial Condition| platziert werden. \\
+    In den Einstellungen der \verb|Initial Condition| (erreichbar via Doppelklick) kann unter \verb|Parameters| die Spannung eingstellt werden.
+
+    \item \underline{AC-Sweep} \\
+    Beim AC-Sweep wird die Frequenz der angegebenen Quellen in einem festgelegten Bereich "gesweeped", d.h. vom Minimum zum Maximum schrittweise durchgerechnet. Die Frequenz kann in Dekaden (logarithmisch), Okataven oder Linear angegeben werden. \\
+
+    Mit dem "\verb|+ Add|"-Knopf können zusätzliche Outputs hinzugefügt werden, wodurch ein neues Feld erscheint. In diesem kann über den Drei-Punkte-Knopf der Output konfiguriert werden.\\
+
+    In \verb|Waveforms| stehen alle möglichen Signale, welche in der Schaltung vorkommen (Probes, Netlabels, Widerstandsspannungen, etc.) Probes erhalten den Namen folgendermaßen: \verb|v("Net", Bauteil, "_", Probe Nummer)|. Eine Probe mit der Nummer $1$, an einem Widerstand, würde dementsprechend \verb|v(NetR1_1)| heißen. \\
+
+    In \verb|Functions| stehen alle möglichen Operationen wie Addition, Umrechnen in dB oder Berechnung der Phase. In Expression-X/Y steht was wirklich angezeigt werden soll. \\
+    Beachte dass es das Expression-X-Feld in AD21 nicht gibt.
+
+    \textbf{Beispiel} \\
+    Bodediagramm eines Tiefpasses.
+
+    \begin{itemize}
+        \item \underline{Übertragungsfunktion}: Expression-Y: \verb|db(v(NetC1_2/v(NetR1_1)))|
+        \item \underline{Phasengang}: Expression-Y: \verb|PHASE(v(NetC1_2))|
+    \end{itemize}
+    \verb|Net1| ist der Eingang des Tiefpasses, \verb|Net2| der Ausgang.
+
+    \underline{Simulation Dashboard}
+    \underline{Simulation Output}
+
+    Sollte eine Achse fehlen: doppelklicken auf die Achse und unter "Label" die gewünschte Einheit eintragen. \\
+
+    Die entsprechende Schematik des Beispiels:
+\end{itemize}
 
 \section{MicroCap}
+Folgende Schritte müssen befolgt werden, um in \textbf{Microcap} simulieren zu können:
+\begin{enumerate}
+    % \item Zunächst muss eine Datei erstellt werden: \\
+    % \verb|File| $\rightarrow$ \verb|New| $\rightarrow$ \verb|Schematic File (.cir)| $\rightarrow$ \verb|OK|
+
+    \item \underline{Komponentenauswahl} \\
+    \begin{itemize}
+        \item Allgemeine Bauteile (Widerstände, Kondensatoren, Quellen, etc.): \verb|Component| $\rightarrow$ \verb|Analog Primitives| $\rightarrow$ \verb|Benötigtes Bauteil|
+        \item Spezifische Bauteile (Transistoren, OPVs, etc.): \verb|Component| $\rightarrow$ \verb|Find Component| $\rightarrow$ \verb|Eingabe des Bauteilnamens| $\rightarrow$ \verb|Auswählen des Bauteils| $\rightarrow$ \verb|OK|
+    \end{itemize}
+    \item \underline{Verbinden der Bauteile} \\
+    Anklicken von Wire Mode. \todo{Add pic}
+
+    \item \underline{Konfiguration der Bauteile} \\
+    \textbf{Beispiel} \\
+    Pulse Source
+
+    \item \underline{Platzierung von Simulationspunkten} \\
+    Anklicken von \verb|Text Mode| und gewünschten Namen eingeben, welcher in der Simulation ausgewählt werden kann. Danach auf die gewünschte Stelle in der Schaltung ziehen, an der dann ein roter Punkt erscheinen sollte.
+
+    \item \underline{Einstellen der Simulation} \\
+    \begin{itemize}
+        \item \textbf{Im Zeitbereich} \\
+        \verb|Analysis| $\rightarrow$ \verb|Transient|
+        \begin{itemize}
+            \item \underline{Maximum Run Time}: Gesamtzeit der Simulation.
+            \item \underline{Number of Points}: Die Anzahl der simulierten Punkte.
+            \item \underline{Page}: Die Seite auf der der simulierte Graph gezeigt wird.
+            \item \underline{P}: Jede Seite kann mehrere Plots enthalten ($\approx$Graph); ist dies der Fall, werden sie untereinander dargestellt.
+            \item \underline{X Expression}: Wird im Normalfall mit $t$ als Zeit beschrieben, kann aber jedoch für etwas anderes verwendet werden.
+            \item \underline{Y Expression}: Dort sollten die jeweiligen Simulationspunkte ausgewählt werden, z.B.Spannungsverhältnisse, deren dB-Werte oder andere Funktionen bzw. Funktionswerte.
+            \item \underline{X Range}: Der Bereich der x-Achse, wobei \verb|Auto| die einfachste Variante ist; \verb|TMAX| ist die Maximalzeit.\\
+            Ansonsten können hier auch - mit Beistrichen getrennt - der Endwert, Startwert und der Unterteilungsabstand festgelegt werden.
+            \item \underline{Y Range}: Der Bereich der y-Achse; Optionen sind hier die selben wie bei \verb|X Range|.
+            \todo{Verschiedene Darstellungsmethoden hinzufügen.}
+        \end{itemize}
+
+    \end{itemize}
+\end{enumerate}
+\todo{Wirklich? Wie man eine Datei macht??}
