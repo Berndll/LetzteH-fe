@@ -1,17 +1,130 @@
 \chapter{Widerstand}
 
 \section{Ohm'sches Gesetz}
-Der Zusammenhang zwischen Spannung, Strom und Widerstand:
+Der Zusammenhang zwischen Spannung $U$, Strom $I$ und Widerstand $R$:
 \begin{align}
-    &U = R\cdot I       \\
-    &I = \frac{U}{R}    \\
-    &R = \frac{U}{I}
+    U = R\cdot I \hspace{1cm} I = \frac{U}{R} \hspace{1cm} R = \frac{I}{R}
+\end{align}
+
+Der Leitwert $G$ wird in Siemens ($S$) angegeben und ist der Kehrwert des Widerstands:
+\begin{align}
+    G = \frac{1}{R} = \frac{I}{U}
 \end{align}
 
 \section{Netzwerke}
 \subsection{Serienschaltung}
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) to[R=$R_1$] ++(2,0);
+    \draw (2,0) to[R=$R_2$] ++(2,0);
+\end{circuitikz}
+\end{center}
+
+\begin{align}
+    R_g &= \sum_{i=0}^{N} R_i = R_1 + R_2 + ...
+\end{align}
+
 \subsection{Parallelschaltung}
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) to[R=$R_1$] ++(2,0);
+    \draw (0,-2) to[R=$R_2$] ++(2,0);
+
+    \draw[black] (0,0) -- (0,-2);
+    \draw[black] (2,0) -- (2,-2);
+
+    \draw[black] (-1,-1) -- (0,-1);
+    \draw[black] (2,-1) -- (3,-1);
+\end{circuitikz}
+\end{center}
+
+\begin{align}
+    \frac{1}{R_g} &= \sum_{i=0}^{N} \frac{1}{R_i} = \frac{1}{R_1} + \frac{1}{R_2} + ...
+\end{align}
+
+Bei zwei parallel geschaltenen Widerständen gilt auch:
+\begin{align}
+    R_g = \frac{R_1 \cdot R_2}{R_1 + R_2}
+\end{align}
+
+\subsection{Spannungsteiler}
+Die Spannung wird auf zwei Widerstände (bzw. Lasten) aufgeteilt. Über die Kirchhoff'schen Gesetze der Knoten- und Maschenregel können dadurch die einzelnen Spannungen, die auf den Widerständen abfallen berechnet werden.
+
+\subsubsection*{Beispiel}
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0)
+        to[R=$R_1$] ++(2,0)
+        to[R=$R_2$] ++(2,0);
+\end{circuitikz}
+\end{center}
+
+Es gilt:
+\begin{align}
+    U_{R_1} &= U_g \cdot \frac{R_1}{R_1 + R_2} \\
+    U_{R_2} &= U_g \cdot \frac{R_2}{R_1 + R_2} \\
+\end{align}
+
+Da die Widerstände in Serie geschalten wurden, sind die Einzelströme gleich groß, d.h.:
+\begin{align}
+    I_{R_1} = I_{R_2}
+\end{align}
+
 \section{Leitungswiderstand}
+\begin{align}
+    R &= \frac{\rho \cdot l}{A} \\
+    G &= \frac{A}{\rho \cdot l}
+\end{align}
+\begin{itemize}
+    \item $\rho$ ... materialspezifischer Widerststand in [$\frac{\Omega \cdot mm^2}{m}$] oder [$\frac{mm^2}{S \cdot m}$]
+    \item $l$ ... Länge der Leitung in [$m$]
+    \item $A$ ... Querschnittsfläche der Leitung in [$m^2$]
+\end{itemize}
+
 \section{Sterndreiecktransformation}
-\section{Temperaturabhängigkeit}
+Die Sterndreiecktransformation kann verwendet werden, um das Arbeiten mit gewissen Widerstandsnetzwerken zu erleichtern.
+
+% \subsubsection*{Stern}
+\begin{center}
+\begin{tikzpicture}
+    \begin{scope}[xshift=-3cm]    
+        \draw (0,0) to[R=$R_2$] ++(330:2);
+        \draw (0,0) to[R=$R_1$] ++(210:2);
+        \draw (0,0) to[R=$R_3$] ++ (90:2);
+    \end{scope}
+
+    \begin{scope}[
+            xshift=3cm,
+            yshift=-1.25cm
+        ]
+        \draw  (1.5,0) to[R=$R_a$] ++(120:3.5);
+        \draw (-2,0) to[R=$R_b$] ++ (60:3.5);
+        \draw (-2,0) to[R=$R_c$] ++  (0:3.5);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\subsubsection*{Stern-zu-Dreieck}
+\begin{align}
+    R_1 &= \frac{R_b \cdot R_c}{R_a + R_b + R_c} \\
+    R_2 &= \frac{R_a \cdot R_c}{R_a + R_b + R_c} \\
+    R_3 &= \frac{R_a \cdot R_b}{R_a + R_b + R_c}
+\end{align}
+
+\subsubsection*{Dreieck-zu-Stern}
+\begin{align}
+    R_a &= \frac{R_1 \cdot R_2 + R_2 \cdot R_3 + R_1 \cdot R_3}{R_1} \\
+    R_b &= \frac{R_1 \cdot R_2 + R_2 \cdot R_3 + R_1 \cdot R_3}{R_2} \\
+    R_c &= \frac{R_1 \cdot R_2 + R_2 \cdot R_3 + R_1 \cdot R_3}{R_3}
+\end{align}
+
 \section{Potentiometer}
+Ein Potentiometer ist ein verstellbarer Widerstand, der durch drehen oder schieben angepasst werden kann. \\
+Es ist, vereinfacht gesagt, eine Serienschaltung zweier Widerstände:
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) to[R=$R_1$] ++(2,0);
+    \draw (2,0) to[R=$R_2$] ++(2,0);
+    \draw (0,2) to[pR=$P_1$] ++ (4,0);
+\end{circuitikz}
+\end{center}

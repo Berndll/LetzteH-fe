@@ -8,7 +8,7 @@ Eine weitere Möglichkeit auf Tau zu kommen ist die Berechnung mit den unten ang
 \end{itemize}
 \subsubsection{Taumessung bei Ladekurven}
 Tau kann sowohl beim Entladevorgang (siehe „Taumessung bei Entladekurven“) als auch beim Ladevorgang abgelesen werden. Bei Ladevorgängen wird eine Tangente aus dem Ursprung der Funktion gelegt. Diese Tangente schneidet anschließend den Maximalspannungswert. Wenn man diesen Schnittpunkt dann im 90° Winkel zur Zeitachse runter verbindet, kann Tau an diesem Punkt abgelesen werden:
-\textbf{RC-Glied}
+\subsubsection*{RC-Glied}
 \begin{center}
 	\begin{circuitikz}
 		\draw (0,0) to[R=$R$] (2,0);
@@ -150,24 +150,24 @@ Bei diesem Diagramm eilt die Spannung dem Strom hinterher.
 
 \subsubsection*{Serienschwingkreis}
 \begin{center}
-	\begin{circuitikz}
-		\draw (0,0) to[R=$R$] (2,0);
-        \draw (2,0) to[L=$L$] (4,0);
-		\draw (4,0) to[C=$C$] (6,0);
+\begin{circuitikz}
+    \draw (0,0) to[R=$R$] (2,0);
+    \draw (2,0) to[L=$L$] (4,0);
+    \draw (4,0) to[C=$C$] (6,0);
 
-        \draw (0,0) -- (0,-2);
-        \draw (6,0) -- (6,-2);
-        \draw (0,-2) -- (2.5,-2);
-        \draw (6,-2) -- (3.5,-2);
+    \draw (0,0) -- (0,-2);
+    \draw (6,0) -- (6,-2);
+    \draw (0,-2) -- (2.5,-2);
+    \draw (6,-2) -- (3.5,-2);
 
-        \draw[black] (2.57,-2) circle (2pt);
-        \draw[black] (3.43,-2) circle (2pt);
+    \draw[black] (2.57,-2) circle (2pt);
+    \draw[black] (3.43,-2) circle (2pt);
 
 
-        \draw (2.75,-2) .. controls (2.875,-2.15) .. (3,-2);
-        \draw (3,-2) .. controls (3.125,-1.85) .. (3.25,-2);
+    \draw (2.75,-2) .. controls (2.875,-2.15) .. (3,-2);
+    \draw (3,-2) .. controls (3.125,-1.85) .. (3.25,-2);
 
-	\end{circuitikz}
+\end{circuitikz}
 \end{center}
 \begin{center}
     \begin{Large}

@@ -32,8 +32,8 @@ Ebenso: \\
     P = U_w \cdot I = U \cdot I \cdot cos(\varphi)
 \end{align}
 \begin{itemize}
-    \item $P$ ... Wirkleistung in [W]
-    \item $U_w$ ... Wirkkomponente der Spannung in [V]
+    \item $P$ ... Wirkleistung in [$W$]
+    \item $U_w$ ... Wirkkomponente der Spannung in [$V$]
 \end{itemize}
 
 \underline{Blindleistung $Q$}
@@ -41,8 +41,8 @@ Ebenso: \\
     Q = U_b \cdot I = U \cdot I \cdot sin(\varphi)
 \end{align}
 \begin{itemize}
-    \item $Q$ ... Blindleistung in [var]
-    \item $U_b$ ... Blindkomponente der Spannung in [V]
+    \item $Q$ ... Blindleistung in [$var$]
+    \item $U_b$ ... Blindkomponente der Spannung in [$V$]
 \end{itemize}
 Die induktive Blindleistung ist positiv: $sin(\varphi) > 0 \rightarrow Q_L > 0$
 Die kapazitive Blindleistung ist negativ: $sin(\varphi) < 0 \rightarrow Q_C < 0$
@@ -52,7 +52,7 @@ Die kapazitive Blindleistung ist negativ: $sin(\varphi) < 0 \rightarrow Q_C < 0$
     S = U \cdot I
 \end{align}
 \begin{itemize}
-    \item $S$ ... Scheinleistung in [VA]
+    \item $S$ ... Scheinleistung in [$VA$]
 \end{itemize}
 
 \newpage
@@ -72,9 +72,9 @@ oder:
 \end{align}
 
 \begin{itemize}
-    \item $p$ ... Momentanwert der Wechselstromleistung in [W]
-    \item $U$ ... Effektivwert der Spannung in [V]
-    \item $I$ ... Effektivwert des Stromes in [A]
+    \item $p$ ... Momentanwert der Wechselstromleistung in [$W$]
+    \item $U$ ... Effektivwert der Spannung in [$V$]
+    \item $I$ ... Effektivwert des Stromes in [$A$]
 \end{itemize}
 
 \underline{Leistsungsfaktor} \\
@@ -84,9 +84,54 @@ Der Leistungsfaktor $cos(\varphi)$ gibt an, welchen Anteil die Wirkleistung an d
     cos(\varphi) &= \frac{P}{S} 
 \end{align}
 \begin{itemize}
-    \item $P$ ... Wirkleistung in [W]
-    \item $S$ ... Scheinleistung in [VA]
+    \item $P$ ... Wirkleistung in [$W$]
+    \item $S$ ... Scheinleistung in [$VA$]
     \item $cos(\varphi)$ ... Leistungsfaktor
 \end{itemize}
 
 \subsection{Kompensation}
+\textit{GdE2 S.102}
+Ein ohmsch-induktiver Verbraucher, wie z.B. ein Elektromotor, entnimmt dem Netz nicht nur Wirkleistung, sondern zum Aufbau des Magnetfeldes auch induktive Blindleistung. Der fließende Blindstromanteil belastet das Netz mit unerwünschten Spannungsabfällen und erhöhten Übertragungsverlusten. Ein parallel zum Verbraucher liegender Kondensator kopmensiert die aus dem Netz bezogene Blindleistung und verbessert den Leistungsfaktor. Da die zugeführte Wirkleistung unverändert bleibt, ergibt sich folgendes Leistungsdreieck:
+
+\begin{center}
+\begin{tikzpicture}[>=latex]
+    \draw[style=help lines] (0,0) (3,2);
+
+    \coordinate (pointer0) at (45:3);
+
+    \coordinate (posX) at (0:3);
+    \coordinate (posY) at (90:3);
+    \coordinate (negX) at (180:1);
+    \coordinate (negY) at (270:1);
+
+    % \draw[->,thick,Green] (0,0) -- (pointer0) node[right, xshift=3pt, Green] {$S$};
+    \draw[->,thick,Red] (0,0) -- (3,0) node[right, xshift=3pt, Red] {$P_{ZU}$};
+    
+    \draw[->,thick,Blue] (3,0) -- (3,1) node[right, xshift=3pt, Blue] {$Q$};
+    \draw[->,thick,Blue] (3,2) -- (3,1) node[right, xshift=3pt, Blue] {$Q$};
+
+
+
+    \draw[->,thick,black] (0,0) -- (posX) node[right,xshift=3pt] {$P$};
+    \draw[->,thick,black] (0,0) -- (posY) node[right,xshift=3pt] {$Q$};
+    \draw[->,thick,black] (0,0) -- (negX);
+    \draw[->,thick,black] (0,0) -- (negY);
+\end{tikzpicture}
+\end{center}
+    
+Wird der Leistsungsfaktor von $cos(\varphi)$ auf $cos(\varphi')$ verbessert, folgt aus dem Leistungsdreieck mit der Blindleistung $Q_M$ des Verbrauchers und der Blindleistung $Q$ des Netzes die erforderliche Blindleistung $Q_C$:
+\begin{align}
+    Q_C = Q - Q_M
+    \hspace{1cm}
+    Q = P_{ZU} \cdot tan(\varphi')
+    \hspace{1cm}
+    Q_M = P_{ZU} \cdot tan(\varphi) \\
+    \Rightarrow Q_C = P_{ZU} \cdot (tan(\varphi') - tan(\varphi))
+\end{align}
+
+\begin{itemize}
+    \item $Q_C$ ... Blindleistung des Kondensators in [$var$]
+    \item $P_{ZU}$ ... Wirkleistung des Verbrauchers in [$W$]
+    \item $\varphi$ ... Phasenwinkel ohne Kompensation in [$°$]
+    \item $\varphi'$ ... Phasenwinkel mit Kompensation in [$°$]
+\end{itemize}

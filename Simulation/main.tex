@@ -35,7 +35,7 @@ Als Nächstes wird die Simulation eingestellt, wobei \verb|Transient| und \verb|
     In \verb|Functions| stehen alle möglichen Operationen wie Addition, Umrechnen in dB oder Berechnung der Phase. In Expression-X/Y steht was wirklich angezeigt werden soll. \\
     Beachte dass es das Expression-X-Feld in AD21 nicht gibt.
 
-    \textbf{Beispiel} \\
+    \subsubsection*{Beispiel}
     Bodediagramm eines Tiefpasses.
 
     \begin{itemize}
@@ -52,44 +52,239 @@ Als Nächstes wird die Simulation eingestellt, wobei \verb|Transient| und \verb|
     Die entsprechende Schematik des Beispiels:
 \end{itemize}
 
+\newpage
+
 \section{MicroCap}
-Folgende Schritte müssen befolgt werden, um in \textbf{Microcap} simulieren zu können:
-\begin{enumerate}
-    % \item Zunächst muss eine Datei erstellt werden: \\
-    % \verb|File| $\rightarrow$ \verb|New| $\rightarrow$ \verb|Schematic File (.cir)| $\rightarrow$ \verb|OK|
+\subsection{Komponentenauswahl}
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.7\linewidth]{Microcap-Bilder/Bauteileaussuchen.PNG}
+    \caption{Komponentenauswahl}
+    \label{fig:Komponentenauswahl}
+\end{figure}
 
-    \item \underline{Komponentenauswahl} \\
-    \begin{itemize}
-        \item Allgemeine Bauteile (Widerstände, Kondensatoren, Quellen, etc.): \verb|Component| $\rightarrow$ \verb|Analog Primitives| $\rightarrow$ \verb|Benötigtes Bauteil|
-        \item Spezifische Bauteile (Transistoren, OPVs, etc.): \verb|Component| $\rightarrow$ \verb|Find Component| $\rightarrow$ \verb|Eingabe des Bauteilnamens| $\rightarrow$ \verb|Auswählen des Bauteils| $\rightarrow$ \verb|OK|
+\subsubsection*{Komponenten suchen}
+$\rightarrow$ Components $\rightarrow$ Find Component oder:\\
+in linkem Fenster $\rightarrow$ Search
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.7\linewidth]{Microcap-Bilder/Bauteilesuchen.PNG}
+    \caption{Komponenten suchen}
+    \label{fig:Komponenten suchen}
+\end{figure}
+
+\newpage
+
+\subsection{Bauteile verbinden}
+$\rightarrow$ Wire Mode $\rightarrow$ linke Maustaste gedrückt halten um Verbindungen zu ziehen
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=1\linewidth]{Microcap-Bilder/Bauteileverbinden.PNG}
+    \caption{Bauteile verbinden}
+    \label{fig:Bauteile verbinden}
+\end{figure}
+
+\subsection{Bauteile konfigurieren}
+jedes Bauteil muss individuell konfiguriert werden $\rightarrow$ auf Syntax achten wenn unklar\\
+mit "Plot" können Diagramme angezeigt werden (z.Bsp. bei Pulse Source das eingestellte Signal im Zeitbereich, beim Kondensator die Impedanz im Vergleich zur Frequenz, ...)
+
+\subsubsection*{Werte}
+Microcap unterscheidet nicht zwischen Groß-und Kleinschreibung!
+$\rightarrow$ 1M = 1m = 1 milli
+\begin{itemize}
+    \item Mega $\rightarrow$ meg
+    \item Kilo $\rightarrow$ k
+    \item Milli $\rightarrow$ m
+    \item µ $\rightarrow$ u
+    \item Nano $\rightarrow$ n
+\end{itemize}
+
+\subsection*{Sinussignal}
+\begin{itemize}
+    \item MODEL: GENERAL
+    \item A: Amplitude[V]
+    \item F: Frequenz[Hz]
+\end{itemize}
+
+\subsection*{Rechtecksignal}
+\begin{itemize}
+    \item MODEL: SQUARE
+    \item VONE: "HIGH"
+    \item VZERO: "LOW"
+    \item Px: $\rightarrow$ Abb. \ref{fig:Konfiguration Rechtecksignal}
+    \item Überprüfen: Plot
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=1\linewidth]{Microcap-Bilder/Rechtecksignal.PNG}
+    \caption{Konfiguration Rechtecksignal}
+    \label{fig:Konfiguration Rechtecksignal}
+\end{figure}
+
+\newpage
+
+\subsection*{OPV}
+
+\subsubsection*{Schmitt-Trigger}
+Für einen Schmitt-Trigger mit unsymmetrischer Versorgung (0V, 5V), der ungefähr zwischen 0V und 4,5V hin-und herschaltet (vorausgesetzt er wurde richtig beschalten ;P), müssen folgende Einstellungen verwendet werden. (siehe Abb.)
+
+\begin{itemize}
+    \item MODEL: \$GENERIC
+    \item VNS: 0.6
+    \item VSS: 5
+    \item VEE: 0
+    \item VPS: 4
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.65\linewidth]{Microcap-Bilder/invertierenderSchmitttrigger.PNG}
+    \caption{Einstellungen für Schmitt-trigger}
+    \label{fig:Einstellungen für Schmitt-trigger}
+\end{figure}
+
+\subsubsection*{Power Supplies}
+Platziert man einen OPV, werden manchmal von Microcap automatisch Labels hinzugefügt, die den OPV mit 15V und -15V versorgen.\\
+Diese Labels kann man löschen und durch eine andere Versorgung ersetzen (siehe Fixed Analog) oder man verändert die Werte unter Power Supplies:
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=1\linewidth]{Microcap-Bilder/PowerSupplies.PNG}
+    \caption{Power Supplies}
+    \label{fig:Power Supplies}
+\end{figure}
+
+\subsubsection*{Transformator}
+
+\begin{itemize}
+    \item VALUE: Primärspule, Sekundärspule, Kopplungsfaktor\\
+    z.Bsp: VALUE = 120u, 1m, 0.1
+    \item der Pin "Plus/Minus output" ist die Primärspule und der Pin "Plus/Minus Input" ist die Sekundärspule.
+\end{itemize}
+
+\subsection{Fixed Analog - Spannungsversorgung}
+Dieses Bauteil liefert eine fixe Gleichspannung.\\
+Dadurch kann man sich mehrere Verbindungen, die beispielsweise bei einer Spannungsquelle nötig wären, ersparen.\\
+(Findet man indem man danach sucht (siehe \textit{Komponenten suchen}))
+
+\newpage
+
+\subsection{Simulationspunkte}
+$\rightarrow$ Text Mode $\rightarrow$ Text platzieren und passenden Namen geben (z. Bsp: U...) $\rightarrow$ mit Leitung verbinden (erkennt man am roten Punkt)
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.5\linewidth]{Textmode.PNG}
+    \caption{Text Mode}
+    \label{fig:Text Mode}
+\end{figure}
+
+\newpage
+
+\subsection{Simulation}
+
+\subsubsection*{Zeitbereich}
+\textbf{Analysis $\rightarrow$ Transient}
+
+\begin{itemize}
+    \item Maximum Run Time: bis zu diesem Zeitpunkt wird simuliert
+    \item Output Start Time (tstart): Zeitpunkt, an der die Simulation beginnt
+    \item Maximum Time Step: $\rightarrow$ 0
+    \item Number of Points: Bestimmt die Anzahl der simulierten Punkte $\rightarrow$ je höher, desto länger dauert die Simulation
+    \item Temperature: Temperatur
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=1\linewidth]{Microcap-Bilder/Transientenanalyse-Diagramme.PNG}
+    \caption{Transientenanalyse - Einstellungen der Graphen und Achsen}
+    \label{fig:Transientenanalyse - Einstellungen der Graphen und Achsen}
+\end{figure}
+
+\textbf{Abb. \ref{fig:Transientenanalyse - Einstellungen der Graphen und Achsen} von links nach rechts:}
+\begin{itemize}
+    \item \begin{itemize}
+        \item Grün: Graph wird angezeigt
+        \item Gelb: Graph wird simuliert, aber nicht angezeigt
+        \item Rot: Graph wird weder simuliert noch angezeigt
     \end{itemize}
-    \item \underline{Verbinden der Bauteile} \\
-    Anklicken von Wire Mode. \todo{Add pic}
-
-    \item \underline{Konfiguration der Bauteile} \\
-    \textbf{Beispiel} \\
-    Pulse Source
-
-    \item \underline{Platzierung von Simulationspunkten} \\
-    Anklicken von \verb|Text Mode| und gewünschten Namen eingeben, welcher in der Simulation ausgewählt werden kann. Danach auf die gewünschte Stelle in der Schaltung ziehen, an der dann ein roter Punkt erscheinen sollte.
-
-    \item \underline{Einstellen der Simulation} \\
-    \begin{itemize}
-        \item \textbf{Im Zeitbereich} \\
-        \verb|Analysis| $\rightarrow$ \verb|Transient|
-        \begin{itemize}
-            \item \underline{Maximum Run Time}: Gesamtzeit der Simulation.
-            \item \underline{Number of Points}: Die Anzahl der simulierten Punkte.
-            \item \underline{Page}: Die Seite auf der der simulierte Graph gezeigt wird.
-            \item \underline{P}: Jede Seite kann mehrere Plots enthalten ($\approx$Graph); ist dies der Fall, werden sie untereinander dargestellt.
-            \item \underline{X Expression}: Wird im Normalfall mit $t$ als Zeit beschrieben, kann aber jedoch für etwas anderes verwendet werden.
-            \item \underline{Y Expression}: Dort sollten die jeweiligen Simulationspunkte ausgewählt werden, z.B.Spannungsverhältnisse, deren dB-Werte oder andere Funktionen bzw. Funktionswerte.
-            \item \underline{X Range}: Der Bereich der x-Achse, wobei \verb|Auto| die einfachste Variante ist; \verb|TMAX| ist die Maximalzeit.\\
-            Ansonsten können hier auch - mit Beistrichen getrennt - der Endwert, Startwert und der Unterteilungsabstand festgelegt werden.
-            \item \underline{Y Range}: Der Bereich der y-Achse; Optionen sind hier die selben wie bei \verb|X Range|.
-            \todo{Verschiedene Darstellungsmethoden hinzufügen.}
-        \end{itemize}
-
+    \item \begin{itemize}
+        \item Grün: X-Achse linear skaliert
+        \item Blau: X-Achse logarithmisch skaliert
     \end{itemize}
-\end{enumerate}
-\todo{Wirklich? Wie man eine Datei macht??}
+    \item \begin{itemize}
+        \item Grün: Y-Achse linear skaliert
+        \item Blau: Y-Achse logarithmisch skaliert
+    \end{itemize}
+    \item Farbenauswahl für die Graphen
+    \item Page: Auf welcher Seite der Graph ist (1, 2, ...)
+    \item P: In welchem Diagramm der Graph ist (1, 2, ...)
+    \item X Expression: T $\rightarrow$ Zeit
+    \item Y Expression: \begin{itemize}
+        \item v(Simulationspunkt) - Spannung (z. Bsp. v(Uin))
+        \item I(...) - Strom (z. Bsp. I(C1))
+        \item normale Rechenoperationen können verwendet werden (z.Bsp. v(Uin)-v(Uout))
+    \end{itemize}
+    \item X-Range: Der Bereich der x-Achse, wobei Auto die einfachste Variante ist; TMAX ist die Maximalzeit. Ansonsten können hier auch - mit Beistrichen getrennt - der Endwert, Startwert und der Unterteilungsabstand festgelegt werden.
+    \item Y-Range: gleiche Einstellung wie bei X-Range
+\end{itemize}
+
+\subsubsection*{Bodediagramm}
+
+\begin{itemize}
+    \item Frequency Range: letzter simulierter Frequenzpunkt, erster simulierter Frequenzpunkt (z. Bsp: 1meg, 10k)
+    \item X-Achsen: logarithmisch skalieren
+    \item X-Expression: F $\rightarrow$ Frequenz
+    \item Y-Expression: \begin{itemize}
+        \item Betrag: z. Bsp. dB(v(Uout))
+        \item Phase: z. Bsp. ph(v(Uout))
+    \end{itemize}
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=1\linewidth]{Microcap-Bilder/ACAnalyse-Limits.PNG}
+    \caption{AC-Analyse $\rightarrow$ Bodediagramm}
+    \label{fig:Bodediagramm}
+\end{figure}
+% Folgende Schritte müssen befolgt werden, um in \textbf{Microcap} simulieren zu können:
+% \begin{enumerate}
+%     % \item Zunächst muss eine Datei erstellt werden: \\
+%     % \verb|File| $\rightarrow$ \verb|New| $\rightarrow$ \verb|Schematic File (.cir)| $\rightarrow$ \verb|OK|
+
+%     \item \underline{Komponentenauswahl} \\
+%     \begin{itemize}
+%         \item Allgemeine Bauteile (Widerstände, Kondensatoren, Quellen, etc.): \verb|Component| $\rightarrow$ \verb|Analog Primitives| $\rightarrow$ \verb|Benötigtes Bauteil|
+%         \item Spezifische Bauteile (Transistoren, OPVs, etc.): \verb|Component| $\rightarrow$ \verb|Find Component| $\rightarrow$ \verb|Eingabe des Bauteilnamens| $\rightarrow$ \verb|Auswählen des Bauteils| $\rightarrow$ \verb|OK|
+%     \end{itemize}
+%     \item \underline{Verbinden der Bauteile} \\
+%     Anklicken von Wire Mode. \todo{Add pic}
+
+%     \item \underline{Konfiguration der Bauteile} \\
+%     \textbf{Beispiel}
+%     Pulse Source
+
+%     \item \underline{Platzierung von Simulationspunkten} \\
+%     Anklicken von \verb|Text Mode| und gewünschten Namen eingeben, welcher in der Simulation ausgewählt werden kann. Danach auf die gewünschte Stelle in der Schaltung ziehen, an der dann ein roter Punkt erscheinen sollte.
+
+%     \item \underline{Einstellen der Simulation} \\
+%     \begin{itemize}
+%         \item \textbf{Im Zeitbereich} \\
+%         \verb|Analysis| $\rightarrow$ \verb|Transient|
+%         \begin{itemize}
+%             \item \underline{Maximum Run Time}: Gesamtzeit der Simulation.
+%             \item \underline{Number of Points}: Die Anzahl der simulierten Punkte.
+%             \item \underline{Page}: Die Seite auf der der simulierte Graph gezeigt wird.
+%             \item \underline{P}: Jede Seite kann mehrere Plots enthalten ($\approx$Graph); ist dies der Fall, werden sie untereinander dargestellt.
+%             \item \underline{X Expression}: Wird im Normalfall mit $t$ als Zeit beschrieben, kann aber jedoch für etwas anderes verwendet werden.
+%             \item \underline{Y Expression}: Dort sollten die jeweiligen Simulationspunkte ausgewählt werden, z.B.Spannungsverhältnisse, deren dB-Werte oder andere Funktionen bzw. Funktionswerte.
+%             \item \underline{X Range}: Der Bereich der x-Achse, wobei \verb|Auto| die einfachste Variante ist; \verb|TMAX| ist die Maximalzeit.\\
+%             Ansonsten können hier auch - mit Beistrichen getrennt - der Endwert, Startwert und der Unterteilungsabstand festgelegt werden.
+%             \item \underline{Y Range}: Der Bereich der y-Achse; Optionen sind hier die selben wie bei \verb|X Range|.
+%             \todo{Verschiedene Darstellungsmethoden hinzufügen.}
+%         \end{itemize}
+
+%     \end{itemize}
+% \end{enumerate}
+% \todo{Wirklich? Wie man eine Datei macht??}

@@ -1,9 +1,93 @@
 \chapter{Felder}
 
 \section{Elektrisches Feld}
+Elektrische Felder spielen eine zentrale Rolle im Zusammenhang mit Kondensatoren. Ein Kondensator besteht aus zwei leitenden Platten, die durch ein Dielektrikum (Isolator) getrennt sind. Wenn eine Spannung an den Kondensator angelegt wird, erzeugt dies ein elektrisches Feld zwischen den Platten, welches als Energiespeicher dient.
+
+\begin{align}
+    &E = \frac{U}{d}    
+\end{align}
+
+\begin{itemize}
+    \item $E$ ... Feldstärke in [$\frac{V}{m}$]
+    \item $U$ ... Spannung in [$V$]
+    \item $d$ ... Abstand der Platten in [$m$]
+\end{itemize}
 
 \section{Elektrischer Fluss}
+Der elektrische Fluss bei einem Kondensator beschreibt die Bewegung elektrischer Ladungen zwischen den Kondensatorplatten aufgrund der Potentialdifferenz zwischen ihnen.
+\begin{align}
+    \Phi = E \cdot A
+\end{align}
+\begin{itemize}
+    \item $\Phi$ ... elektrischer Fluss in [$\frac{V}{m}$]
+    \item $E$ ... Feldstärke in [$\frac{V}{m}$]
+    \item $A$ ... Fläche der Kondensatorplatten in [$m^2$]
+\end{itemize}
 
 \section{Magnetisches Feld}
 
+\subsection{Leiter}
+Wenn ein elektrischer Strom durch einen Leiter fließt, erzeugt er ein magnetisches Feld um den Leiter herum, das senkrecht zur Stromrichtung steht. Dies wird durch die Rechte-Hand-Regel beschrieben: \\
+Wenn der Daumen der rechten Hand entlang des Leiters zeigt (in Richtung des Stromflusses), zeigen die gekrümmten Finger den Weg des magnetischen Feldes um den Leiter herum.
+\subsubsection*{Feldstärke im Außenraum eines geraden Leiters}
+\begin{align}
+    H = \frac{I}{l} = \frac{I}{2r\pi}
+\end{align}
+
+\begin{itemize}
+    \item $H$ ... Magnetische Feldstärke in [$\frac{A}{m}$]
+    \item $l$ ... Länge der Feldlinie in [$m$]
+    \item $r$ ... Abstand der Feldlinie zur Leitermitte in [$m$]
+    \item $I$ ... Strom der durch die Leitung fließt in [$A$]
+\end{itemize}
+
+\subsubsection*{Feldstärke im Innenraum eines geraden Leiters}
+\begin{align}
+    H = \frac{I}{l} = \frac{I}{2\cdot r_{a}^{2}\cdot \pi} \cdot r    
+\end{align}
+\begin{itemize}
+    \item $H$ ... Magnetische Feldstärke in [$\frac{A}{m}$]
+    \item $r$ ... Abstand zur Leitermitte in [$m$]
+    \item $r_{a}$ ... Radius des Leiters in [$m$]
+    \item $I$ ... Strom der durch die Leitung fließt in [$A$]
+\end{itemize}
+
+\subsection{Spulen}
+Eine Spule besteht aus einer langen Leiterschleife, die mehrmals um einen Kern gewickelt ist. Wenn ein Strom durch die Spule fließt, verstärkt sich das magnetische Feld um jeden einzelnen Draht der Spule, und die magnetischen Felder aller Drahtwindungen addieren sich. Dadurch entsteht ein starkes und gerichtetes Magnetfeld innerhalb und in der Nähe der Spule.
+
+\subsubsection*{Feldstärke im Innenraum einer Ringspule}
+\begin{align}
+    H = \frac{I\cdot N}{D}
+\end{align}
+\begin{itemize}
+    \item $H$ ... Magnetische Feldstärke in [$\frac{A}{m}$]
+    \item $r$ ... Abstand zur Leitermitte in [$m$]
+    \item $N$ ... Windungszahl
+    \item $I$ ... Strom der durch die Ringspule fließt in [$A$]
+\end{itemize}
+
+\subsection{Durchflutungssatz}
+Die Durchflutung ist die Summe aller Ströme, die durch eine Fläche hindurchtreten.
+\begin{align}
+    \theta = N \cdot I
+\end{align}
+
+\begin{itemize}
+    \item $\theta$ ... Durchfltung in [$A$]
+    \item $N$ ... Windungszahl
+    \item $I$ ... Stromstärke in [$A$]
+\end{itemize}
+
+\newpage
+
 \section{Magnetischer Fluss}
+Der magnetische Fluss ist die Gesamtheit aller Feldlinien des magnetischen Feldes. Wenige Feldlinien bedeuten geringen magnetischen Fluss, viele Feldlinien kennzeichnen bei gleichem Maßstab einen großen magnetischen Fluss.
+\begin{align}
+    \Phi = L \cdot I = B \cdot A
+\end{align}
+\begin{itemize}
+    \item $\Phi$ ... Magnetischer Fluss in [$Wb$]
+    \item $B$ ... Magnetische Flussdichte in [$T$]
+    \item $L$ ... Induktivität in [$H$]
+    \item $I$ ... Stromstärke in [$A$]
+\end{itemize}

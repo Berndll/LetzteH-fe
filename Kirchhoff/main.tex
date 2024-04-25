@@ -1,18 +1,20 @@
 \chapter{Kirchhoff}
-Kirchhoff hat zwei fundamentale Regeln/Gesetze aufgestellt.
+Kirchhoff hat zwei fundamentale Regeln bzw. Gesetze aufgestellt: \\
+Die \textbf{Knotenregel} und die \textbf{Maschenregel}.
 
 \section{Knotenregel}
-Die Summe aller Ströme bei einem Knotenpunkt ist 0, d.h. Ströme die hineinfließen, müssen auch hinausfließen.
-
-\section{Maschenregel}
-Die Summer aller Spannungen in einer Masche ist 0.
-
-$\sum U = 0$
-
+Die Summe aller Ströme bei einem Knotenpunkt ist $0$, d.h. Ströme die hineinfließen, müssen auch hinausfließen:
 \begin{align}
-    &U_1 + U_2 = U_3        \\
-    &U_1 + U_2 - U_3 = 0
+    \sum_{i = 0}^{N} I_i = 0
 \end{align}
 
-Alle Spannungen in Richtung des Umlaufsinns: +
-Alle Spannungen in Gegenrichtung des Umlaufsinns: -
+Diese Regel besagt, dass alle Ströme in einer Serienschaltung die gleichen sein müssen. Ebenso müssen Ströme die zu einem zusammenlaufen, aufsummiert werden, um den Ausgangsstrom zu ermitteln.
+
+\section{Maschenregel}
+Die Summer aller Spannungen in einer Masche ist $0$.
+
+\begin{align}
+    \sum_{i = 0}^{N} U_i = 0
+\end{align}
+
+Laut dieser Regel sind Spannungen einer Parallelschaltung immer gleich groß. Auch gilt, dass die Summe von Spannungen einer Serienschaltungen aufsummiert werden müssen, um die Gesamtspannung zu berechnen.

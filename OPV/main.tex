@@ -1,17 +1,15 @@
 \chapter{OPV-Schaltungen}
 
-\section{Verstärker}
-
-\subsection{Leerlaufverstärkung}
-Merke, dass kein Strom in den OPV fließt; es gilt:
-\begin{align}
-    V = \frac{U_a}{U_d}
-\end{align}
+Prinzipiell gilt beim OPV immer: $V = \frac{U_a}{U_D}$
 \begin{itemize}
     \item $V$ ist die Verstärkung
     \item $U_a$ ist die Ausgangsspannung
-    \item $U_d$ ist die Differenzspannung (zwischen dem "+"- und "-"-Eingang).
+    \item $U_D$ ist die Differenzspannung (zwischen dem "+"- und "-"-Eingang).
 \end{itemize}
+
+Wichtig zu wissen ist, dass \textbf{kein Strom in den OPV fließt}. \\
+Außerdem versucht er die Differenzspannung \textbf{$U_D$ immer auf $0V$} zu regeln!
+
 \begin{center}
 \begin{circuitikz}
     \coordinate (opAmp) at (0,0);
@@ -23,8 +21,6 @@ Merke, dass kein Strom in den OPV fließt; es gilt:
 
     \draw(opAmp) node[op amp, yscale=-1] {};
     \draw (1.25,-1.15) node[rground]{};
-
-
         
     \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_D$};
     \draw[->, thick, blue] (opOut) -- +(0,-0.9) node[above right, blue] {$U_a$};
@@ -38,9 +34,23 @@ Merke, dass kein Strom in den OPV fließt; es gilt:
 	\draw (-1.5,-0.49) circle (1.5pt); 
 \end{circuitikz}
 \end{center}
+
+Aufgrund der typischen Verstärkung von $20 ... 200.000$, erreicht der OPV seine Aussteuergrenze, weswegen gilt:
+\begin{itemize}
+    \item \underline{$U_D > 0V \Rightarrow U_a = V_{CC}$} (positive Versorgungsspannung) und
+    \item \underline{$U_D < 0V \Rightarrow U_a = V_{SS}$} (negative Versorgungsspannung). 
+\end{itemize}
+Die verschiedenen Schaltungen verwenden dieses Verhalten zu deren Gunsten. \\
+
+Bei \textbf{symmetrischer Versorgung} gilt: $V_{SS} = -V_{CC}$. \\
+Bei \textbf{unsymmetrischer Versorgung} gilt: $V_{SS} \neq -V_{CC}$ (typ. $GND$). \\
+
+\newpage
+
+\section{Verstärker}
+
 \subsection{Impedanzwandler}
-Ist dazu da, um dem folgenden System mehr Strom liefern zu können.\\
-Beachte, dass die Verstärkung hier $V=0$ ist weil $U_a=U_e$.
+Der Impedanzwandler ist dazu da, um dem folgenden System mehr Strom liefern zu können; weil $U_a = U_e$ gilt, ist die Verstärkung hier $V=1$:
 \begin{center}
 \begin{circuitikz}
     \coordinate (opAmp) at (3,-0.5);
@@ -58,7 +68,7 @@ Beachte, dass die Verstärkung hier $V=0$ ist weil $U_a=U_e$.
     \draw[black] (opOut) -- +(1.2,0);
     \draw[black] (opOut) -- +(0,-1.5) -- +(-2.5,-1.5) -- (opIn-);
 
-    \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue]    {$U_d$};
+    \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue]    {$U_D$};
     \draw[->, thick, blue] ($(opOut) + (1.25,-0.1)$) -- +(0,-1.3) node[above right, blue] {$U_a$};
     \draw[->, thick, blue] (0,-0.1) -- +(0,-1.8) node[above right, blue] {$U_e$};
 
@@ -74,334 +84,267 @@ Beachte, dass die Verstärkung hier $V=0$ ist weil $U_a=U_e$.
         (opOut) circle (1.5pt);
 \end{circuitikz}
 \end{center}
+Dieser Wandler wird auch "Spannungsfolger" genannt.
 
-\subsubsection{nicht invertierende Komparator}
+\subsection{Nicht-Invertierender Verstärker}
+Diese Schaltung verstärkt $U_e$ bis zur Aussteuergrenze; z.B.: bei $V = +2$ wird $+2,5V$ zu $+5V$
+
 \begin{center}
 \begin{circuitikz}
-    \coordinate (opAmp) at (0,0);
-    \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
-    \coordinate (opIn+Label) at ($(opIn+) + (-0.25,-0.1)$);
-    \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
-    \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0.1)$);
-    \coordinate (opOut) at ($(opAmp) + (1.25,-0.1)$);
+    \node[op amp, noinv input up] at (0,0) (opamp) {};
+    \draw(1.5,0) to[R, l=$R_1$] (1.5,-2);
+    \draw(1.5,-2) to[R, l=$R_2$] (1.5,-4);
+    \draw (-4.55,-4) node[rground]{};
+    \draw (1.5,-4) node[rground]{};
+    \draw (3.55,-4) node[rground]{};
 
-    \draw(opAmp) node[op amp, yscale=-1] {};
-    \draw (1.25,-1.15) node[rground]{};
+    \draw (-2,-0.49) -- (-1,-0.49);
+    \draw (-2,-0.49) -- (-2,-2);
+    \draw (-2,-2) -- (1.5,-2);
 
-
-        
-    \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_D$};
-    \draw[->, thick, blue] (opOut) -- +(0,-0.9) node[above right, blue] {$U_a$};
-
-    \draw (-1,0.49) -- (-1.45,0.49);
-    \draw (-1,-0.49) -- (-1.45,-0.49);
-
-    \draw (1.25,0) circle (1.5pt);
-	\draw (1.25,-1.1) circle (1.5pt); 
-    \draw (-1.5,0.49) circle (1.5pt);
-	\draw (-1.5,-0.49) circle (1.5pt); 
-\end{circuitikz}
-\end{center}
-Der Minus-Eingang vom OPV wird als U$_c$ angenommen.\\
-Es wird überprüft, ob Ue < oder > Uc ist.   
-\begin{align}
-    U_d > 0	=> U_a=HIGH \\
-    U_d < 0	=> U_a=LOW
-\end{align}
-
-
-
-\subsubsection{invertierende Komparator}
-\begin{center}
-\begin{circuitikz}
     
-    \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
-    \coordinate (opIn+Label) at ($(opIn+) + (-0.25,-0.1)$);
-    \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
-    \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0.1)$);
-    \coordinate (opOut) at ($(opAmp) + (1.25,-0.1)$);
+    \draw (-1,0.49) -- (-4.5,0.49);
+    \draw (1,0) -- (3.5,0);
 
-    \node[op amp] at (0,0) (opamp) {};
-    \draw (1.25,-1.15) node[rground]{};
+    \draw (-4.55,0.49) circle (1.5pt);
+    \draw (-4.55,-3.95) circle (1.5pt); 
+    \draw (3.55,0) circle (1.5pt);
+    \draw (3.55,-3.95) circle (1.5pt); 
+    \draw[black,fill=black] (1.5,-2) circle (1.5pt);
+    \draw[black,fill=black] (1.5,0) circle (1.5pt);
 
-
-        
-    \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_D$};
-    \draw[->, thick, blue] (opOut) -- +(0,-0.9) node[above right, blue] {$U_a$};
-
-    \draw (-1,0.49) -- (-1.45,0.49);
-    \draw (-1,-0.49) -- (-1.45,-0.49);
-
-    \draw (1.25,0) circle (1.5pt);
-	\draw (1.25,-1.1) circle (1.5pt); 
-    \draw (-1.5,0.49) circle (1.5pt);
-	\draw (-1.5,-0.49) circle (1.5pt); 
+    \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
+    \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-3.8) node[above left, blue] {$U_e$};
+    \draw[->, thick, blue] (3.55,-0.1) -- (3.55,-3.8) node[above left, blue] {$U_a$};
 \end{circuitikz}
 \end{center}
-Der Minus-Eingang vom OPV wird als U$_c$ angenommen.\\
-Es wird überprüft, ob Ue < oder > Uc ist.
 
+Für die Dimensionierung der Widerstände gilt:
 \begin{align}
-Ud > 0	=> Ua=LOW\\
-Ud < 0	=> Ua=HIGH
+    V = \frac{U_a}{U_e}=\frac{R_1+R_2}{R_2}
 \end{align}
-
+Es wird einer der Widerstände angenommen (typischerweise $R_2$) und berechnet den zweiten.
 
 \subsection{Invertierender Verstärker}
+Diese Schaltung invertiert $U_e$ und verstärkt das Signal bis zur Aussteuergrenze; z.B.: bei $V = -2$ wird $+2,5V$ zu $-5V$
 
 \begin{center}
 \begin{circuitikz}
-        % \coordinate (opAmp) at (4,-0.5);
-        % \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
-        % \coordinate (opIn+Label) at ($(opIn+) + (-0.25,0)$);
-        % \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
-        % \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0)$);
-        % \coordinate (opOut) at ($(opAmp) + (1.25,0)$);
-    
-        % % OpAmp
-        % \draw(opAmp) node[op amp] {};
-        
-        % % Resistors
-        % \draw(0,0) to[R, l=$R_1$] (opIn+);
-        % \draw($(opIn+) + (0,1.5)$) to[R, l=$R_2$] ($(opIn+) + (2.5,1.5)$);
- 
-        % % Wires
-        % \draw[black] (opOut) -- +(1,0);
-        % \draw[black] (opIn+) -- ($(opIn+) + (0,1.5)$);
-        % \draw[black] ($(opIn+) + (2.5,1.5)$) -- (opOut);
+    \draw node [op amp] (A1) {};
+    \draw(-4,0.49) to[R, l=$R_1$] (-2,0.49);
+    \draw(-1,2) to[R, l=$R_2$] (1,2);
+    \draw (-4.55,-1.55) node[rground]{};
+    \draw (-2,-1.5) node[rground]{};
+    \draw (2.55,-1.55) node[rground]{};
 
-        % \draw[black] (opIn-) -- +(0,-1);
-        
-        % % Ground
-        % \draw[ultra thick, black] ($(opIn-) +(-0.25,-1)$) -- +(0.5,0);
+    \draw (-4,0.49) -- (-4.5,0.49);
+    \draw (-2,-0.49) -- (-1,-0.49);
+    \draw (-2,-0.49) -- (-2,-1.5);
+    \draw (-2,0.49) -- (-1,0.49);
+    \draw (-1.5,0.49) -- (-1.5,2);
+    \draw (-1.5,2) -- (-1,2);
+    \draw (1,2) -- (1.5,2);
+    \draw (1.5,2) -- (1.5,0);
+    \draw (1,0) -- (2.5,0);
 
-        % % Voltages
-        % \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_d$};
-        \draw node [op amp](A1){};
-        \draw(-4,0.49) to[R, l=$R_1$] (-2,0.49);
-        \draw(-1,2) to[R, l=$R_2$] (1,2);
-        \draw (-4.55,-1.55) node[rground]{};
-        \draw (-2,-1.5) node[rground]{};
-        \draw (2.55,-1.55) node[rground]{};
+    \draw (-4.55,0.49) circle (1.5pt);
+    \draw (-4.55,-1.5) circle (1.5pt); 
+    \draw (2.55,0) circle (1.5pt);
+    \draw (2.55,-1.5) circle (1.5pt); 
+    \draw[black,fill=black] (-1.5,0.49) circle (1.5pt);
+    \draw[black,fill=black] (1.5,0) circle (1.5pt);
 
-        \draw (-4,0.49) -- (-4.5,0.49);
-        \draw (-2,-0.49) -- (-1,-0.49);
-        \draw (-2,-0.49) -- (-2,-1.5);
-        \draw (-2,0.49) -- (-1,0.49);
-        \draw (-1.5,0.49) -- (-1.5,2);
-        \draw (-1.5,2) -- (-1,2);
-        \draw (1,2) -- (1.5,2);
-        \draw (1.5,2) -- (1.5,0);
-        \draw (1,0) -- (2.5,0);
-
-        \draw (-4.55,0.49) circle (1.5pt);
-    	\draw (-4.55,-1.5) circle (1.5pt); 
-        \draw (2.55,0) circle (1.5pt);
-    	\draw (2.55,-1.5) circle (1.5pt); 
-        \draw[black,fill=black] (-1.5,0.49) circle (1.5pt);
-    	\draw[black,fill=black] (1.5,0) circle (1.5pt);
-
-        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_d$};
-        \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-1.4) node[above left, blue] {$U_e$};
-        \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-1.4) node[above left, blue] {$U_a$};
-        \draw[<-, thick, blue] (-1.2,2.7) -- (1.5,2.7) node[above left, blue] {$U_{2}$};
-        
+    \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
+    \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-1.4) node[above left, blue] {$U_e$};
+    \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-1.4) node[above left, blue] {$U_a$};
+    \draw[<-, thick, blue] (-1,2.85) -- (1,2.85) node[above, midway, blue] {$U_{2}$};
 \end{circuitikz}
 \end{center}
 
-$R_e$ ist der Eingangswiderstand der Schaltung.\\
-
-Hier gilt: $R_e=R_1$
-
+Für die Dimensionierung der Widerstände gilt:
 \begin{align}
     V = \frac{U_a}{U_e}=-\frac{R_2}{R_1}
 \end{align}
+Es wird einer der beiden angenommen und der andere berechnet.
 
-\subsection{Nicht-Invertierender Verstärker}
-\begin{center}
-\begin{circuitikz}
-        % \coordinate (opAmp) at (2,-0.5);
-        % \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
-        % \coordinate (opIn+Label) at ($(opIn+) + (-0.25,0)$);
-        % \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
-        % \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0)$);
-        % \coordinate (opOut) at ($(opAmp) + (1.25,0)$);
-    
-        % % OpAmp
-        % \draw(opAmp) node[op amp, yscale=-1] {};
-
-        % % Resistors
-        % \draw(opOut) to[R, l=$R_1$] ($(opOut) + (0,-2)$);
-        % \draw($(opOut) + (0,-2)$) to[R, l=$R_2$] ($(opOut) + (0,-4)$);
-
-        % % Wires
-        % \draw[black] (opOut) -- +(1,0);
-        % \draw[black] (opIn+) -- ($(opIn+) + (-1,0)$);
-        % \draw[black] (opIn-) -- ($(opIn+) + (0,-2.5)$) -- ($(opOut) + (0,-2)$);
-
-        % % Voltages
-        % \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_d$};
-        \node[op amp, noinv input up] at (0,0) (opamp) {};
-        \draw(1.5,0) to[R, l=$R_1$] (1.5,-2);
-        \draw(1.5,-2) to[R, l=$R_2$] (1.5,-4);
-        \draw (-4.55,-4) node[rground]{};
-        \draw (1.5,-4) node[rground]{};
-        \draw (3.55,-4) node[rground]{};
-
-        \draw (-2,-0.49) -- (-1,-0.49);
-        \draw (-2,-0.49) -- (-2,-2);
-        \draw (-2,-2) -- (1.5,-2);
-
-        
-        \draw (-1,0.49) -- (-4.5,0.49);
-        \draw (1,0) -- (3.5,0);
-
-        \draw (-4.55,0.49) circle (1.5pt);
-    	\draw (-4.55,-3.95) circle (1.5pt); 
-        \draw (3.55,0) circle (1.5pt);
-    	\draw (3.55,-3.95) circle (1.5pt); 
-        \draw[black,fill=black] (1.5,-2) circle (1.5pt);
-    	\draw[black,fill=black] (1.5,0) circle (1.5pt);
-
-        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_d$};
-        \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-3.8) node[above left, blue] {$U_e$};
-        \draw[->, thick, blue] (3.55,-0.1) -- (3.55,-3.8) node[above left, blue] {$U_a$};
-\end{circuitikz}
-\end{center}
-
-$R_e$ ist der Eingangswiderstand der Schaltung.\\
-
-Hier gilt: $R_e=\infty$
-
-\begin{align}
-    V = \frac{U_a}{U_d}=\frac{R_1+R_2}{R_2}
-\end{align}
+\newpage
 
 \section{Schmitttrigger}
+Ein Schmitttrigger ist eine Schaltung, bei dem eine gewisse Schaltschwelle unter- bzw. überschritten werden muss, um seinen Zustand ($V_{CC}$ oder $V_{SS}$) zu ändern.
 
-\subsection{Invertierender Schmitttrigger}
-\begin{align}
-    \frac{U_a}{U_e}=\frac{R_1+R_2}{R_2}
-\end{align}
+\subsection{Nicht-Invertierender Schmitttrigger}
+Der nicht-invertierende Schmitttrigger gibt \underline{$V_{CC}$} bei überschreiten der oberen Schaltschwelle aus und \underline{$V_{SS}$} bei unterschreiten der unteren Schaltschwelle.
 
 \begin{center}
 \begin{circuitikz}
-    % \coordinate (opAmp) at (2,-0.5);
-    % \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
-    % \coordinate (opIn+Label) at ($(opIn+) + (-0.25,0)$);
-    % \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
-    % \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0)$);
-    % \coordinate (opOut) at ($(opAmp) + (1.25,0)$);
+    \draw node [op amp,  noinv input up](A1){};
+    \draw(-4,0.49) to[R, l=$R_1$] (-2,0.49);
+    \draw(-1,2) to[R, l=$R_2$] (1,2);
+    \draw (-4.55,-1.55) node[rground]{};
+    \draw (-2,-1.5) node[rground]{};
+    \draw (2.55,-1.55) node[rground]{};
 
-    % % OpAmp
-    % \draw(opAmp) node[op amp] {};
+    \draw (-4,0.49) -- (-4.5,0.49);
+    \draw (-2,-0.49) -- (-1,-0.49);
+    \draw (-2,-0.49) -- (-2,-1.5);
+    \draw (-2,0.49) -- (-1,0.49);
+    \draw (-1.5,0.49) -- (-1.5,2);
+    \draw (-1.5,2) -- (-1,2);
+    \draw (1,2) -- (1.5,2);
+    \draw (1.5,2) -- (1.5,0);
+    \draw (1,0) -- (2.5,0);
 
-    % % Resistors
-    % \draw(opOut) to[R, l=$R_1$] ($(opOut) + (0,-2)$);
-    % \draw($(opOut) + (0,-2)$) to[R, l=$R_2$] ($(opOut) + (0,-4)$);
+    \draw (-4.55,0.49) circle (1.5pt);
+    \draw (-4.55,-1.5) circle (1.5pt); 
+    \draw (2.55,0) circle (1.5pt);
+    \draw (2.55,-1.5) circle (1.5pt); 
+    \draw[black,fill=black] (-1.5,0.49) circle (1.5pt);
+    \draw[black,fill=black] (1.5,0) circle (1.5pt);
 
-    % % Wires
-    % \draw[black] (opOut) -- +(1,0);
-    % \draw[black] (opIn+) -- ($(opIn+) + (-1,0)$);
-    % \draw[black] (opIn-) -- ($(opIn+) + (0,-2.5)$) -- ($(opOut) + (0,-2)$);
-
-    % % Voltages
-    % \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_d$};
-        \node[op amp] at (0,0) (opamp) {};
-        \draw(1.5,0) to[R, l=$R_1$] (1.5,-2);
-        \draw(1.5,-2) to[R, l=$R_2$] (1.5,-4);
-        \draw (-4.55,-4) node[rground]{};
-        \draw (1.5,-4) node[rground]{};
-        \draw (3.55,-4) node[rground]{};
-
-        \draw (-2,-0.49) -- (-1,-0.49);
-        \draw (-2,-0.49) -- (-2,-2);
-        \draw (-2,-2) -- (1.5,-2);
-
-        
-        \draw (-1,0.49) -- (-4.5,0.49);
-        \draw (1,0) -- (3.5,0);
-
-        \draw (-4.55,0.49) circle (1.5pt);
-    	\draw (-4.55,-3.95) circle (1.5pt); 
-        \draw (3.55,0) circle (1.5pt);
-    	\draw (3.55,-3.95) circle (1.5pt); 
-        \draw[black,fill=black] (1.5,-2) circle (1.5pt);
-    	\draw[black,fill=black] (1.5,0) circle (1.5pt);
-
-        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_d$};
-        \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-3.8) node[above left, blue] {$U_e$};
-        \draw[->, thick, blue] (3.55,-0.1) -- (3.55,-3.8) node[above left, blue] {$U_a$};
+    \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
+    \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-1.4) node[above left, blue] {$U_e$};
+    \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-1.4) node[above left, blue] {$U_a$};
 \end{circuitikz}
 \end{center}
 
-\subsection{Nicht-Invertierender Schmitttrigger}
+Zur Dimensionierung der Widerstände gilt:
 \begin{align}
-    \frac{U_a}{U_e}=\frac{R_2}{R_1}
+    \frac{\Delta U_a}{\Delta U_e}=\frac{R_2}{R_1}
 \end{align}
+
+Die Hysterese des nicht-invertierendes Schmitttriggers sieht folgendermaßen aus:
+\begin{center}
+\begin{circuitikz} [scale=0.75]
+    \draw[<->] (-3,0) -- (3,0) node[right, above] {$U_e$};
+    \draw[<->] (0,-3) -- (0,3) node[right, above] {$U_a$};
+
+    \draw[->, ultra thick, Green] (2,2) -- +(2,0);
+    \draw[->, ultra thick, Green] (-2,-2) -- +(4,0);
+    \draw[->, ultra thick, Green] (2,-2) -- +(0,4);
+
+    \draw[->, ultra thick, red] (2,2) -- +(-4,0);
+    \draw[->, ultra thick, red] (-2,-2) -- +(-2,0);
+    \draw[->, ultra thick, red] (-2,2) -- +(0,-4);
+\end{circuitikz}
+\end{center}
+
+\subsubsection*{Beispiel}
+Ein Schmitttrigger soll $2V$ bis $3V$ am Eingang, zu $0V$ bis $5V$ am Ausgang umsetzen.
+
+\begin{align}
+    \frac{\Delta U_a}{\Delta U_e} &= \frac{5V - 0V}{3V - 2V} = \frac{5V}{1V}
+\end{align}
+
+Annahme: $R_1 = 10k\Omega$
+\begin{align}
+    \frac{\Delta U_a}{\Delta U_e} &= \frac{R_2}{R_1} \\
+    \Rightarrow R_2 &= R_1 \cdot \frac{U_a}{U_e} \\
+    R_2 &= 10k\Omega \cdot \frac{5V}{1V} = 50k\Omega
+\end{align}
+
+Außerdem muss der U-Minus-Eingang um die Mitte der Schaltschwellen hinaufgeschoben werden, also hier: $2V$ und $3V$ wird zu einer Mittensspannung von $2,5V$. Dies kann einfach durch einen Spannungsteiler erreicht werden.
+
 
 \begin{center}
 \begin{circuitikz}
-        % \coordinate (opAmp) at (4,-0.5);
-        % \coordinate (opIn+) at ($(opAmp) + (-1.25,.5)$);
-        % \coordinate (opIn+Label) at ($(opIn+) + (-0.25,0)$);
-        % \coordinate (opIn-) at ($(opAmp) + (-1.25,-.5)$);
-        % \coordinate (opIn-Label) at ($(opIn-) + (-0.25,0)$);
-        % \coordinate (opOut) at ($(opAmp) + (1.25,0)$);
-    
-        % % OpAmp
-        % \draw(opAmp) node[op amp, yscale=-1] {};
-        
-        % % Resistors
-        % \draw(0,0) to[R, l=$R_1$] (opIn+);
-        % \draw($(opIn+) + (0,1.5)$) to[R, l=$R_2$] ($(opIn+) + (2.5,1.5)$);
-    
-        % % Wires
-        % \draw[black] (opOut) -- +(1,0);
-        % \draw[black] (opIn+) -- ($(opIn+) + (0,1.5)$);
-        % \draw[black] ($(opIn+) + (2.5,1.5)$) -- (opOut);
+    \draw node [op amp,  noinv input up](A1){};
+    \draw(-4,0.49) to[R, l=$R_1$] (-2,0.49);
+    \draw(-1,2) to[R, l=$R_2$] (1,2);
+    \draw (-4.55,-1.55) node[rground]{};
+    \draw (-2,-1.5) node[rground]{};
+    \draw (2.55,-1.55) node[rground]{};
 
-        % \draw[black] (opIn-) -- +(0,-1);
-        
-        % % Ground
-        % \draw[ultra thick, black] ($(opIn-) +(-0.25,-1)$) -- +(0.5,0);
+    \draw (-4,0.49) -- (-4.5,0.49);
+    \draw (-2,-0.49) -- (-1,-0.49);
+    \draw (-2,-0.49) -- (-2,-1.5);
+    \draw (-2,0.49) -- (-1,0.49);
+    \draw (-1.5,0.49) -- (-1.5,2);
+    \draw (-1.5,2) -- (-1,2);
+    \draw (1,2) -- (1.5,2);
+    \draw (1.5,2) -- (1.5,0);
+    \draw (1,0) -- (2.5,0);
 
-        % % Voltages
-        % \draw[->, thick, blue] (opIn+Label) -- (opIn-Label) node[above left, blue] {$U_d$};
-        \draw node [op amp,  noinv input up](A1){};
-        \draw(-4,0.49) to[R, l=$R_1$] (-2,0.49);
-        \draw(-1,2) to[R, l=$R_2$] (1,2);
-        \draw (-4.55,-1.55) node[rground]{};
-        \draw (-2,-1.5) node[rground]{};
-        \draw (2.55,-1.55) node[rground]{};
+    \draw (-4.55,0.49) circle (1.5pt);
+    \draw (-4.55,-1.5) circle (1.5pt); 
+    \draw (2.55,0) circle (1.5pt);
+    \draw (2.55,-1.5) circle (1.5pt); 
+    \draw[black,fill=black] (-1.5,0.49) circle (1.5pt);
+    \draw[black,fill=black] (1.5,0) circle (1.5pt);
 
-        \draw (-4,0.49) -- (-4.5,0.49);
-        \draw (-2,-0.49) -- (-1,-0.49);
-        \draw (-2,-0.49) -- (-2,-1.5);
-        \draw (-2,0.49) -- (-1,0.49);
-        \draw (-1.5,0.49) -- (-1.5,2);
-        \draw (-1.5,2) -- (-1,2);
-        \draw (1,2) -- (1.5,2);
-        \draw (1.5,2) -- (1.5,0);
-        \draw (1,0) -- (2.5,0);
-
-        \draw (-4.55,0.49) circle (1.5pt);
-    	\draw (-4.55,-1.5) circle (1.5pt); 
-        \draw (2.55,0) circle (1.5pt);
-    	\draw (2.55,-1.5) circle (1.5pt); 
-        \draw[black,fill=black] (-1.5,0.49) circle (1.5pt);
-    	\draw[black,fill=black] (1.5,0) circle (1.5pt);
-
-        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_d$};
-        \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-1.4) node[above left, blue] {$U_e$};
-        \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-1.4) node[above left, blue] {$U_a$};
+    \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
+    \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-1.4) node[above left, blue] {$U_e$};
+    \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-1.4) node[above left, blue] {$U_a$};
 \end{circuitikz}
 \end{center}
 
 \newpage
 
+\subsection{Invertierender Schmitttrigger}
+Der invertierende Schmitttrigger gibt \underline{$V_{SS}$} bei überschreiten der oberen Schaltschwelle aus und \underline{$V_{CC}$} bei unterschreiten der unteren Schaltschwelle.
+
+\begin{center}
+\begin{circuitikz}
+    \node[op amp] at (0,0) (opamp) {};
+    \draw(1.5,0) to[R, l=$R_1$] (1.5,-2);
+    \draw(1.5,-2) to[R, l=$R_2$] (1.5,-4);
+    \draw (-4.55,-4) node[rground]{};
+    \draw (1.5,-4) node[rground]{};
+    \draw (3.55,-4) node[rground]{};
+
+    \draw (-2,-0.49) -- (-1,-0.49);
+    \draw (-2,-0.49) -- (-2,-2);
+    \draw (-2,-2) -- (1.5,-2);
+
+    
+    \draw (-1,0.49) -- (-4.5,0.49);
+    \draw (1,0) -- (3.5,0);
+
+    \draw (-4.55,0.49) circle (1.5pt);
+    \draw (-4.55,-3.95) circle (1.5pt); 
+    \draw (3.55,0) circle (1.5pt);
+    \draw (3.55,-3.95) circle (1.5pt); 
+    \draw[black,fill=black] (1.5,-2) circle (1.5pt);
+    \draw[black,fill=black] (1.5,0) circle (1.5pt);
+
+    \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
+    \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-3.8) node[above left, blue] {$U_e$};
+    \draw[->, thick, blue] (3.55,-0.1) -- (3.55,-3.8) node[above left, blue] {$U_a$};
+\end{circuitikz}
+\end{center}
+
+Zur Dimensionierung der Widerstände gilt:
+\begin{align}
+    \frac{U_a}{U_e}=\frac{R_1+R_2}{R_2}
+\end{align}
+
+
+Die Hysterese des nicht-invertierendes Schmitttriggers sieht folgendermaßen aus:
+\begin{center}
+\begin{circuitikz} [scale=0.75]
+    \draw[<->] (-3,0) -- (3,0) node[right, above] {$U_e$};
+    \draw[<->] (0,-3) -- (0,3) node[right, above] {$U_a$};
+
+    \draw[->, ultra thick, Green] (2,-2) -- +(2,0);
+    \draw[->, ultra thick, Green] (-2,2) -- +(4,0);
+    \draw[->, ultra thick, Green] (2,2) -- +(0,-4);
+
+    \draw[->, ultra thick, red] (2,-2) -- +(-4,0);
+    \draw[->, ultra thick, red] (-2,2) -- +(-2,0);
+    \draw[->, ultra thick, red] (-2,-2) -- +(0,4);
+\end{circuitikz}
+\end{center}
+
+\begin{align}
+    U_{mitte}&=\frac{U_{Schwelle/Unten}+U_{Schwelle/Oben}}{2} \\
+    R_2&=R_3\cdot\frac{U_{mitte}}{U_{Versorgung}-U_{mitte}} \\
+    R_1&=\frac{R_2\cdot R_3}{R_2 + R_3}\cdot\frac{U_{Schwelle/Oben}-U_{Schwelle/Oben}-V_{CC}+GND}{U_{Schwelle/Unten}-U_{Schwelle/Oben}} 
+\end{align}
+
+\newpage
+
 \section{Addierer}
-Wenn $R_1=R_2=R_3$ dann gilt $U_a=-(U_{R_1}+U_{R_2})$.
+Ein Addierer summiert die Eingangspannungen $U_{e_1}$ und $U_{e_2}$ und gibt das Ergebnis mit umgekehrtem Vorzeichen aus (wenn $R_1 = R_2=R_3$ dann gilt $U_a = -(U_{R_1}+U_{R_2})$).
+
 \begin{center}
 \begin{circuitikz}
         \draw node [op amp](A1){};
@@ -435,9 +378,9 @@ Wenn $R_1=R_2=R_3$ dann gilt $U_a=-(U_{R_1}+U_{R_2})$.
     	\draw[black,fill=black] (1.5,0) circle (1.5pt);
         \draw[black,fill=black] (-1.5,2) circle (1.5pt);
 
-        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_d$};
-        \draw[->, thick, blue] (-6.05,1.9) -- (-6.05,-1.4) node[above left, blue] {$U_{e2}$};
-        \draw[->, thick, red] (-4.55,0.4) -- (-4.55,-1.4) node[above left, red] {$U_{e1}$};
+        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
+        \draw[->, thick, blue] (-6.05,1.9) -- (-6.05,-1.4) node[above left, blue] {$U_{e_2}$};
+        \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-1.4) node[above left, blue] {$U_{e_1}$};
         \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-1.4) node[above left, blue] {$U_a$};
 \end{circuitikz}
 \end{center}
@@ -448,11 +391,9 @@ Wenn $R_1=R_2=R_3$ dann gilt $U_a=-(U_{R_1}+U_{R_2})$.
     I_2&=\frac{U_{e_2}}{R_2}
 \end{align}
 \begin{align}   
-    U_{R_g}&=R_g\cdot(I_1+I_3) \\
-    U_{R_g}&=R_g\cdot(\frac{U_{e_1}}{R_1}+\frac{U_{e_2}}{R_2}) \\
+    U_{R_g}&=R_g\cdot(I_1+I_3) =R_g\cdot(\frac{U_{e_1}}{R_1}+\frac{U_{e_2}}{R_2}) \\
     U_{R_g}&=R_g\cdot(\frac{U_{e_1}\cdot R_g}{R_1}+\frac{U_{e_2}\cdot R_g}{R_2})
 \end{align}
-\todo{Woher das Minus auf einmal?}
 
 \subsubsection*{Berechnung mit Überlagerungsprinzip}
 
@@ -466,6 +407,8 @@ Wenn $R_1=R_2=R_3$ dann gilt $U_a=-(U_{R_1}+U_{R_2})$.
     U_a&=\frac{R_g}{R_1}\cdot U_{e_1}+\frac{R_g}{R_2}\cdot U_{e_2} \\
     U_a&=-(U_{e_1}\cdot\frac{R_g}{R_1}+U_{e_2}\cdot\frac{R_g}{R_2})
 \end{align}
+
+\newpage
 
 \section{Subtrahierer}
 \subsection{Typ 1}
@@ -501,9 +444,9 @@ Wenn $R_1=R_2=R_3$ dann gilt $U_a=-(U_{R_1}+U_{R_2})$.
         \draw[black,fill=black] (-1.5,0.49) circle (1.5pt);
     	\draw[black,fill=black] (1.5,0) circle (1.5pt);
 
-        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_d$};
-        \draw[->, thick, blue] (-5.55,0.4) -- (-5.55,-2.4) node[above left, blue] {$U_e2$};
-        \draw[->, thick, red] (-4.05,-0.6) -- (-4.05,-2.4) node[above left, red] {$U_e1$};
+        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
+        \draw[->, thick, blue] (-5.55,0.4) -- (-5.55,-2.4) node[above left, blue] {$U_{e_2}$};
+        \draw[->, thick, blue] (-4.05,-0.6) -- (-4.05,-2.4) node[above left, blue] {$U_{e_1}$};
         \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-2.4) node[above left, blue] {$U_a$};
 \end{circuitikz}
 \end{center}
@@ -558,10 +501,11 @@ Wenn $R_1=R_2=R_3$ dann gilt $U_a=-(U_{R_1}+U_{R_2})$.
         \draw[ thick, green] (-2.2,-2) -- (-3.8,-2) node[below left, green] {$B$};
         \draw[ thick, green] (-3.8,-2) -- (-3.8,0.15) node[above left, green] {}; 
 
-        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_d$};
+        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
         \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-2.4) node[above left, blue] {$U_a$};
 \end{circuitikz}
 \end{center}
+
 \begin{align}
     U_a=(\sum B - \sum A)\cdot\frac{R_2}{R_1}
 \end{align}
@@ -599,12 +543,13 @@ Wenn $R_1=R_2=R_3$ dann gilt $U_a=-(U_{R_1}+U_{R_2})$.
         \draw[black,fill=black] (-1.5,0.49) circle (1.5pt);
     	\draw[black,fill=black] (1.5,0) circle (1.5pt);
 
-        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_d$};
+        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
         \draw[->, thick, blue] (-5.55,0.4) -- (-5.55,-2.4) node[above left, blue] {$U_e2$};
-        \draw[->, thick, red] (-4.05,-0.6) -- (-4.05,-2.4) node[above left, red] {$U_e1$};
+        \draw[->, thick, blue] (-4.05,-0.6) -- (-4.05,-2.4) node[above left, blue] {$U_e1$};
         \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-2.4) node[above left, blue] {$U_a$};
 \end{circuitikz}
 \end{center}
+
 \underline{Berechnung mit Überlagerungsprinzip} \\
 \underline{$U_{e_1}$ wirkt, $U_{e_2}=0$:}
 \begin{align}
@@ -626,7 +571,11 @@ Wenn alle $R$ gleich groß sind, gilt: $U_a=U_{e_1}-U_{e_2}$
 
 \todo{Berechnung mit Teilspannungen}
 
-\section{Integrator \and Differentiator}
+\newpage
+
+\section{Integrator}
+
+
 \begin{center}
 \begin{circuitikz}
         \draw node [op amp](A1){};
@@ -658,12 +607,13 @@ Wenn alle $R$ gleich groß sind, gilt: $U_a=U_{e_1}-U_{e_2}$
         \draw[black,fill=black] (-1.5,0.49) circle (1.5pt);
     	\draw[black,fill=black] (1.5,0) circle (1.5pt);
 
-        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_d$};
+        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
         \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-1.4) node[above left, blue] {$U_e$};
         \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-1.4) node[above left, blue] {$U_a$};
 \end{circuitikz}
 \end{center}
-Differentiator:
+
+\section{Differentiator}
 \begin{center}
 \begin{circuitikz}
         \draw node [op amp](A1){};
@@ -691,13 +641,15 @@ Differentiator:
         \draw[black,fill=black] (-1.5,0.49) circle (1.5pt);
     	\draw[black,fill=black] (1.5,0) circle (1.5pt);
 
-        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_d$};
+        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
         \draw[->, thick, blue] (-6.05,0.4) -- (-6.05,-1.4) node[above left, blue] {$U_e$};
         \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-1.4) node[above left, blue] {$U_a$};
         
         
 \end{circuitikz}
 \end{center}
+
+\newpage
 
 \section{Pegelwandler}
 \begin{center}
@@ -726,7 +678,7 @@ Differentiator:
         \draw[black,fill=black] (-1.5,0.49) circle (1.5pt);
     	\draw[black,fill=black] (1.5,0) circle (1.5pt);
 
-        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_d$};
+        \draw[->, thick, blue] (-1.2,0.4) -- (-1.2,-0.4) node[above left, blue] {$U_D$};
         \draw[->, thick, blue] (-4.55,0.4) -- (-4.55,-1.4) node[above left, blue] {$U_e$};
         \draw[->, thick, blue] (2.55,-0.1) -- (2.55,-1.4) node[above left, blue] {$U_a$};
         \draw[->, thick, blue] (-4.55,3.5) -- (1.5,3.5) node[above left, blue] {$U_{abfall}$};
@@ -753,6 +705,8 @@ Das Eingangssignal von $U_e=-1V$ bis $+1V$ soll am Ausgang zu $U_a=0V$ bis $+5V$
     U_{R_2}&\approx 0,715V                                      \\
     \Rightarrow U_+=U_a+U_{R_2}&=0V+0,714V=0,714V
 \end{align}
+
+\newpage
 
 \section{Instrumentation-Amplifier}
 \begin{center}
