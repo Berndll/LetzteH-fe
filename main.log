@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  25 APR 2024 22:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  25 APR 2024 23:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2115,8 +2115,8 @@ n.toc
 [2
 
 ] [3] [4] [5]
-Overfull \hbox (0.55193pt too wide) detected at line 134
- []\T1/SourceSansPro-TLF/bold/n/12 106
+Overfull \hbox (0.55193pt too wide) detected at line 135
+ []\T1/SourceSansPro-TLF/bold/n/12 105
  []
 
 )
@@ -2260,20 +2260,6 @@ Overfull \hbox (26.92566pt too wide) in paragraph at lines 121--121
 [][][]\T1/SourceSansPro-TLF/regular/n/12 Kompensation 
  []
 
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 136.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 136.
-
-Missing character: There is no ° in font cmr12!
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 137.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 137.
-
-Missing character: There is no ° in font cmr12!
 ) [18]
 \openout2 = `Quellen/main.aux'.
 
@@ -2515,201 +2501,210 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
 
 
-] [43] [44]
+] [43]
+Missing character: There is no ; in font nullfont!
+[44]
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
-[45] [46] [47] [48] [49] [50]
+[45] [46] [47] [48]
+Overfull \hbox (14.45192pt too wide) in paragraph at lines 329--330
+\T1/SourceSansPro-TLF/regular/n/12 Der Blind-wider-stand einer Spule wird mit $
+[][] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 j!L$ \T1/SourceSansPro-TLF/regular/n/12
+ beschrieben. Das heiÿt, die Impedanz
+ []
+
+[49]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 307.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 307.
-
-[51]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 354.
+(hyperref)                removing `math shift' on input line 342.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 354.
+(hyperref)                removing `math shift' on input line 342.
+
+[50]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 389.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 354.
+(hyperref)                removing `\begingroup' on input line 389.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 354.
+(hyperref)                removing `\endgroup' on input line 389.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 354.
+(hyperref)                removing `\@@over' on input line 389.
 
-[52] [53]
-<LineareBauteile/Traffo.png, id=707, 488.57532pt x 215.30438pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 389.
+
+[51] [52]
+<LineareBauteile/Traffo.png, id=705, 488.57532pt x 215.30438pt>
 File: LineareBauteile/Traffo.png Graphic file (type png)
 <use LineareBauteile/Traffo.png>
-Package pdftex.def Info: LineareBauteile/Traffo.png  used on input line 385.
+Package pdftex.def Info: LineareBauteile/Traffo.png  used on input line 420.
 (pdftex.def)             Requested size: 298.27516pt x 131.44388pt.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 393.
+(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 428.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 6.0pt on input line 393.
- [54 <./LineareBauteile/Traffo.png>]
-Overfull \hbox (28.41315pt too wide) in paragraph at lines 408--410
+(Font)              scaled to size 6.0pt on input line 428.
+ [53 <./LineareBauteile/Traffo.png>]
+Overfull \hbox (28.41315pt too wide) in paragraph at lines 443--445
 \T1/SourceSansPro-TLF/regular/n/12 Die Zeitkon-stante $\OML/cmm/m/it/12 ^^\$ \T
 1/SourceSansPro-TLF/regular/n/12 (Tau) beschreibt den Zusam-men-hang zwis-chen 
 den ver-bauten Bauteilen.
  []
 
 
-Overfull \hbox (8.63698pt too wide) in paragraph at lines 408--410
+Overfull \hbox (8.63698pt too wide) in paragraph at lines 443--445
 \T1/SourceSansPro-TLF/regular/n/12 Eine weit-ere Möglichkeit auf Tau zu kom-men
  ist die Berech-nung mit den un-ten angegebe-
  []
 
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 411.
+(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 446.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 14.4pt on input line 411.
+(Font)              scaled to size 14.4pt on input line 446.
 
-Overfull \hbox (11.15182pt too wide) in paragraph at lines 415--416
+Overfull \hbox (11.15182pt too wide) in paragraph at lines 450--451
 \T1/SourceSansPro-TLF/regular/n/12 Ur-sprung der Funk-tion gelegt. Diese Tan-ge
 nte schnei-det an-schlieÿend den Max-i-malspan-
  []
 
 
-Overfull \hbox (3.44165pt too wide) in paragraph at lines 434--434
+Overfull \hbox (3.44165pt too wide) in paragraph at lines 469--469
 \T1/SourceSansPro-TLF/regular/n/12 ladekurve[]  
  []
 
 
-Overfull \hbox (3.44165pt too wide) in paragraph at lines 434--434
+Overfull \hbox (3.44165pt too wide) in paragraph at lines 469--469
 \T1/SourceSansPro-TLF/regular/n/12 ladekurve[]  
  []
 
-[55]
-Overfull \hbox (14.26747pt too wide) in paragraph at lines 479--480
+[54]
+Overfull \hbox (14.26747pt too wide) in paragraph at lines 514--515
 \T1/SourceSansPro-TLF/regular/n/12 und einem Kon-den-sator. Zusät-zlich wird ei
 n Wider-stand einge-baut, dass der Schwingkreis
  []
 
-[56] [57] [58]
-<LineareBauteile/RLC-1.png, id=742, 568.37344pt x 529.22719pt>
+[55] [56] [57]
+<LineareBauteile/RLC-1.png, id=740, 568.37344pt x 529.22719pt>
 File: LineareBauteile/RLC-1.png Graphic file (type png)
 <use LineareBauteile/RLC-1.png>
-Package pdftex.def Info: LineareBauteile/RLC-1.png  used on input line 644.
+Package pdftex.def Info: LineareBauteile/RLC-1.png  used on input line 679.
 (pdftex.def)             Requested size: 319.58192pt x 297.58458pt.
-<LineareBauteile/RLC-2.png, id=743, 560.0925pt x 522.45187pt>
+<LineareBauteile/RLC-2.png, id=741, 560.0925pt x 522.45187pt>
 File: LineareBauteile/RLC-2.png Graphic file (type png)
 <use LineareBauteile/RLC-2.png>
-Package pdftex.def Info: LineareBauteile/RLC-2.png  used on input line 646.
+Package pdftex.def Info: LineareBauteile/RLC-2.png  used on input line 681.
 (pdftex.def)             Requested size: 319.58192pt x 298.11954pt.
- [59 <./LineareBauteile/RLC-1.png>] [60 <./LineareBauteile/RLC-2.png>]
-Overfull \hbox (10.09857pt too wide) in paragraph at lines 662--671
+ [58 <./LineareBauteile/RLC-1.png>] [59 <./LineareBauteile/RLC-2.png>]
+Overfull \hbox (10.09857pt too wide) in paragraph at lines 697--706
 \T1/SourceSansPro-TLF/regular/n/12 Das Bode-di-a-gramm zeigt das Ver-hal-ten ei
 nes Sys-tems im log-a-rith-mis-chen Fre-quenzbere-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 662--671
+Underfull \hbox (badness 10000) in paragraph at lines 697--706
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 662--671
+Underfull \hbox (badness 10000) in paragraph at lines 697--706
 
  []
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-[61]
-Overfull \hbox (30.5405pt too wide) in paragraph at lines 720--727
+[60]
+Overfull \hbox (30.5405pt too wide) in paragraph at lines 755--762
 \T1/SourceSansPro-TLF/regular/n/12 Die Kre-is-fre-quenz $\OML/cmm/m/it/12 !$ \T
 1/SourceSansPro-TLF/regular/n/12 wird in Ein-heiten Ra-di-ant pro Sekunde ($[]$
 ) angegeben und beschreibt,
  []
 
-[62] [63]
-Underfull \hbox (badness 10000) in paragraph at lines 751--755
+[61] [62]
+Underfull \hbox (badness 10000) in paragraph at lines 786--790
 
  []
 
 
-Overfull \hbox (7.07103pt too wide) in paragraph at lines 772--775
+Overfull \hbox (7.07103pt too wide) in paragraph at lines 807--810
 \T1/SourceSansPro-TLF/regular/n/12 aufweist. Bei ho-hen Fre-quenz wird der Kon-
 den-sator je-doch zu einem Kurzschluss, dieses
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 772--775
+Underfull \hbox (badness 10000) in paragraph at lines 807--810
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--807
+Underfull \hbox (badness 10000) in paragraph at lines 839--842
 
  []
 
-[64] [65]
+[63] [64]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-[66]
-Overfull \hbox (18.85378pt too wide) in paragraph at lines 909--913
+[65]
+Overfull \hbox (18.85378pt too wide) in paragraph at lines 944--948
 \T1/SourceSansPro-TLF/regular/n/12 Ein Hoch-pass-fil-ter lässt nur Sig-nale mit
  ho-hen Fre-quen-zen passieren und block-iert niedrige
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 909--913
+Underfull \hbox (badness 10000) in paragraph at lines 944--948
 
  []
 
+[66]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 [67]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-[68]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (26.83853pt too wide) in paragraph at lines 1055--1061
+Overfull \hbox (26.83853pt too wide) in paragraph at lines 1090--1096
 \T1/SourceSansPro-TLF/regular/n/12 Ein Band-pass-fil-ter lässt nur Sig-nale in-
 ner-halb eines bes-timmten Fre-quenzbere-ichs passieren
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1055--1061
+Underfull \hbox (badness 10000) in paragraph at lines 1090--1096
 
  []
 
-[69] [70]
+[68] [69]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 1144.
+(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 1179.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 10.0pt on input line 1144.
+(Font)              scaled to size 10.0pt on input line 1179.
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-[71]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 11
-96.
+[70]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 12
+31.
  (d:/Programs/texlive/2022/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 Missing character: There is no ; in font nullfont!
-[72]
+[71]
 Missing character: There is no ; in font nullfont!
-) [73]
+) [72]
 \openout2 = `Halbleiter/main.aux'.
 
  (./Halbleiter/main.tex
@@ -2727,7 +2722,7 @@ T1/SourceSansPro-TLF/bold/n/12 Sperrspan-nung \T1/SourceSansPro-TLF/regular/n/1
 2 und den \T1/SourceSansPro-TLF/bold/n/12 Durch-
  []
 
-[74
+[73
 
 
 
@@ -2750,7 +2745,7 @@ Overfull \hbox (2.21864pt too wide) in paragraph at lines 33--34
 r-möglicht es der Zener-Diode, eine sta-bile Aus-
  []
 
-[75]
+[74]
 Overfull \hbox (13.37537pt too wide) in paragraph at lines 43--44
 \T1/SourceSansPro-TLF/regular/n/12 chen den an-deren bei-den An-schlüssen (Koll
 ek-tor und Ba-sis) kon-trol-lieren. Diese Fähigkeit
@@ -2786,7 +2781,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
-[76]) [77]
+[75]) [76]
 \openout2 = `OPV/main.aux'.
 
  (./OPV/main.tex
@@ -2801,12 +2796,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--47
 
  []
 
-[78
+[77
 
 
 
 
-] [79] [80]
+] [78] [79]
 Overfull \hbox (27.39534pt too wide) in paragraph at lines 176--177
 \T1/SourceSansPro-TLF/regular/n/12 Der nicht-invertierende Schmitt-trig-ger gib
 t $[]$ bei über-schre-iten der oberen Schaltschwelle
@@ -2822,13 +2817,13 @@ Overfull \hbox (4.73766pt too wide) in paragraph at lines 178--178
 \T1/SourceSansPro-TLF/regular/n/12 schematic[]  
  []
 
-[81]
+[80]
 Overfull \hbox (11.97063pt too wide) in paragraph at lines 247--248
 []\T1/SourceSansPro-TLF/regular/n/12 Auÿerdem muss der U-Minus-Eingang um die M
 itte der Schaltschwellen hin-aufgeschoben
  []
 
-[82] [83]
+[81] [82]
 Underfull \hbox (badness 10000) in paragraph at lines 402--403
 
  []
@@ -2838,7 +2833,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 404--405
 
  []
 
-[84] [85] [86]
+[83] [84] [85]
 Overfull \hbox (14.15765pt too wide) in paragraph at lines 574--574
 [][][]\T1/SourceSansPro-TLF/regular/n/12 Berechnung 
  []
@@ -2848,7 +2843,7 @@ Overfull \hbox (14.15765pt too wide) in paragraph at lines 574--574
 [][][]\T1/SourceSansPro-TLF/regular/n/12 Berechnung 
  []
 
-[87] [88] [89] [90]) [91]
+[86] [87] [88] [89]) [90]
 \openout2 = `Atmega/main.aux'.
 
  (./Atmega/main.tex
@@ -2868,7 +2863,7 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
 (Font)              `T1/SourceSansPro-TLF/regular/n' on input line 8.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
 (Font)              scaled to size 10.95pt on input line 8.
- [92
+ [91
 
 
 
@@ -2880,7 +2875,7 @@ ver-ringert wer-den und wird über das [][]\T1/pcr/m/n/12 CLKPR[]\T1/SourceSansP
 ro-TLF/regular/n/12 -
  []
 
-<Atmega/CLKPR.png, id=940, 455.45157pt x 76.78688pt>
+<Atmega/CLKPR.png, id=938, 455.45157pt x 76.78688pt>
 File: Atmega/CLKPR.png Graphic file (type png)
 <use Atmega/CLKPR.png>
 Package pdftex.def Info: Atmega/CLKPR.png  used on input line 38.
@@ -2890,7 +2885,7 @@ Overfull \hbox (29.34122pt too wide) in paragraph at lines 38--39
 [][] 
  []
 
-<Atmega/CLKPR-Table.png, id=941, 455.45157pt x 362.85562pt>
+<Atmega/CLKPR-Table.png, id=939, 455.45157pt x 362.85562pt>
 File: Atmega/CLKPR-Table.png Graphic file (type png)
 <use Atmega/CLKPR-Table.png>
 Package pdftex.def Info: Atmega/CLKPR-Table.png  used on input line 41.
@@ -2900,8 +2895,8 @@ Overfull \hbox (29.34122pt too wide) in paragraph at lines 41--42
 [][] 
  []
 
-[93 <./Atmega/CLKPR.png> <./Atmega/CLKPR-Table.png>]
-<Atmega/PortPin-Config.png, id=948, 455.45157pt x 155.83218pt>
+[92 <./Atmega/CLKPR.png> <./Atmega/CLKPR-Table.png>]
+<Atmega/PortPin-Config.png, id=946, 455.45157pt x 155.83218pt>
 File: Atmega/PortPin-Config.png Graphic file (type png)
 <use Atmega/PortPin-Config.png>
 Package pdftex.def Info: Atmega/PortPin-Config.png  used on input line 54.
@@ -2918,9 +2913,9 @@ Overfull \hbox (29.34122pt too wide) in paragraph at lines 53--55
 [] 
  []
 
-[94 <./Atmega/PortPin-Config.png>]
+[93 <./Atmega/PortPin-Config.png>]
 
-LaTeX Warning: Reference `' on page 95 undefined on input line 74.
+LaTeX Warning: Reference `' on page 94 undefined on input line 74.
 
 
 Overfull \hbox (8.37424pt too wide) in paragraph at lines 82--84
@@ -2938,13 +2933,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
-[95]
-<Atmega/AutoTrigger-Reg.png, id=970, 455.45157pt x 52.69687pt>
+[94]
+<Atmega/AutoTrigger-Reg.png, id=968, 455.45157pt x 52.69687pt>
 File: Atmega/AutoTrigger-Reg.png Graphic file (type png)
 <use Atmega/AutoTrigger-Reg.png>
 Package pdftex.def Info: Atmega/AutoTrigger-Reg.png  used on input line 100.
 (pdftex.def)             Requested size: 455.45045pt x 52.69673pt.
-<Atmega/ADC-AutoTrigger-Select.png, id=971, 455.45157pt x 285.31593pt>
+<Atmega/ADC-AutoTrigger-Select.png, id=969, 455.45157pt x 285.31593pt>
 File: Atmega/ADC-AutoTrigger-Select.png Graphic file (type png)
 <use Atmega/ADC-AutoTrigger-Select.png>
 Package pdftex.def Info: Atmega/ADC-AutoTrigger-Select.png  used on input line 
@@ -2960,8 +2955,8 @@ Overfull \hbox (29.34122pt too wide) in paragraph at lines 100--103
 [] 
  []
 
-[96 <./Atmega/AutoTrigger-Reg.png> <./Atmega/ADC-AutoTrigger-Select.png>]
-<Atmega/ADLAR-1.png, id=979, 455.45157pt x 124.96687pt>
+[95 <./Atmega/AutoTrigger-Reg.png> <./Atmega/ADC-AutoTrigger-Select.png>]
+<Atmega/ADLAR-1.png, id=977, 455.45157pt x 124.96687pt>
 File: Atmega/ADLAR-1.png Graphic file (type png)
 <use Atmega/ADLAR-1.png>
 Package pdftex.def Info: Atmega/ADLAR-1.png  used on input line 112.
@@ -2971,7 +2966,7 @@ Overfull \hbox (58.71591pt too wide) in paragraph at lines 111--113
 [] 
  []
 
-<Atmega/ADLAR-0.png, id=980, 455.45157pt x 120.45pt>
+<Atmega/ADLAR-0.png, id=978, 455.45157pt x 120.45pt>
 File: Atmega/ADLAR-0.png Graphic file (type png)
 <use Atmega/ADLAR-0.png>
 Package pdftex.def Info: Atmega/ADLAR-0.png  used on input line 114.
@@ -2986,19 +2981,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
-[97 <./Atmega/ADLAR-1.png> <./Atmega/ADLAR-0.png>]
+[96 <./Atmega/ADLAR-1.png> <./Atmega/ADLAR-0.png>]
 Overfull \hbox (0.55714pt too wide) in paragraph at lines 122--123
 \T1/SourceSansPro-TLF/regular/n/12 Die ADC Mess-dauer muss eingestellt wer-den:
  kurze Mess-dauern führen zu un-ge-naueren
  []
 
-<Atmega/ADC-Control-Status.png, id=991, 455.45157pt x 88.83188pt>
+<Atmega/ADC-Control-Status.png, id=988, 455.45157pt x 88.83188pt>
 File: Atmega/ADC-Control-Status.png Graphic file (type png)
 <use Atmega/ADC-Control-Status.png>
 Package pdftex.def Info: Atmega/ADC-Control-Status.png  used on input line 124.
 
 (pdftex.def)             Requested size: 455.45045pt x 88.83165pt.
-<Atmega/ADC-Prescaler.png, id=992, 455.45157pt x 204.01219pt>
+<Atmega/ADC-Prescaler.png, id=989, 455.45157pt x 204.01219pt>
 File: Atmega/ADC-Prescaler.png Graphic file (type png)
 <use Atmega/ADC-Prescaler.png>
 Package pdftex.def Info: Atmega/ADC-Prescaler.png  used on input line 126.
@@ -3018,8 +3013,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
-[98 <./Atmega/ADC-Control-Status.png> <./Atmega/ADC-Prescaler.png>] [99]
-[100]
+[97 <./Atmega/ADC-Control-Status.png> <./Atmega/ADC-Prescaler.png>] [98]
+[99]
 Underfull \hbox (badness 10000) in paragraph at lines 224--226
 
  []
@@ -3041,7 +3036,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
-[101]
+[100]
 Underfull \hbox (badness 10000) in paragraph at lines 240--243
 
  []
@@ -3056,27 +3051,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
-[102]
+[101]
 Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
-[103]
+[102]
 Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
-<Atmega/EICRA-Reg.png, id=1120, 455.20062pt x 96.36pt>
+<Atmega/EICRA-Reg.png, id=1117, 455.20062pt x 96.36pt>
 File: Atmega/EICRA-Reg.png Graphic file (type png)
 <use Atmega/EICRA-Reg.png>
 Package pdftex.def Info: Atmega/EICRA-Reg.png  used on input line 304.
 (pdftex.def)             Requested size: 455.1995pt x 96.35974pt.
-<Atmega/EICRA-Description.png, id=1121, 455.20062pt x 122.4575pt>
+<Atmega/EICRA-Description.png, id=1118, 455.20062pt x 122.4575pt>
 File: Atmega/EICRA-Description.png Graphic file (type png)
 <use Atmega/EICRA-Description.png>
 Package pdftex.def Info: Atmega/EICRA-Description.png  used on input line 306.
 (pdftex.def)             Requested size: 455.1995pt x 122.45718pt.
-<Atmega/EIMSK-Table.png, id=1122, 453.695pt x 87.82813pt>
+<Atmega/EIMSK-Table.png, id=1119, 453.695pt x 87.82813pt>
 File: Atmega/EIMSK-Table.png Graphic file (type png)
 <use Atmega/EIMSK-Table.png>
 Package pdftex.def Info: Atmega/EIMSK-Table.png  used on input line 308.
@@ -3096,17 +3091,17 @@ Overfull \hbox (56.95935pt too wide) in paragraph at lines 302--309
 [] 
  []
 
-[104 <./Atmega/EICRA-Reg.png>]
+[103 <./Atmega/EICRA-Reg.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 310--313
 
  []
 
-<Atmega/PCICR-Reg.png, id=1132, 455.20062pt x 80.3pt>
+<Atmega/PCICR-Reg.png, id=1130, 455.20062pt x 80.3pt>
 File: Atmega/PCICR-Reg.png Graphic file (type png)
 <use Atmega/PCICR-Reg.png>
 Package pdftex.def Info: Atmega/PCICR-Reg.png  used on input line 315.
 (pdftex.def)             Requested size: 455.1995pt x 80.29979pt.
-<Atmega/PCMSK0-Reg.png, id=1133, 455.20062pt x 92.345pt>
+<Atmega/PCMSK0-Reg.png, id=1131, 455.20062pt x 92.345pt>
 File: Atmega/PCMSK0-Reg.png Graphic file (type png)
 <use Atmega/PCMSK0-Reg.png>
 Package pdftex.def Info: Atmega/PCMSK0-Reg.png  used on input line 317.
@@ -3121,7 +3116,7 @@ Overfull \hbox (58.46495pt too wide) in paragraph at lines 314--318
 [] 
  []
 
-) [105 <./Atmega/EICRA-Description.png> <./Atmega/EIMSK-Table.png> <./Atmega/PC
+) [104 <./Atmega/EICRA-Description.png> <./Atmega/EIMSK-Table.png> <./Atmega/PC
 ICR-Reg.png> <./Atmega/PCMSK0-Reg.png>]
 \openout2 = `Simulation/main.aux'.
 
@@ -3143,7 +3138,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
  []
 
-[106
+[105
 
 
 
@@ -3233,7 +3228,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
-[107]
+[106]
 Overfull \hbox (7.43999pt too wide) in paragraph at lines 50--51
 []\T1/SourceSansPro-TLF/regular/n/12 Sollte eine Achse fehlen: dop-pelk-licken 
 auf die Achse und unter "La-bel" die gewün-
@@ -3244,13 +3239,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[108] [109]
+[107] [108]
 Overfull \hbox (8.87903pt too wide) in paragraph at lines 88--90
 \T1/SourceSansPro-TLF/regular/n/12 mit "Plot" kön-nen Di-a-gramme angezeigt wer
 -den (z.Bsp. bei Pulse Source das eingestellte
  []
 
-[110] [111]
+[109] [110]
 Overfull \hbox (0.17822pt too wide) in paragraph at lines 148--150
 \T1/SourceSansPro-TLF/regular/n/12 Platziert man einen OPV, wer-den manch-mal v
 on Mi-cro-cap au-toma-tisch La-bels hinzuge-
@@ -3268,13 +3263,13 @@ Overfull \hbox (33.13425pt too wide) in paragraph at lines 167--170
  die beispiel-sweise bei einer Span-nungsquelle
  []
 
-[112] [113] [114] [115]
+[111] [112] [113] [114]
 Overfull \hbox (18.40154pt too wide) in paragraph at lines 227--228
 []\T1/SourceSansPro-TLF/regular/n/12 normale Rechen-op-er-a-tio-nen kön-nen ver
 -wen-det wer-den (z.Bsp. v(Uin)-v(Uout)) 
  []
 
-) [116] (./main.aux (./Grundkonzepte/main.aux) (./Widerstand/main.aux)
+) [115] (./main.aux (./Grundkonzepte/main.aux) (./Widerstand/main.aux)
 (./Kirchhoff/main.aux) (./Leistung/main.aux) (./Quellen/main.aux)
 (./Felder/main.aux) (./dB/main.aux) (./Wechselstrom/main.aux)
 (./LineareBauteile/main.aux) (./Halbleiter/main.aux) (./OPV/main.aux)
@@ -3289,10 +3284,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 78294 strings out of 475071
- 1968668 string characters out of 5778416
- 3473983 words of memory out of 5000000
- 98011 multiletter control sequences out of 15000+600000
+ 78239 strings out of 475071
+ 1966837 string characters out of 5778416
+ 3472321 words of memory out of 5000000
+ 97956 multiletter control sequences out of 15000+600000
  599212 words of font info for 106 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,17n,133p,10622b,3353s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3322,10 +3317,10 @@ sfonts/cm/cmsy6.pfb><d:/Programs/texlive/2022/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb><d:/Programs/texlive/2022/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb><d:/Programs/texlive/2022/texmf-dist/fonts/type1/urw/co
 urier/ucrr8a.pfb>
-Output written on main.pdf (116 pages, 1522902 bytes).
+Output written on main.pdf (115 pages, 1526202 bytes).
 PDF statistics:
- 1866 PDF objects out of 2073 (max. 8388607)
- 1654 compressed objects within 17 object streams
+ 1867 PDF objects out of 2073 (max. 8388607)
+ 1656 compressed objects within 17 object streams
  621 named destinations out of 1000 (max. 500000)
- 1218 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1226 words of extra memory for PDF output out of 10000 (max. 10000000)
 
