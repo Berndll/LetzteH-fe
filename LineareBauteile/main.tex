@@ -1,7 +1,7 @@
 \chapter{Lineare Bauteile}
 
 \section{Kondensator}
-Ein Kondensator ist ein \textbf{passives Bauelement} und dazu, Energie zu speichern. Durch hineinfließenden \textbf{Strom}, wird Ladung in den Kondensator transportiert, wodurch \textbf{Spannung aufgebaut wird}.\\
+Ein Kondensator ist ein \textbf{passives Bauelement} und dazu, Energie zu speichern. Durch hineinfließenden \textbf{Strom}, wird Ladung in den Kondensator transportiert, wodurch \textbf{Spannung aufgebaut wird}. \\
 
 \begin{center}
 \begin{circuitikz}
@@ -18,14 +18,14 @@ Ein Kondensator ist ein \textbf{passives Bauelement} und dazu, Energie zu speich
 
 Es gilt:
 \begin{align}
-    \Delta Q=C\cdot \Delta U=I\cdot \Delta t
+    \Delta Q=C\cdot \Delta U = I \cdot \Delta t
 \end{align}
 
 \begin{itemize}
-    \item \textbf{$\Delta Q$}... Ladungsänderung in \textbf{Coulomb ($C$)}
-    \item \textbf{$C$}... Kapazität in \textbf{Farad ($F$)}
-    \item \textbf{$\Delta t$}... Zeitänderung in \textbf{Ampere ($A$)}
-    \item \textbf{$\Delta U$}... Spannungsänderung in \textbf{Volt ($V$)}
+    \item \textbf{$\Delta Q$} ... Ladungsänderung in \textbf{Coulomb ($C$)}
+    \item \textbf{$C$} ... Kapazität in \textbf{Farad ($F$)}
+    \item \textbf{$\Delta t$} ... Zeitänderung in \textbf{Ampere ($A$)}
+    \item \textbf{$\Delta U$} ... Spannungsänderung in \textbf{Volt ($V$)}
 \end{itemize}
 
 \newpage
@@ -39,15 +39,15 @@ Es gilt:
 \end{align}
 \begin{center}
 \begin{circuitikz}
-        % Capacitor
-        \draw(0,0) to[C=$C_1$] (2,0) to[C=$C_2$] (4,0);
+    % Capacitor
+    \draw(0,0) to[C=$C_1$] (2,0) to[C=$C_2$] (4,0);
 
-        % Voltages
-        \draw[->, thick, blue] (0.5,-1) -- (1.5,-1) node[below left, blue] {$U_{C_1}$};
-        \draw[->, thick, blue] (2.5,-1) -- (3.5,-1) node[below left, blue] {$U_{C_2}$};
-        
-        % Currents
-        \node[currarrow, red] at (0.25,0) {} node[below, red] {$I_{C_g}$};
+    % Voltages
+    \draw[->, thick, blue] (0.5,-1) -- (1.5,-1) node[below left, blue] {$U_{C_1}$};
+    \draw[->, thick, blue] (2.5,-1) -- (3.5,-1) node[below left, blue] {$U_{C_2}$};
+    
+    % Currents
+    \node[currarrow, red] at (0.25,0) {} node[below, red] {$I_{C_g}$};
 \end{circuitikz}
 \end{center}
 
@@ -58,22 +58,22 @@ Es gilt:
 \end{align}
 \begin{center}
 \begin{circuitikz}
-        % Capacitor
-        \draw(0,0) to[C=$C_1$] (2,0);
-        \draw(0,-2) to[C=$C_2$] (2,-2);
+    % Capacitor
+    \draw(0,0) to[C=$C_1$] (2,0);
+    \draw(0,-2) to[C=$C_2$] (2,-2);
 
-        % Wires
-        \draw[black] (0,0) -- (0,-2);
-        \draw[black] (2,0) -- (2,-2);
-        \draw[black] (0,-1) -- (-1,-1);
-        \draw[black] (2,-1) -- (3,-1);
+    % Wires
+    \draw[black] (0,0) -- (0,-2);
+    \draw[black] (2,0) -- (2,-2);
+    \draw[black] (0,-1) -- (-1,-1);
+    \draw[black] (2,-1) -- (3,-1);
 
-        % Voltages
-        \draw[->, thick, blue] (0.5,-3) -- (1.5,-3) node[below left, blue] {$U_{C_g}$};
-        
-        % Currents
-        \node[currarrow, red] at (0.25,0) {} node[above, red] {$I_{C_1}$};
-        \node[currarrow, red] at (0.25,-2) {} node[below, red] at (0.25,-2) {$I_{C_2}$};
+    % Voltages
+    \draw[->, thick, blue] (0.5,-3) -- (1.5,-3) node[below left, blue] {$U_{C_g}$};
+    
+    % Currents
+    \node[currarrow, red] at (0.25,0) {} node[above, red] {$I_{C_1}$};
+    \node[currarrow, red] at (0.25,-2) {} node[below, red] at (0.25,-2) {$I_{C_2}$};
 \end{circuitikz}
 \end{center}
 
@@ -158,20 +158,19 @@ Reale Kondensatoren besitzen jedoch einen Innenwiderstand $R_i > 0 \Omega$ und l
         restrict x to domain=-1:6,
         restrict y to domain=-1:2
     ]
-    \addplot[blue, samples=100] {1-exp(-x)};
 
-    % \draw[black]
-    % \addplot[black, samples=2] {x} node[left] {$\tau$};
-    % \addplot[black, dashed, samples=2] {y};
+    \addplot[blue, samples=100] {1-exp(-x)};
+    \addplot[gray] {x};
 \end{axis}
 \end{tikzpicture}
 \end{center}
 
+Dort wo die Tangente der Lade- bzw. Entladekurve den Maximalwert erreicht, kann $\tau$ abgelesen werden. \\
+Dieses Beispiel verwendet einen Wert von $1s$.
+
+\subsection{Zeigerdiagramm}
+
 \newpage
-
-\subsection{Tau-Messung}
-
-
 
 \subsection{Blindwiderstand}
 Der Blindwiderstand eines Kondensators wird mit $\underline{x}_C=\frac{1}{j\omega C}$ beschrieben. Das heißt, die Impedanz (der "Widerstand") ist abhängig von der Frequenz ($j\omega$).
@@ -186,32 +185,119 @@ Der Blindwiderstand eines Kondensators wird mit $\underline{x}_C=\frac{1}{j\omeg
 \newpage
 
 \section{Spule}
-Eine Spule ist ein \textbf{passives Bauelement} um \textbf{Energe zu speichern} in dem es ein \text{Magnetfeld erzeugt}. Außerdem ist sie \textbf{frequenzabhängig}. 
+Eine Spule ist ein \textbf{passives Bauelement} um \textbf{Energie zu speichern}, indem aufgrund der angelegten Spannung  ein \textbf{Magnetfeld} erzeugt wird.
 
-\subsubsection*{Anwendungen}
+\begin{center}
+\begin{circuitikz}
+        % Inductance
+        \draw(0,0) to[L] (2,0);
+
+        % Voltages
+        \draw[->, thick, blue] (0.5,0.5) -- (1.5,0.5) node[above left, blue] {$U_L$};
+        
+        % Currents
+        \node[currarrow, red] at (0.25,0) {} node[above, red] {$I_L$};
+\end{circuitikz}
+\end{center}
+
+\begin{align}
+    U \cdot \Delta t = L \cdot \Delta I
+\end{align}
+
 \begin{itemize}
-    \item Filter
-    \item Schwingkreise
-    \item Energiespeicher
-    \item Störunterdrückung (Stromflussglättung)
+    \item \textbf{$U$} ... Spannung in \textbf{Volt ($V$)}
+    \item \textbf{$\Delta t$} ... Zeitänderung in \textbf{Ampere ($A$)}
+    \item \textbf{$L$} ... Induktivität in \textbf{Henry ($H$)}
+    \item \textbf{$\Delta I$} ... Stromänderung in \textbf{Ampere ($A$)}
 \end{itemize}
 
-\subsubsection*{Wichtige Formeln}
-\begin{table}[!htb]
-    \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        Linearer Stromanstieg/-abfall & $L\cdot \Delta i = U_L \cdot \Delta t$ \\
-        Impedanz (komplexer Widerstand) & $x_L = j\omega L = j2\pi fL$ \\
-        Wechselstromverhalten & $u(t) = L\cdot \frac{di(t)}{dt}$ \\
-        Serienschaltung zweier magnetisch nicht gekoppelter Spulen& $L_{g}=L_1+L_2$ \\
-        Parallelschaltung zweier magnetisch nicht gekoppelter Spulen& $L_{g}=\frac{L_1\cdot L_2}{L_1+ L_2}$ \\
-        \hline
-    \end{tabular}
-    \caption{Wichtige Formeln}
-\end{table}
+\subsection{Schaltung von Spulen}
+\subsubsection*{Serienschaltung}
+Es gilt:
+\begin{align}
+    L_g&=L_1 + L_2
+\end{align}
+\begin{center}
+\begin{circuitikz}
+    % Capacitor
+    \draw(0,0) to[L=$L_1$] (2,0) to[L=$L_2$] (4,0);
+
+    % Voltages
+    \draw[->, thick, blue] (0.5,-1) -- (1.5,-1) node[below left, blue] {$U_{L_1}$};
+    \draw[->, thick, blue] (2.5,-1) -- (3.5,-1) node[below left, blue] {$U_{L_2}$};
+    
+    % Currents
+    \node[currarrow, red] at (0.25,0) {} node[below, red] {$I_{L_g}$};
+\end{circuitikz}
+\end{center}
+
+\subsubsection*{Parallelschaltung}
+Es gilt:
+\begin{align}
+    L_g&=\frac{L_1\cdot L_2}{L_1+L_2} \\
+    \frac{1}{L_g}&=\frac{1}{L_1}+\frac{1}{L_2}
+\end{align}
+\begin{center}
+\begin{circuitikz}
+    % Capacitor
+    \draw(0,0) to[L=$L_1$] (2,0);
+    \draw(0,-2) to[L=$L_2$] (2,-2);
+
+    % Wires
+    \draw[black] (0,0) -- (0,-2);
+    \draw[black] (2,0) -- (2,-2);
+    \draw[black] (0,-1) -- (-1,-1);
+    \draw[black] (2,-1) -- (3,-1);
+
+    % Voltages
+    \draw[->, thick, blue] (0.5,-3) -- (1.5,-3) node[below left, blue] {$U_{L_g}$};
+    
+    % Currents
+    \node[currarrow, red] at (0.25,0) {} node[above, red] {$I_{L_1}$};
+    \node[currarrow, red] at (0.25,-2) {} node[below, red] at (0.25,-2) {$I_{L_2}$};
+\end{circuitikz}
+\end{center}
 
 \subsection{Lade- \& Entladekurven}
+Wenn konstante Spannung an einer Spule angelegt wird, steigt der Strom linear. Dies passiert so lang, bis die Spule schlussendlich durchbrennt, oder die Spannung auf $0V$ bzw. weniger als $0V$ eingestellt wurde.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis} [
+        grid=both,
+        xmin=0, xmax=5,
+        ymin=0, ymax=1,
+        xlabel=$t$,
+        axis lines=middle,
+    ]
+    
+    \addplot[red] {x / 5} node[right] {$i(t)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+% \subsubsection*{Anwendungen}
+% \begin{itemize}
+%     \item Filter
+%     \item Schwingkreise
+%     \item Energiespeicher
+%     \item Störunterdrückung (Stromflussglättung)
+% \end{itemize}
+
+% \subsubsection*{Wichtige Formeln}
+% \begin{table}[!htb]
+%     \centering
+%     \begin{tabular}{|c|c|}
+%         \hline
+%         Linearer Stromanstieg/-abfall & $L\cdot \Delta i = U_L \cdot \Delta t$ \\
+%         Impedanz (komplexer Widerstand) & $x_L = j\omega L = j2\pi fL$ \\
+%         Wechselstromverhalten & $u(t) = L\cdot \frac{di(t)}{dt}$ \\
+%         Serienschaltung zweier magnetisch nicht gekoppelter Spulen& $L_{g}=L_1+L_2$ \\
+%         Parallelschaltung zweier magnetisch nicht gekoppelter Spulen& $L_{g}=\frac{L_1\cdot L_2}{L_1+ L_2}$ \\
+%         \hline
+%     \end{tabular}
+%     \caption{Wichtige Formeln}
+% \end{table}
 
 \subsection{Zeigerdiagramm}
 
@@ -293,15 +379,12 @@ Die Induktivität einer Spule ist proportional dem Qudrat der Windungszahl.
 
 \newpage
 
-\section{Transformator \& Übertrager}
+\section{Transformator / Übertrager}
 Zwei oder mehrere magnetisch gekoppelte Spulen:
-\todo{Insert Picture}
 
-\subsection{Transformator}
+\includegraphics[width=0.7 \linewidth]{LineareBauteile/Traffo.png}
 
-\subsection{Übertrager}
-
-\subsubsection*{Übersetzungsverhältnis}
+\subsection{Übersetzungsverhältnis}
 
 Bei einem Transformator werden die Spannungen im Verhältnis der Windungszahlen von Primär- und Sekundärspule umgesetzt. Die Ströme werden im umgekehrten Verhältnis der Windungszahlen transformiert.
 
@@ -348,6 +431,7 @@ $\tau$ kann sowohl beim Entladevorgang (siehe „Taumessung bei Entladekurven“
 \end{circuitikz}
 \end{center}
 
+\todo{Fix Entladekurve}
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
     % Achsen
@@ -563,14 +647,6 @@ In dieser Schaltung wurden beispielsweise folgende Bauteilwerte genutzt:
 \end{center}
 
 \todo{Güte?}
-
-% \newpage
-
-% \section{Resonanzkreise}
-
-% \subsection{Güte}
-
-% \subsection{Bandbreite}
 
 \newpage
 

@@ -3,7 +3,7 @@
 \section{Ohm'sches Gesetz}
 Der Zusammenhang zwischen Spannung $U$, Strom $I$ und Widerstand $R$:
 \begin{align}
-    U = R\cdot I \hspace{1cm} I = \frac{U}{R} \hspace{1cm} R = \frac{I}{R}
+    U = R\cdot I \hspace{1cm} I = \frac{U}{R} \hspace{1cm} R = \frac{U}{I}
 \end{align}
 
 Der Leitwert $G$ wird in Siemens ($S$) angegeben und ist der Kehrwert des Widerstands:
@@ -11,8 +11,7 @@ Der Leitwert $G$ wird in Siemens ($S$) angegeben und ist der Kehrwert des Widers
     G = \frac{1}{R} = \frac{I}{U}
 \end{align}
 
-\section{Netzwerke}
-\subsection{Serienschaltung}
+\section{Serienschaltung}
 \begin{center}
 \begin{circuitikz}
     \draw (0,0) to[R=$R_1$] ++(2,0);
@@ -24,7 +23,7 @@ Der Leitwert $G$ wird in Siemens ($S$) angegeben und ist der Kehrwert des Widers
     R_g &= \sum_{i=0}^{N} R_i = R_1 + R_2 + ...
 \end{align}
 
-\subsection{Parallelschaltung}
+\section{Parallelschaltung}
 \begin{center}
 \begin{circuitikz}
     \draw (0,0) to[R=$R_1$] ++(2,0);
@@ -47,7 +46,7 @@ Bei zwei parallel geschaltenen Widerständen gilt auch:
     R_g = \frac{R_1 \cdot R_2}{R_1 + R_2}
 \end{align}
 
-\subsection{Spannungsteiler}
+\section{Spannungsteiler}
 Die Spannung wird auf zwei Widerstände (bzw. Lasten) aufgeteilt. Über die Kirchhoff'schen Gesetze der Knoten- und Maschenregel können dadurch die einzelnen Spannungen, die auf den Widerständen abfallen berechnet werden.
 
 \subsubsection*{Beispiel}

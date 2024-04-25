@@ -17,7 +17,7 @@ Die Defintion $j=\sqrt{-1}$ ist hierbei besonders wichtig.
     &\Rightarrow x_1=3j\hspace{0.5cm} x_2=-3j
 \end{align}
 
-\newpage
+\vspace{1cm}
 
 Eine komplexe Zahl $\underline{z}$ besteht aus einem Realteil $a$ und einem Imaginärteil $b$
 
@@ -51,6 +51,8 @@ Eine komplexe Zahl $\underline{z}$ besteht aus einem Realteil $a$ und einem Imag
 \end{tikzpicture}
 \end{center}
 
+\newpage
+
 Der Betrag des Zeigers ($|\underline{z}|$) ist die Länge, $\varphi$ der Winkel zwischen der x-Achse und dem Zeiger.
 \begin{align}
     &\underline{z}=a+jb=Re(\underline{z})+j Im(\underline{z})   \\
@@ -64,7 +66,7 @@ Die Länge kann über den Pythagoras berechnet werden und der Winkel mit dem Ark
     |\underline{z}|&=\sqrt{Re(\underline{z})^{2}+Im(\underline{z})^{2}}
 \end{align}
 
-\newpage
+\vspace{1cm}
 
 \subsection{Addition \& Subtraktion}
 Die Summe \& Differenz kompler Zahlen $\underline{z_1}=a+jb$ und $\underline{z_2}=c+jd$ ist definiert als
@@ -76,7 +78,9 @@ Es werden Real- und Imaginärteile addiert bzw. subtrahiert.\\
 
 Grafisch können Zahlen in Zeigerdarstellung wie Vektoren addiert bzw. subtrahiert werden. D.h. beim Addieren wird das Ende eines Zeigers an die Spitze des anderen gehängt.\\
 
-\underline{Beispiel} \\
+\vspace{1cm}
+
+\subsubsection*{Beispiel}
 $\underline{x} = 3 \cdot e^{j \cdot 30\degree}$ \\
 $\underline{y} = 3 \cdot e^{j \cdot 240\degree}$ \\
 
@@ -84,7 +88,7 @@ Gesucht: $\underline{z}$\\
 $\underline{z}=\underline{x}+\underline{y}$
 
 \begin{center}
-\begin{tikzpicture}[>=latex]
+\begin{tikzpicture}[>=latex,scale=1.5]
     \draw[style=help lines] (0,0) (3,2);
 
     \coordinate (pointer0) at (30:3);
@@ -105,8 +109,6 @@ $\underline{z}=\underline{x}+\underline{y}$
 \end{tikzpicture}
 \end{center}
 
-\newpage
-
 \subsection{Multiplikation}
 Die Längen der Zeiger multiplizieren und die Winkel addieren:
 \begin{align}
@@ -118,6 +120,8 @@ Die Längen der Zeiger dividieren und die Winkel subtrahieren:
 \begin{align}
     \frac{\underline{y}}{\underline{z}}=\frac{|\underline{y}|}{|\underline{z}|}\cdot e^{j\cdot(\varphi_{\underline{y}}-\varphi_{\underline{z}})}
 \end{align}
+
+\newpage
 
 \subsection{Konjugiert Komplexe Zahlen}
 Konjugiert-Komplexe Zahlen sind besonders wichtig, wenn man mit komplexen Zahlen rechnen möchte. Um die konjugiert-komplexe Zahl zu ermitteln, wird nur das Vorzeichen des Imaginärteils der Zahl umgedreht; sie wird als $\underline{z}^*$ angeschrieben.
@@ -150,7 +154,7 @@ Visuell ist es das Gleiche, als wenn man den Punkt auf der x-Achse spiegelt.
 \end{tikzpicture}
 \end{center}
 
-\newpage
+\vspace{0.5cm}
 
 \section{Zeigerdiagramm}
 Mit Zeigerdiagrammen kann man sinusförmige Funktion übersichtlicher darstellen. Die Zeiger folgen dem Einheitskreis und sollen zeigen, wie sich die Funktion zeitlich verhält.
@@ -211,18 +215,21 @@ Mit Zeigerdiagrammen kann man sinusförmige Funktion übersichtlicher darstellen
 \section{Impedanz}
 Die Impedanz ist der "Widerstand" eines Systems, die aber auch die Frequenz einbezieht (weil der Imaginärteil nicht $0$ ist). Sie wird mit $z$ dargestellt.
 \begin{align}
-    &\underline{z}=\frac{\underline{U}}{\underline{I}}  \\
+    &\underline{z}=\frac{\underline{U}}{\underline{I}} \\
     &\underline{z}=R+jx
 \end{align}
 
 \subsubsection*{Beispiel}
 Kondensator: $C=1\mu F$\\
 \begin{align}
-    &\underline{z}_C=R+jx=\underline{y}_C                       \\
-    &\underline{x}_C=\frac{1}{j\cdot\omega C}\cdot\frac{j}{j}
+    &\underline{z}_C=R+jx=\underline{x}_C \Rightarrow &\underline{z}_C=\frac{1}{j\cdot\omega C}\cdot\frac{j}{j}
 \end{align}
 \begin{align}
     \underline{U}=5V\cdot e^{j\cdot 0} \hspace{1cm} f=1kHz
+\end{align}
+
+\begin{align}
+    \underline{I} = \frac{\underline{U}}{\underline{z_C}} = \frac{5}{\frac{-j}{\omega C}}
 \end{align}
 
 \section{Admittanz}

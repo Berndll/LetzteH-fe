@@ -1,16 +1,89 @@
-\chapter{Quellen}
-
 \section{Spannungsquelle}
 \textit{GdE1 S. 43ff} \\
 Unter einer Spannungsquelle versteht man eine elektrische Energiequelle, die eine von der Belastung unabhängige \textbf{Spannung} liefert; deswegen passt sich der \textbf{Strom} dem Ohm'schen Gesetz an.
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[vsourceshape, rotate = 90]{};
+
+    \draw (0,0.4) -- (0,1);
+    \draw (0,-0.4) -- (0,-1);
+        
+    \draw[->, thick, blue] (-1, 1) -- (-1, -1) node[above left, blue] {$U_0$};
+
+\end{circuitikz}
+\end{center}
 
 \subsection{Ideale Spannungsquelle}
 Bei einer idealen Spannungsquelle entspricht der Innenwiderstand $R_i = 0\Omega$. Im Leerlauf entspricht die Ausgangsspannung $U_a$ der Quellenspannung $U_q$.\\
+\begin{center}
+\begin{circuitikz}
 
+    \draw (0,0) node[vsourceshape, rotate = 90]{};
+
+    \draw (0,0.4) -- (0,1);
+    \draw (0,1) -- (1,1);
+    \draw (0,-0.4) -- (0,-1);
+    \draw (0,-1) -- (1,-1);
+        
+    \draw[->, thick, blue] (1.05,0.9) -- (1.05, -0.9) node[right, midway, blue] {$U_a = U_q$};
+
+    \draw (1.05,1) circle (1.5pt);
+	\draw (1.05,-1) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
 Eine Belastung durch $R_a$ verursacht keine Spannungsänderung bei $U_a$.
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[vsourceshape, rotate = 90]{};
+    \draw[red] (4,1) to[R, R=$R_a$] (4,-1);
+
+    \draw (0,0.4) -- (0,1);
+    \draw (0,1) -- (2,1);
+    \draw (0,-0.4) -- (0,-1);
+    \draw (0,-1) -- (2,-1);
+
+    \draw[red] (2.1,1) -- (4,1);
+    \draw[red] (2.1,-1) -- (4,-1);
+        
+    \draw[->, thick, blue] (2.05,0.9) -- (2.05, -0.9) node[right, midway, blue] {$U_a = U_q$};
+
+
+    \draw (2.05,1) circle (1.5pt);
+	\draw (2.05,-1) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
 
 \subsection{Reale Spannungsquelle}
 Eine reale Spannungsquelle hat einen Innenwiderstand $R_i$, an dem bei Belastung eine Spannung $U_i$ abfällt. Um diesen Spannungsabfall verringert sich die Ausgangsspannung $U_a$ im Vergleich zu $U_q$.\\
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[vsourceshape, rotate = 90]{};
+    \draw[red] (4,1) to[R, R=$R_a$] (4,-1);
+    \draw (1,1) to[R, R=$R_i$] (3,1);
+
+    \draw (0,0.4) -- (0,1);
+    \draw (0,1) -- (1,1);
+    \draw (0,-0.4) -- (0,-1);
+    \draw (0,-1) -- (3,-1);
+
+    \draw[red] (3.1,1) -- (4,1);
+    \draw[red] (3.1,-1) -- (4,-1);
+        
+    \draw[->, thick, blue] (1.05,0.9) -- (1.05, -0.9) node[right, midway, blue] {$U_q$};
+    \draw[->, thick, blue] (1,1.7) -- (3, 1.7) node[above, midway, blue] {$U_i$};
+    \draw[->, thick, blue] (3.05,0.9) -- (3.05,-0.9) node[right, midway, blue] {$U_a$};
+
+
+    \draw (3.05,1) circle (1.5pt);
+	\draw (3.05,-1) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
 
 Daraus ergibt sich folgende Formel: $U_a = U_q - U_i$ \\
 
@@ -19,32 +92,142 @@ Damit sich die $U_a$ bei Belastung nur geringfügig ändert, muss der Innenwider
 Spannungsquellen sollten nicht kurzgeschlossen werden, da der Kurzschlussstrom nur durch $R_i$ begrenzt wird und entsprechend sehr groß werden kann.
 
 \section{Stromquelle}
-\textit{GdE1 S. 44 ff}
+\textit{GdE1 S. 44 ff} \\
 Unter einer Stromquelle versteht man eine elektrische Energiequelle, die einen von der Belastung unabhängigen \textbf{Strom} liefert; deswegen passt sich die \textbf{Spannung} dem Ohm'schen Gesetz an.
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[isourceshape, rotate = 90]{};
+
+    \draw (0,0.4) -- (0,1);
+    \draw (0,-0.4) -- (0,-1);
+        
+    \draw[->, thick, blue] (-1, 1) -- (-1, -1) node[above left, blue] {$U_0$};
+
+\end{circuitikz}
+\end{center}
 
 \subsection{Ideale Stromquelle}
 Bei einer idealen Stromquelle entspricht der Widerstand $R_i=\infty\Omega$. Im Leerlauf entspricht der Quellenstrom $I_q$ dem Strom am Ausgang; die Ausgangsspannung entspricht $0V$.\\
+\begin{center}
+\begin{circuitikz}
+    
+    \draw (0,0) node[isourceshape, rotate = 90]{};
+
+    \draw (0,0.4) -- (0,1);
+    \draw (0,1) -- (1,1);
+    \draw (0,-0.4) -- (0,-1);
+    \draw (0,-1) -- (1,-1);
+
+    \draw[red] (1.1,1) -- (3,1);
+    \draw[red] (1.1,-1) -- (3,-1);
+    \draw[red] (3,-1) -- (3,1);
+    \draw[->, red, fill=red] (2,1) -- (2.1,1)node[above,midway]{$I_q$};
+        
+    \draw[->, thick, blue] (1.05,0.9) -- (1.05, -0.9) node[right, midway, blue] {$U_a = 0$};
+
+    \draw (1.05,1) circle (1.5pt);
+	\draw (1.05,-1) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
 
 Wird anstelle der Kurzschlussverbindung eine Last $R_a$ angeschlossen, bleibt der Quellenstrom $I_q$ unverändert. Es entsteht lediglich eine Ausgangsspannung $U_a$ nach dem Ohm'schen Gesetz.\\
 Weiterhin bleibt: Bei einer idealen Stromquelle ist der Strom am Ausgang immer gleich dem Quellenstrom $I_q$.
 
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[isourceshape, rotate = 90]{};
+    \draw[red] (4,1) to[R, R=$R_a$] (4,-1);
+
+    \draw (0,0.4) -- (0,1);
+    \draw (0,1) -- (2,1);
+    \draw (0,-0.4) -- (0,-1);
+    \draw (0,-1) -- (2,-1);
+
+    \draw[red] (2.1,1) -- (4,1);
+    \draw[red] (2.1,-1) -- (4,-1);
+
+    \draw[->, red, fill=red] (3,1) -- (3.1,1)node[above,midway]{$I_q$};
+    \draw[->, thick, blue] (2.05,0.9) -- (2.05, -0.9) node[right, midway, blue] {$U_a$};
+
+
+    \draw (2.05,1) circle (1.5pt);
+	\draw (2.05,-1) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
+
+
 \subsection{Reale Stromquelle}
-Bei einer realen Stromquelle ist der Innenwiderstand $R_i \neq \infty$; daher geht ein Teil des Quellstroms $I_q$ verloren.\\
+Bei einer realen Stromquelle ist der Innenwiderstand $R_i \neq \infty$; daher geht ein Teil des Quellstroms $I_q$ verloren. \\
 
 Dadurch ergibt sich folgende Formel: $I=I_q - I_i$\\
 
-Damit möglichst wenig Strom aufgrund des Innenwiderstands $R_i$ verloren geht, muss dieser möglichst \textbf{groß} sein.\\
 
+Damit möglichst wenig Strom aufgrund des Innenwiderstands $R_i$ verloren geht, muss dieser möglichst \textbf{groß} sein. \\
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[isourceshape, rotate = 90]{};
+    \draw[red] (4,1) to[R, R=$R_a$] (4,-1);
+    \draw (1,1) to[R, R=$R_i$] (1,-1);
+
+    \draw (0,0.4) -- (0,1);
+    \draw (0,1) -- (2,1);
+    \draw (0,-0.4) -- (0,-1);
+    \draw (0,-1) -- (2,-1);
+
+    \draw[red] (2.1,1) -- (4,1);
+    \draw[red] (2.1,-1) -- (4,-1);
+
+    \draw[->, red, fill=red] (3,1) -- (3.1,1)node[above,midway]{$I$};
+    \draw[->, red, fill=red] (1,0.9) -- (1,0.7)node[right,midway]{$I_i$};
+    \draw[->, red, fill=red] (0.5,1) -- (0.6,1)node[above,midway]{$I_q$};
+    \draw[->, thick, blue] (2.05,0.9) -- (2.05, -0.9) node[right, midway, blue] {$U_a$};
+
+
+    \draw (2.05,1) circle (1.5pt);
+	\draw (2.05,-1) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
 Stromquellen sollten nicht im Leerlauf betrieben werden, da dabei der Quellenstrom $I_q$ über den hohen Innenwiderstand $R_i$ fließen muss und hohe Leerlaufspannungen auftreten können.
 
+\newpage
+
 \section{Ersatzschaltbild}
-\textit{GdE1 S. 103 ff}
+\textit{GdE1 S. 103 ff} \\
 Mit dem ESB (Ersatzschaltbild) kann eine Netzwerkstruktur in eine Einfachere umgewandelt werden.\\
 Ziel dieser Umwandlung ist es eine Ersatzschaltung zu finden, in der $U_a$ und $R_i$ mit der komplexeren Struktur übereinstimmen.
 
 \subsection{Spannungsquellen-Ersatzschaltbild}
 Jede Quelle mit linearem Zusammenhang zwischen Ausgangsstrom $I$ und Klemmenspannung $U_a$ lässt sich in Form eines Spannungsquellen-ESB darstellen. Dieses besteht aus einer Reihenschaltung von idealer Spannungsquelle mit Quellenspannung $U_q$ und Innenwiderstand $R_i$.
+\begin{center}
+\begin{circuitikz}
 
+    \draw (0,0) node[vsourceshape, rotate = 90]{};
+    \draw (5,2) to[R, R=$R_a$] (5,-2);
+    \draw (2,2) to[R, R=$R_i$] (4,2);
+
+    \draw (0,0.4) -- (0,2);
+    \draw (0,2) -- (2,2);
+    \draw (4,2) -- (5,2);
+    \draw (0,-0.4) -- (0,-2);
+    \draw (0,-2) -- (5,-2);
+   
+
+    \draw[->, red, fill=red] (4.4,2) -- (4.5,2)node[above,midway]{$I$};
+    \draw[->, thick, blue] (4,1) -- (4, -1) node[right, midway, blue] {$U_a$};
+    \draw[->, thick, blue] (2,2.7) -- (4, 2.7) node[above, midway, blue] {$U_i$};
+    \draw[->, thick, blue] (-1,1) -- (-1, -1) node[right, midway, blue] {$U_q$};
+
+    \draw (4,2) circle (1.5pt);
+	\draw (4,-2) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
 Ein Spannungsquellen-ESB ist vollständig durch die Angabe von $U_q$ und $R_i$, wobei gilt:
 \begin{align}
     U_a=U_q - I\cdot R = U_q \cdot \frac{R_a}{R_i+R_a}
@@ -74,11 +257,155 @@ Als dritte Kenngröße kann der Kurschlussstrom - der Ausgangsstrom bei kurzgesc
 \end{enumerate}
 
 \subsubsection*{Beispiel}
-\todo{Insert Bsp}
+Es soll das Spannungsquellen-ESB eines belasteten Spannungsteilers ermittelt werden.
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[vsourceshape, rotate = 90]{};
+    \draw (3,3) to[R, R=$R_1$] (3,1);
+    \draw (3,0) to[R, R=$R_2$] (3,-2);
+    \draw (5,0) to[R, R=$R_a$] (5,-2);
+
+    \draw (0,0.4) -- (0,3);
+    \draw (0,3) -- (3,3);
+    \draw (0,-0.4) -- (0,-2);
+    \draw (0,-2) -- (5,-2);
+    \draw (3,0) -- (5,0);
+    \draw (3,0) -- (3,1);
+   
+
+    \draw[->, red, fill=red] (2.8,3) -- (2.9,3)node[above,midway]{$I$};
+    \draw[->, red, fill=red] (3.8,0) -- (3.9,0)node[above,midway]{$I_a$};
+    \draw[->, thick, blue] (6,0) -- (6, -2) node[right, midway, blue] {$U_a$};
+
+    \draw[black,fill=black] (3,0) circle (1.5pt);
+    \draw[black,fill=black] (3,-2) circle (1.5pt);
+
+\end{circuitikz}
+\end{center}
+wird zu folgende Schaltung
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[vsourceshape, rotate = 90]{};
+    \draw (5,2) to[R, R=$R_a$] (5,-2);
+    \draw (2,2) to[R, R=$R_i$] (4,2);
+
+    \draw (0,0.4) -- (0,2);
+    \draw (0,2) -- (2,2);
+    \draw (4,2) -- (5,2);
+    \draw (0,-0.4) -- (0,-2);
+    \draw (0,-2) -- (5,-2);
+   
+
+    \draw[->, red, fill=red] (4.4,2) -- (4.5,2)node[above,midway]{$I$};
+    \draw[->, thick, blue] (4,1) -- (4, -1) node[right, midway, blue] {$U_a$};
+    \draw[->, thick, blue] (2,2.7) -- (4, 2.7) node[above, midway, blue] {$U_i$};
+    \draw[->, thick, blue] (-1,1) -- (-1, -1) node[right, midway, blue] {$U_q$};
+
+    \draw (4,2) circle (1.5pt);
+	\draw (4,-2) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
+\begin{align}
+    U_{q1} = 12V; R_1 = 1k\Omega; R_2 = 3k3\Omega
+\end{align}
+Schritt 1: Bestimmen der Quellenspannung $U_q$
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[vsourceshape, rotate = 90]{};
+    \draw (3,3) to[R, R=$R_1$] (3,1);
+    \draw (3,0) to[R, R=$R_2$] (3,-2);
+
+    \draw (0,0.4) -- (0,3);
+    \draw (0,3) -- (3,3);
+    \draw (0,-0.4) -- (0,-2);
+    \draw (0,-2) -- (5,-2);
+    \draw (3,0) -- (5,0);
+    \draw (3,0) -- (3,1);
+   
+
+    \draw[->, red, fill=red] (2.8,3) -- (2.9,3)node[above,midway]{$I$};
+    \draw[->, red, fill=red] (3.8,0) -- (3.9,0)node[above,midway]{$I_a$};
+    \draw[->, thick, blue] (5,-0.1) -- (5, -1.9) node[right, midway, blue] {$U_Q$};
+
+    \draw[black,fill=black] (3,0) circle (1.5pt);
+    \draw[black,fill=black] (3,-2) circle (1.5pt);
+
+    \draw (5,0) circle (1.5pt);
+	\draw (5,-2) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
+Dadurch konnte mit einem einfachen unbelasteten Spannungsteiler berechnet werden:
+\begin{align}
+    U_q = U_{q1} \cdot \frac{R_2}{R_1+R_2} = 12V \cdot \frac{3k3}{1k+3k3} = 9,21V
+\end{align}
+Schritt 2: Berechnen des Innenwiderstandes $R_i$
+\begin{center}
+\begin{circuitikz}
+    \draw (3,3) to[R, R=$R_1$] (3,1);
+    \draw (3,0) to[R, R=$R_2$] (3,-2);
+
+    \draw (0,0.4) -- (0,3);
+    \draw (0,3) -- (3,3);
+    \draw (0,-0.4) -- (0,-2);
+    \draw (0,-2) -- (5,-2);
+    \draw (3,0) -- (5,0);
+    \draw (3,0) -- (3,1);
+   
+
+    \draw[->, red, fill=red] (2.8,3) -- (2.9,3)node[above,midway]{$I$};
+    \draw[->, red, fill=red] (3.8,0) -- (3.9,0)node[above,midway]{$I_a$};
+    \draw[->, thick, blue] (5,-0.1) -- (5, -1.9) node[right, midway, blue] {$U_Q$};
+
+    \draw[black,fill=black] (3,0) circle (1.5pt);
+    \draw[black,fill=black] (3,-2) circle (1.5pt);
+
+    \draw (5,0) circle (1.5pt);
+	\draw (5,-2) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
+Der Innenwiderstand $R_i$, welcher durch die Klemmen gesehen wird, ist $R_1$ und $R_2$ parallel. Daher konnte $R_i$ mit folgender Formel berechnet werden:
+\begin{align}
+    R_i = \frac{R_1 \cdot R_2}{R_1 + R_2} = \frac{1k \cdot 3k3}{1k + 3k3} = 767,4 \Omega
+\end{align}
+Schritt 3: Berechnung des Kurzschlussstroms $I_k$
+\begin{align}
+    I_k = \frac{U_q}{R_i} = \frac{U_{q1}}{R_1} = \frac{9,21V}{767,4\Omega} = \frac{12V}{1k\Omega} = 12mA
+\end{align}
 
 \subsection{Stromquellen-Ersatzschaltbild}
 Das Stromquellen-ESB ist eine weitere Möglichkeit zur Beschreibung es Verhaltens einer linearen Quelle. Es besteht aus der Parallelschaltung einer idealen Stromquelle mit Quellenstrom $I_q$ und einem Innenwiderstand $R_i$. \\
+\begin{center}
+\begin{circuitikz}
 
+    \draw (0,0) node[isourceshape, rotate = 90]{};
+    \draw (4,1) to[R, R=$R_a$] (4,-1);
+    \draw (1,1) to[R, R=$R_i$] (1,-1);
+
+    \draw (0,0.4) -- (0,1);
+    \draw (0,1) -- (2,1);
+    \draw (0,-0.4) -- (0,-1);
+    \draw (0,-1) -- (2,-1);
+
+    \draw (2.1,1) -- (4,1);
+    \draw (2.1,-1) -- (4,-1);
+
+    \draw[->, red, fill=red] (3,1) -- (3.1,1)node[above,midway]{$I$};
+    \draw[->, red, fill=red] (1,0.9) -- (1,0.7)node[right,midway]{$I_i$};
+    \draw[->, red, fill=red] (0.5,1) -- (0.6,1)node[above,midway]{$I_q$};
+    \draw[->, thick, blue] (2.05,0.9) -- (2.05, -0.9) node[right, midway, blue] {$U_a$};
+
+
+    \draw (2.05,1) circle (1.5pt);
+	\draw (2.05,-1) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
 Das Ersatzschaltbild ist vollständig durch die Angabe des Quellstroms $I_q$ und des Innenwiderstands $R_i$, dabei gilt:
 \begin{align}
     I = I_q - U_a \cdot \frac{R_i}{R_i + R_a}
@@ -107,10 +434,60 @@ Als dritte Kenngröße kann die Leerlaufspannung $U_L$ - die Ausgangsspannung be
     Man berechnet den Strom, den die Quelle bei Leerlauf liefern würde, indem die Leerlaufspannung durch $R_i$ dividiert wird: $I_q = \frac{U_{LL}}{R_i}$ 
 \end{enumerate}
 
-\todo{Von Spannungs-ESB zu Strom-ESB}
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[vsourceshape, rotate = 90]{};
+    \draw (5,2) to[R, R=$R_a$] (5,-2);
+    \draw (2,2) to[R, R=$R_i$] (4,2);
+
+    \draw (0,0.4) -- (0,2);
+    \draw (0,2) -- (2,2);
+    \draw (4,2) -- (5,2);
+    \draw (0,-0.4) -- (0,-2);
+    \draw (0,-2) -- (5,-2);
+   
+
+    \draw[->, red, fill=red] (4.4,2) -- (4.5,2)node[above,midway]{$I$};
+    \draw[->, thick, blue] (4,1) -- (4, -1) node[right, midway, blue] {$U_a$};
+    \draw[->, thick, blue] (2,2.7) -- (4, 2.7) node[above, midway, blue] {$U_i$};
+    \draw[->, thick, blue] (-1,1) -- (-1, -1) node[right, midway, blue] {$U_q$};
+
+    \draw (4,2) circle (1.5pt);
+	\draw (4,-2) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
+wird zu folgende Schaltung
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[isourceshape, rotate = 90]{};
+    \draw (4,1) to[R, R=$R_a$] (4,-1);
+    \draw (1,1) to[R, R=$R_i$] (1,-1);
+
+    \draw (0,0.4) -- (0,1);
+    \draw (0,1) -- (2,1);
+    \draw (0,-0.4) -- (0,-1);
+    \draw (0,-1) -- (2,-1);
+
+    \draw (2.1,1) -- (4,1);
+    \draw (2.1,-1) -- (4,-1);
+
+    \draw[->, red, fill=red] (3,1) -- (3.1,1)node[above,midway]{$I$};
+    \draw[->, red, fill=red] (1,0.9) -- (1,0.7)node[right,midway]{$I_i$};
+    \draw[->, red, fill=red] (0.5,1) -- (0.6,1)node[above,midway]{$I_q$};
+    \draw[->, thick, blue] (2.05,0.9) -- (2.05, -0.9) node[right, midway, blue] {$U_a$};
+
+
+    \draw (2.05,1) circle (1.5pt);
+	\draw (2.05,-1) circle (1.5pt); 
+
+\end{circuitikz}
+\end{center}
 
 \section{Überlagerungs-/Superpositionsprinzip}
-\textit{GdE1 S. 97ff}
+\textit{GdE1 S. 97ff} \\
 Das Überlagerungsprinzip (bzw. Superpositionsprinzip) dient dazu, die einzelnen Spannungen und Ströme bei mehreren Quellen zu ermitteln.
 
 \subsubsection*{Anleitung}
@@ -125,12 +502,68 @@ Das Überlagerungsprinzip (bzw. Superpositionsprinzip) dient dazu, die einzelnen
     \item Punkt $2$ und $3$ wiederholen, bis jede Quelle einmal "gewirkt" hat.
     \item Aufsummieren aller Spannungen und Ströme, aller Fälle. 
 \end{enumerate}
-\todo{Anleitung besser erklären?}
 
 \subsubsection*{Beispiel}
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[isourceshape, rotate = 90]{};
+    \draw (-2,0) node[vsourceshape, rotate = 90]{};
+    \draw (-2,0.4) to[R, R=$R_1$] (-2,2.5);
+    \draw (0,0.4) to[R, R=$R_2$] (0,2.5);
+    \draw (2,2.5) to[R, R=$R_a$] (2,-1);
+
+    \draw (-2,2.5) -- (2,2.5);
+    
+    \draw (2,-1) -- (-2,-1);
+    \draw (0,-0.4) -- (0,-1);
+    \draw (-2,-0.4) -- (-2,-1);
+
+
+
+    \draw[->, red, fill=red] (-2,2.3) -- (-2,2.5)node[above,midway]{$I_1$};
+    \draw[->, red, fill=red] (0,2.3) -- (0,2.5)node[above,midway]{$I_2$};
+    \draw[<-, red, fill=red] (2,2.3) -- (2,2.5)node[above,midway]{$I_a$};
+    \draw[->, thick, blue] (3,1.5) -- (3, 0) node[right, midway, blue] {$U_a$};
+    \draw[<-, thick, blue] (1,2.3) -- (1, 0.8) node[right, midway, blue] {$U_2$};
+    \draw[<-, thick, blue] (-1.5,2.3) -- (-1.5, 0.8) node[right, midway, blue] {$U_1$};
+
+    \draw[black,fill=black] (0,2.5) circle (1.5pt);
+    \draw[black,fill=black] (0,-1) circle (1.5pt);
+
+\end{circuitikz}
+\end{center}
+In diesem Fall ist die Spannungsquellenwiderstand $R_i = 0\Omega$
 \begin{enumerate}
     \item Festlegen der Bezugsrichtungen der Ströme und Spannungen.
     \item Mit Ausnahme einer Quelle werden alle anderen Quellen durch ihren Innenwiderstand ersetzt. Es muss beachtet werden, dass die Bezugsrichtungen des ersten Schritts hier gleich bleiben.
+\begin{center}
+\begin{circuitikz}
+
+    \draw (0,0) node[isourceshape, rotate = 90]{};
+    
+    \draw (-2,0.4) to[R, R=$R_1$] (-2,2.5);
+    \draw (0,0.4) to[R, R=$R_2$] (0,2.5);
+    \draw (2,2.5) to[R, R=$R_a$] (2,-1);
+
+    \draw (-2,2.5) -- (2,2.5);
+    
+    \draw (2,-1) -- (-2,-1);
+    \draw (0,-0.4) -- (0,-1);
+    \draw (-2,-0.4) -- (-2,-1);
+
+    \draw[->, red, fill=red] (-2,2.3) -- (-2,2.5)node[above,midway]{$I_1$};
+    \draw[->, red, fill=red] (0,2.3) -- (0,2.5)node[above,midway]{$I_2$};
+    \draw[<-, red, fill=red] (2,2.3) -- (2,2.5)node[above,midway]{$I_a$};
+    \draw[->, thick, blue] (3,1.5) -- (3, 0) node[right, midway, blue] {$U_a`$};
+    \draw[<-, thick, blue] (1,2.3) -- (1, 0.8) node[right, midway, blue] {$U_2`$};
+    \draw[<-, thick, blue] (-1.5,2.3) -- (-1.5, 0.8) node[right, midway, blue] {$U_1`$};
+
+    \draw[black,fill=black] (0,2.5) circle (1.5pt);
+    \draw[black,fill=black] (0,-1) circle (1.5pt);
+
+\end{circuitikz}
+\end{center}
     \item Berechnung der Teilströme und -spannungen.
     \begin{align}
         I_q &= 10[mA] \hspace{1cm} R_1 = 100[\Omega] \hspace{1cm} R_2 = 1,2[k\Omega] \hspace{1cm} R_a = 470[\Omega] \\
@@ -173,3 +606,23 @@ Das Überlagerungsprinzip (bzw. Superpositionsprinzip) dient dazu, die einzelnen
         U_a = U_a' + U_a'' = 824[mV] + 19,79[V] = 20,61[mV]
     \end{align}
 \end{enumerate}
+\begin{center}
+\begin{circuitikz}
+
+    \draw (-2,0) node[vsourceshape, rotate = 90]{};
+    \draw (-2,0.4) to[R, R=$R_1$] (-2,2.5);
+    \draw (2,2.5) to[R, R=$R_a$] (2,-1);
+
+    \draw (-2,2.5) -- (2,2.5);
+    
+    \draw (2,-1) -- (-2,-1);
+    \draw (-2,-0.4) -- (-2,-1);
+
+    \draw[->, red, fill=red] (-2,2.3) -- (-2,2.5)node[above,midway]{$I_1$};
+    \draw[<-, red, fill=red] (2,2.3) -- (2,2.5)node[above,midway]{$I_a$};
+    \draw[->, thick, blue] (3,1.5) -- (3, 0) node[right, midway, blue] {$U_a$};
+    \draw[<-, thick, blue] (-1.5,2.3) -- (-1.5, 0.8) node[right, midway, blue] {$U_1$};
+
+\end{circuitikz}
+\end{center}
+In diesem Fall ist der weggefallene Teil mit der Stromversorgung $R_i = 0 \Omega$

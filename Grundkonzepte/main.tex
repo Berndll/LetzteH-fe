@@ -3,36 +3,46 @@
 \section{Grundeinheiten}
 
 \setlength{\tabcolsep}{4pt} % Default value: 6pt
-\renewcommand{\arraystretch}{1.25} % Default value: 1
+\renewcommand{\arraystretch}{1.05} % Default value: 1
 \begin{table}[!htb]
     \centering
     \begin{tabular}{|c|c|c|c|}
         \hline
-        \textbf{SI-Einheiten}   & \textbf{Bedeutung}        & \textbf{Einheit}                  & \textbf{Zusammenhang}              \\ \hline
-        U                       & Spannung                  & Volt (V)                          & -                                  \\
-        I                       & Strom                     & Ampere (A)                        & -                                  \\
-        R                       & Widerstand                & Ohm ($\Omega$)                    & -                                  \\
-        G                       & Leitwert                  & Siemens (S)                       & $\frac{1}{R}$                      \\
-        P                       & Leistung                  & Watt (W)                          & $U\cdot I$                         \\
-        C                       & Kapazität                 & Farad (F)                         & $C\cdot s$                         \\
-        Q                       & Ladung                    & Coulomb (C)                       & $C \cdot U$                        \\
-        L                       & Induktivität              & Henry (H)                         & -                                  \\
-        f                       & Frequenz                  & Hertz (Hz)                        & $s^{-1}$                           \\ 
-        $\omega$                & Kreisfrequenz             & (rad/s)                           & -                                  \\
-        W                       & Arbeit                    & Joule (J)                         & $N \cdot m$                        \\
-        F                       & Kraft                     & Newton (N)                        & $V \cdot A \cdot s \cdot m^{-1}$   \\ 
-        p                       & Druck                     & Pascal (Pa)                       & $N \cdot m^2$                      \\
-        $\varphi$               & Potenzial                 & Volt (V)                          & $\frac{W}{A}$                      \\
+        \textbf{SI-Einheiten} & \textbf{Bedeutung}        & \textbf{Einheit} & \textbf{Zusammenhang} \\ \hline
+        U               & Spannung                  & Volt (V)         & -                     \\
+        I               & Strom                     & Ampere (A)       & -                     \\
+        R               & Widerstand                & Ohm ($\Omega$)   & -                     \\
+        G               & Leitwert                  & Siemens (S)      & $\frac{1}{R}$         \\
+        S               & Scheinleistung            & Voltampere (VA)  & $U\cdot I$            \\
+        P               & Wirkleistung              & Watt (W)         & $U_w\cdot I$            \\
+        Q               & Blindleistung             & var              & $U_b\cdot I$            \\
+        C               & Kapazität                 & Farad (F)        & $Q \cdot t$            \\
+        Q               & Ladung                    & Coulomb (C)      & $C \cdot U$           \\
+        L               & Induktivität              & Henry (H)        & -                     \\
+        f               & Frequenz                  & Hertz (Hz)       & $t^{-1}$              \\ 
+        $\omega$        & Kreisfrequenz             & (rad/s)          & -           \\
+        W               & Arbeit                    & Joule (J)        & $F \cdot l$           \\
+        F               & Kraft                     & Newton (N)       & $V \cdot A \cdot s \cdot l^{-1}$ \\ 
+        p               & Druck                     & Pascal (Pa)      & $F \cdot l^2$         \\
+        $\varphi$       & Potenzial                 & Volt (V)         & $\frac{W}{A}$ \\
+        N               & Windungen                 & keine Einheit    & $\mu_0 \cdot f\frac{\pi}{2} \cdot r$ \\
+        $U_{pp}$        & Spitze-Spitze Spannung    & $V_{pp}$         & $2 \cdot V_{p}$ \\
+        $U_{eff}$       & Effektivspannung          & V                & $\frac{V_p}{\sqrt{2}}$ \\
         \hline
-        H                       & magnetische Feldstärke    & Strom pro Meter ($\frac{A}{m}$)   & -                                  \\ 
-        E                       & Elektrische Feldstärke    & $\frac{V}{m}$                     & $\frac{F}{Q}$                      \\
-        $\Psi$                  & Elektrischer Fluss        & Coulomb $C$                       & -                                  \\
-        $\phi$                  & magnetischer Fluss        & Weber (Wb)                        & $V \cdot s$                        \\
-        D                       & Elektrische Flussdichte   & $\frac{C}{m^2}$                   & $\frac{\Psi}{A^2}$                 \\
-        B                       & magnetische Flussdichte   & Tesla (T)                         & $C \cdot U$                        \\
+
+
+        
+        %\textbf{Einheiten} & \textbf{Bedeutung}        & \textbf{Einheit} & \textbf{Zusammenhang} \\ \hline
+        H               & Magnetische Feldstärke    & Strom pro Meter ($\frac{A}{m}$)  & -     \\ 
+        E               & Elektrische Feldstärke    & $\frac{V}{m}$    & $\frac{F}{Q}$         \\
+        $\Psi$          & Elektrischer Fluss        & Coulomb $C$              & -             \\
+        $\phi$          & magnetischer Fluss        & Weber (Wb)      & $V \cdot t$            \\
+        D               & Elektrische Flussdichte   & $\frac{C}{m^2}$  & $\frac{\Psi}{A^2}$    \\
+        B               & Magnetische Flussdichte   & Tesla (T)        & $C \cdot U$           \\
         \hline
     \end{tabular}
     \caption{Grundeinheiten}
+    \label{Grundkonzepte/Einheiten/Tabelle}
 \end{table}
 
 \newpage
@@ -46,11 +56,11 @@
     \begin{tabular}{|c|c|c|c|}
         \hline
         \textbf{Konstanten} & \textbf{Bedeutung}    & \textbf{Einheit} & \textbf{Wert teilweise gerundet} \\ \hline
-        c               & Lichtgeschwindigkeit (Vakuum)   & $\frac{m}{s}$  & 299 792 458    \\
-        e               & Elementarladung    & C  & $1,602 \cdot 10^{-19}$    \\
-        $\mu \textsubscript{0}$               & Magnetische Feldkonstante   & $\frac{H}{m}$  & $4\cdot \pi \cdot 10^{-7}$  \\
-        $\epsilon \textsubscript{0}$    & Permittivität   & $\frac{F}{m}$  & $8,854 \cdot 10^{-12}$  \\
-        Cu    & Leitfähigkeit Kupfer    & $\frac{S \cdot m}{mm^{2}}$  & 56  \\
+        c                                           & Lichtgeschwindigkeit (Vakuum)   & $\frac{m}{s}$  & 299 792 458    \\
+        e                                           & Elementarladung                 & C              & $1,602 \cdot 10^{-19}$    \\
+        $\mu \textsubscript{0}$                     & Magnetische Feldkonstante       & $\frac{H}{m}$  & $4\cdot \pi \cdot 10^{-7}$  \\
+        $\epsilon \textsubscript{0}$                & Permittivität                   & $\frac{F}{m}$  & $8,854 \cdot 10^{-12}$  \\
+        Cu    & Leitfähigkeit Kupfer                & $\frac{S \cdot m}{mm^{2}}$      & 56  \\
         \hline
 
     \end{tabular}

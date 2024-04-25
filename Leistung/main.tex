@@ -26,8 +26,7 @@ Allgemein gilt:
 
 \newpage
 
-Ebenso: \\
-\underline{Wirkleistung $P$}
+\subsection{Wirkleistung $P$}
 \begin{align}
     P = U_w \cdot I = U \cdot I \cdot cos(\varphi)
 \end{align}
@@ -36,7 +35,7 @@ Ebenso: \\
     \item $U_w$ ... Wirkkomponente der Spannung in [$V$]
 \end{itemize}
 
-\underline{Blindleistung $Q$}
+\subsection{Blindleistung $Q$}
 \begin{align}
     Q = U_b \cdot I = U \cdot I \cdot sin(\varphi)
 \end{align}
@@ -44,10 +43,10 @@ Ebenso: \\
     \item $Q$ ... Blindleistung in [$var$]
     \item $U_b$ ... Blindkomponente der Spannung in [$V$]
 \end{itemize}
-Die induktive Blindleistung ist positiv: $sin(\varphi) > 0 \rightarrow Q_L > 0$
-Die kapazitive Blindleistung ist negativ: $sin(\varphi) < 0 \rightarrow Q_C < 0$
+Die \textbf{induktive} Blindleistung ist \textbf{positiv}: $sin(\varphi) > 0 \rightarrow Q_L > 0$ \\
+Die \textbf{kapazitive} Blindleistung ist \textbf{negativ}: $sin(\varphi) < 0 \rightarrow Q_C < 0$ \\
 
-\underline{Scheinleistung $S$}
+\subsection{Scheinleistung $S$}
 \begin{align}
     S = U \cdot I
 \end{align}
@@ -77,7 +76,7 @@ oder:
     \item $I$ ... Effektivwert des Stromes in [$A$]
 \end{itemize}
 
-\underline{Leistsungsfaktor} \\
+\subsection{Leistungsfaktor}
 Der Leistungsfaktor $cos(\varphi)$ gibt an, welchen Anteil die Wirkleistung an der Scheinleistung hat. Er erreicht bei ohmschen Lasten den maximalen Wert $1$:
 \begin{align}
     P &= U \cdot I \cdot cos(\varphi) = S \cdot cos(\varphi) \\
@@ -90,7 +89,7 @@ Der Leistungsfaktor $cos(\varphi)$ gibt an, welchen Anteil die Wirkleistung an d
 \end{itemize}
 
 \subsection{Kompensation}
-\textit{GdE2 S.102}
+\textit{GdE2 S.102} \\
 Ein ohmsch-induktiver Verbraucher, wie z.B. ein Elektromotor, entnimmt dem Netz nicht nur Wirkleistung, sondern zum Aufbau des Magnetfeldes auch induktive Blindleistung. Der fließende Blindstromanteil belastet das Netz mit unerwünschten Spannungsabfällen und erhöhten Übertragungsverlusten. Ein parallel zum Verbraucher liegender Kondensator kopmensiert die aus dem Netz bezogene Blindleistung und verbessert den Leistungsfaktor. Da die zugeführte Wirkleistung unverändert bleibt, ergibt sich folgendes Leistungsdreieck:
 
 \begin{center}
@@ -118,8 +117,10 @@ Ein ohmsch-induktiver Verbraucher, wie z.B. ein Elektromotor, entnimmt dem Netz 
     \draw[->,thick,black] (0,0) -- (negY);
 \end{tikzpicture}
 \end{center}
-    
-Wird der Leistsungsfaktor von $cos(\varphi)$ auf $cos(\varphi')$ verbessert, folgt aus dem Leistungsdreieck mit der Blindleistung $Q_M$ des Verbrauchers und der Blindleistung $Q$ des Netzes die erforderliche Blindleistung $Q_C$:
+
+\todo{Kompensation zeichen.}
+
+Wird der Leistungsfaktor von $cos(\varphi)$ auf $cos(\varphi')$ verbessert, folgt aus dem Leistungsdreieck mit der Blindleistung $Q_M$ des Verbrauchers und der Blindleistung $Q$ des Netzes die erforderliche Blindleistung $Q_C$:
 \begin{align}
     Q_C = Q - Q_M
     \hspace{1cm}
