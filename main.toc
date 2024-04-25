@@ -22,126 +22,126 @@
 \contentsline {section}{\numberline {4.2}Leistung bei Wechselstrom}{17}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Leistungsfaktor}{17}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Kompensation}{18}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Spannungsquelle}{19}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Ideale Spannungsquelle}{19}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Reale Spannungsquelle}{19}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Stromquelle}{20}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Ideale Stromquelle}{20}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Reale Stromquelle}{21}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}Ersatzschaltbild}{22}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Spannungsquellen-Ersatzschaltbild}{22}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Stromquellen-Ersatzschaltbild}{25}{subsection.4.5.2}%
-\contentsline {section}{\numberline {4.6}Überlagerungs-/Superpositionsprinzip}{27}{section.4.6}%
-\contentsline {chapter}{\numberline {5}Felder}{30}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Elektrisches Feld}{30}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Elektrischer Fluss}{30}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Magnetisches Feld}{31}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Leiter}{31}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Spulen}{32}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Durchflutungssatz}{32}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}Magnetischer Fluss}{33}{section.5.4}%
-\contentsline {chapter}{\numberline {6}dB-Rechnung}{34}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Rechenregeln}{34}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Besonderheiten bei Leistungsgrößen}{35}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Allgemeine Formeln}{35}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Spannungsgrößen}{35}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Leistungssgrößen}{35}{subsection.6.3.2}%
-\contentsline {section}{\numberline {6.4}Spezielle Formeln}{36}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Häufige Zahlenwerte}{36}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Wechselstromtechnik}{37}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Komplexe Zahlen}{37}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Addition \& Subtraktion}{38}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Multiplikation}{39}{subsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.1.3}Division}{39}{subsection.7.1.3}%
-\contentsline {subsection}{\numberline {7.1.4}Konjugiert Komplexe Zahlen}{40}{subsection.7.1.4}%
-\contentsline {section}{\numberline {7.2}Zeigerdiagramm}{40}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Impedanz}{41}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Admittanz}{41}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Lineare Bauteile}{42}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Kondensator}{42}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Schaltung von Kondensatoren}{43}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Lade- \& Entladekurven}{45}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}Zeigerdiagramm}{46}{subsection.8.1.3}%
-\contentsline {subsection}{\numberline {8.1.4}Blindwiderstand}{46}{subsection.8.1.4}%
-\contentsline {section}{\numberline {8.2}Spule}{47}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Schaltung von Spulen}{47}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}Lade- \& Entladekurven}{48}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}Zeigerdiagramm}{49}{subsection.8.2.3}%
-\contentsline {subsection}{\numberline {8.2.4}Blindwiderstand}{49}{subsection.8.2.4}%
-\contentsline {section}{\numberline {8.3}Induktivitäten}{50}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Definition der Induktivität $L$ einer Spule}{50}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}Selbstinduktionsspannung einer Spule}{50}{subsection.8.3.2}%
-\contentsline {subsection}{\numberline {8.3.3}Induktivität einer Spule}{50}{subsection.8.3.3}%
-\contentsline {subsection}{\numberline {8.3.4}Induktivität einer schlanken Zylinderspule}{51}{subsection.8.3.4}%
-\contentsline {subsection}{\numberline {8.3.5}Induktivität einer Zylinderspule mit $\frac {l}{d}>10$}{51}{subsection.8.3.5}%
-\contentsline {subsection}{\numberline {8.3.6}Induktivität einer schlanken Zylinderspule mit Eisenkern}{52}{subsection.8.3.6}%
-\contentsline {section}{\numberline {8.4}Transformator / Übertrager}{53}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Übersetzungsverhältnis}{53}{subsection.8.4.1}%
-\contentsline {section}{\numberline {8.5}RLC Netzwerke}{54}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}Die Zeitkonstante Tau}{54}{subsection.8.5.1}%
-\contentsline {subsubsection}{\nonumberline Taumessung bei Ladekurven}{54}{subsubsection*.28}%
-\contentsline {subsubsection}{\nonumberline Taumessung bei Entladekurven}{55}{subsubsection*.32}%
-\contentsline {subsection}{\numberline {8.5.2}Schwingkreis}{55}{subsection.8.5.2}%
-\contentsline {subsubsection}{\nonumberline LC-Schwingkreis}{55}{subsubsection*.34}%
-\contentsline {subsubsection}{\nonumberline Quarz - Schwingkreis}{57}{subsubsection*.38}%
-\contentsline {subsection}{\numberline {8.5.3}RLC-Kombinationen}{58}{subsection.8.5.3}%
-\contentsline {section}{\numberline {8.6}Übertragungsfunktion}{60}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Bodediagramm}{60}{subsection.8.6.1}%
-\contentsline {subsection}{\numberline {8.6.2}Umrechnen rad/s nach Hz}{61}{subsection.8.6.2}%
-\contentsline {section}{\numberline {8.7}Filter}{61}{section.8.7}%
-\contentsline {subsection}{\numberline {8.7.1}Grenzfrequenz}{61}{subsection.8.7.1}%
-\contentsline {subsection}{\numberline {8.7.2}Tiefpass}{63}{subsection.8.7.2}%
-\contentsline {subsection}{\numberline {8.7.3}Hochpass}{66}{subsection.8.7.3}%
-\contentsline {subsection}{\numberline {8.7.4}Bandpass}{68}{subsection.8.7.4}%
-\contentsline {subsection}{\numberline {8.7.5}Allpass / Phasenschieber}{71}{subsection.8.7.5}%
-\contentsline {chapter}{\numberline {9}Halbleiter}{73}{chapter.9}%
-\contentsline {section}{\numberline {9.1}PN-Übergang}{73}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Dioden}{73}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}Schottky-Dioden}{74}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}Zener-Dioden}{74}{subsection.9.2.2}%
-\contentsline {section}{\numberline {9.3}Bipolartransistor}{75}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Treiberschaltung}{75}{subsection.9.3.1}%
-\contentsline {section}{\numberline {9.4}MOSFET}{76}{section.9.4}%
-\contentsline {chapter}{\numberline {10}OPV-Schaltungen}{77}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Verstärker}{78}{section.10.1}%
-\contentsline {subsection}{\numberline {10.1.1}Impedanzwandler}{78}{subsection.10.1.1}%
-\contentsline {subsection}{\numberline {10.1.2}Nicht-Invertierender Verstärker}{78}{subsection.10.1.2}%
-\contentsline {subsection}{\numberline {10.1.3}Invertierender Verstärker}{79}{subsection.10.1.3}%
-\contentsline {section}{\numberline {10.2}Schmitttrigger}{80}{section.10.2}%
-\contentsline {subsection}{\numberline {10.2.1}Nicht-Invertierender Schmitttrigger}{80}{subsection.10.2.1}%
-\contentsline {subsection}{\numberline {10.2.2}Invertierender Schmitttrigger}{82}{subsection.10.2.2}%
-\contentsline {section}{\numberline {10.3}Addierer}{83}{section.10.3}%
-\contentsline {section}{\numberline {10.4}Subtrahierer}{85}{section.10.4}%
-\contentsline {subsection}{\numberline {10.4.1}Typ 1}{85}{subsection.10.4.1}%
-\contentsline {subsection}{\numberline {10.4.2}Typ 2}{85}{subsection.10.4.2}%
-\contentsline {subsection}{\numberline {10.4.3}Typ 3}{86}{subsection.10.4.3}%
-\contentsline {section}{\numberline {10.5}Integrator}{87}{section.10.5}%
-\contentsline {section}{\numberline {10.6}Differentiator}{87}{section.10.6}%
-\contentsline {section}{\numberline {10.7}Pegelwandler}{88}{section.10.7}%
-\contentsline {section}{\numberline {10.8}Instrumentation-Amplifier}{90}{section.10.8}%
-\contentsline {chapter}{\numberline {11}ATMega32u4}{91}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Register beschreiben}{91}{section.11.1}%
-\contentsline {section}{\numberline {11.2}Takt}{92}{section.11.2}%
-\contentsline {section}{\numberline {11.3}GPIO}{93}{section.11.3}%
-\contentsline {section}{\numberline {11.4}ADC}{94}{section.11.4}%
-\contentsline {subsection}{\numberline {11.4.1}Differenziell}{94}{subsection.11.4.1}%
-\contentsline {subsection}{\numberline {11.4.2}Auto-Trigger Mode}{95}{subsection.11.4.2}%
-\contentsline {subsection}{\numberline {11.4.3}Messdauer berechnen}{97}{subsection.11.4.3}%
-\contentsline {section}{\numberline {11.5}Sleep Mode}{100}{section.11.5}%
-\contentsline {section}{\numberline {11.6}Power Saving}{102}{section.11.6}%
-\contentsline {subsection}{\numberline {11.6.1}Peripherien}{102}{subsection.11.6.1}%
-\contentsline {subsection}{\numberline {11.6.2}Pins}{103}{subsection.11.6.2}%
-\contentsline {section}{\numberline {11.7}Externe Interrupts}{103}{section.11.7}%
-\contentsline {chapter}{\numberline {12}Simulation}{105}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Altium}{105}{section.12.1}%
-\contentsline {subsection}{\numberline {12.1.1}Quellen}{105}{subsection.12.1.1}%
-\contentsline {subsection}{\numberline {12.1.2}Probes}{105}{subsection.12.1.2}%
-\contentsline {subsection}{\numberline {12.1.3}Simulation}{105}{subsection.12.1.3}%
-\contentsline {section}{\numberline {12.2}MicroCap}{108}{section.12.2}%
-\contentsline {subsection}{\numberline {12.2.1}Komponentenauswahl}{108}{subsection.12.2.1}%
-\contentsline {subsection}{\numberline {12.2.2}Bauteile verbinden}{109}{subsection.12.2.2}%
-\contentsline {subsection}{\numberline {12.2.3}Bauteile konfigurieren}{109}{subsection.12.2.3}%
-\contentsline {subsection}{\numberline {12.2.4}Fixed Analog - Spannungsversorgung}{112}{subsection.12.2.4}%
-\contentsline {subsection}{\numberline {12.2.5}Simulationspunkte}{113}{subsection.12.2.5}%
-\contentsline {subsection}{\numberline {12.2.6}Simulation}{114}{subsection.12.2.6}%
+\contentsline {section}{\numberline {4.3}Spannungsquelle}{21}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Ideale Spannungsquelle}{21}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Reale Spannungsquelle}{21}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Stromquelle}{22}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Ideale Stromquelle}{22}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Reale Stromquelle}{23}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Ersatzschaltbild}{24}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Spannungsquellen-Ersatzschaltbild}{24}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Stromquellen-Ersatzschaltbild}{27}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Überlagerungs-/Superpositionsprinzip}{29}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Felder}{32}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Elektrisches Feld}{32}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Elektrischer Fluss}{32}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Magnetisches Feld}{33}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Leiter}{33}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Spulen}{34}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Durchflutungssatz}{34}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Magnetischer Fluss}{35}{section.5.4}%
+\contentsline {chapter}{\numberline {6}dB-Rechnung}{36}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Rechenregeln}{36}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Besonderheiten bei Leistungsgrößen}{37}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Allgemeine Formeln}{37}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Spannungsgrößen}{37}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Leistungssgrößen}{37}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}Spezielle Formeln}{38}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Häufige Zahlenwerte}{38}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Wechselstromtechnik}{39}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Komplexe Zahlen}{39}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Addition \& Subtraktion}{40}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Multiplikation}{41}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Division}{41}{subsection.7.1.3}%
+\contentsline {subsection}{\numberline {7.1.4}Konjugiert Komplexe Zahlen}{42}{subsection.7.1.4}%
+\contentsline {section}{\numberline {7.2}Zeigerdiagramm}{42}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Impedanz}{43}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Admittanz}{43}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Lineare Bauteile}{44}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Kondensator}{44}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Schaltung von Kondensatoren}{45}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Lade- \& Entladekurven}{47}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Zeigerdiagramm}{48}{subsection.8.1.3}%
+\contentsline {subsection}{\numberline {8.1.4}Blindwiderstand}{48}{subsection.8.1.4}%
+\contentsline {section}{\numberline {8.2}Spule}{49}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Schaltung von Spulen}{49}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Lade- \& Entladekurven}{50}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Zeigerdiagramm}{51}{subsection.8.2.3}%
+\contentsline {subsection}{\numberline {8.2.4}Blindwiderstand}{51}{subsection.8.2.4}%
+\contentsline {section}{\numberline {8.3}Induktivitäten}{52}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Definition der Induktivität $L$ einer Spule}{52}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Selbstinduktionsspannung einer Spule}{52}{subsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.3.3}Induktivität einer Spule}{52}{subsection.8.3.3}%
+\contentsline {subsection}{\numberline {8.3.4}Induktivität einer schlanken Zylinderspule}{53}{subsection.8.3.4}%
+\contentsline {subsection}{\numberline {8.3.5}Induktivität einer Zylinderspule mit $\frac {l}{d}>10$}{53}{subsection.8.3.5}%
+\contentsline {subsection}{\numberline {8.3.6}Induktivität einer schlanken Zylinderspule mit Eisenkern}{54}{subsection.8.3.6}%
+\contentsline {section}{\numberline {8.4}Transformator / Übertrager}{55}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Übersetzungsverhältnis}{55}{subsection.8.4.1}%
+\contentsline {section}{\numberline {8.5}RLC Netzwerke}{56}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Die Zeitkonstante Tau}{56}{subsection.8.5.1}%
+\contentsline {subsubsection}{\nonumberline Taumessung bei Ladekurven}{56}{subsubsection*.27}%
+\contentsline {subsubsection}{\nonumberline Taumessung bei Entladekurven}{57}{subsubsection*.31}%
+\contentsline {subsection}{\numberline {8.5.2}Schwingkreis}{57}{subsection.8.5.2}%
+\contentsline {subsubsection}{\nonumberline LC-Schwingkreis}{57}{subsubsection*.33}%
+\contentsline {subsubsection}{\nonumberline Quarz - Schwingkreis}{59}{subsubsection*.37}%
+\contentsline {subsection}{\numberline {8.5.3}RLC-Kombinationen}{60}{subsection.8.5.3}%
+\contentsline {section}{\numberline {8.6}Übertragungsfunktion}{62}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Bodediagramm}{62}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}Umrechnen rad/s nach Hz}{63}{subsection.8.6.2}%
+\contentsline {section}{\numberline {8.7}Filter}{63}{section.8.7}%
+\contentsline {subsection}{\numberline {8.7.1}Grenzfrequenz}{63}{subsection.8.7.1}%
+\contentsline {subsection}{\numberline {8.7.2}Tiefpass}{65}{subsection.8.7.2}%
+\contentsline {subsection}{\numberline {8.7.3}Hochpass}{68}{subsection.8.7.3}%
+\contentsline {subsection}{\numberline {8.7.4}Bandpass}{70}{subsection.8.7.4}%
+\contentsline {subsection}{\numberline {8.7.5}Allpass / Phasenschieber}{73}{subsection.8.7.5}%
+\contentsline {chapter}{\numberline {9}Halbleiter}{75}{chapter.9}%
+\contentsline {section}{\numberline {9.1}PN-Übergang}{75}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Dioden}{75}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Schottky-Dioden}{76}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Zener-Dioden}{76}{subsection.9.2.2}%
+\contentsline {section}{\numberline {9.3}Bipolartransistor}{77}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Treiberschaltung}{77}{subsection.9.3.1}%
+\contentsline {section}{\numberline {9.4}MOSFET}{78}{section.9.4}%
+\contentsline {chapter}{\numberline {10}OPV-Schaltungen}{79}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Verstärker}{80}{section.10.1}%
+\contentsline {subsection}{\numberline {10.1.1}Impedanzwandler}{80}{subsection.10.1.1}%
+\contentsline {subsection}{\numberline {10.1.2}Nicht-Invertierender Verstärker}{80}{subsection.10.1.2}%
+\contentsline {subsection}{\numberline {10.1.3}Invertierender Verstärker}{81}{subsection.10.1.3}%
+\contentsline {section}{\numberline {10.2}Schmitttrigger}{82}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Nicht-Invertierender Schmitttrigger}{82}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}Invertierender Schmitttrigger}{84}{subsection.10.2.2}%
+\contentsline {section}{\numberline {10.3}Addierer}{85}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Subtrahierer}{87}{section.10.4}%
+\contentsline {subsection}{\numberline {10.4.1}Typ 1}{87}{subsection.10.4.1}%
+\contentsline {subsection}{\numberline {10.4.2}Typ 2}{87}{subsection.10.4.2}%
+\contentsline {subsection}{\numberline {10.4.3}Typ 3}{88}{subsection.10.4.3}%
+\contentsline {section}{\numberline {10.5}Integrator}{89}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Differentiator}{89}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Pegelwandler}{90}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Instrumentation-Amplifier}{92}{section.10.8}%
+\contentsline {chapter}{\numberline {11}ATMega32u4}{93}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Register beschreiben}{93}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Takt}{94}{section.11.2}%
+\contentsline {section}{\numberline {11.3}GPIO}{95}{section.11.3}%
+\contentsline {section}{\numberline {11.4}ADC}{96}{section.11.4}%
+\contentsline {subsection}{\numberline {11.4.1}Differenziell}{96}{subsection.11.4.1}%
+\contentsline {subsection}{\numberline {11.4.2}Auto-Trigger Mode}{97}{subsection.11.4.2}%
+\contentsline {subsection}{\numberline {11.4.3}Messdauer berechnen}{99}{subsection.11.4.3}%
+\contentsline {section}{\numberline {11.5}Sleep Mode}{102}{section.11.5}%
+\contentsline {section}{\numberline {11.6}Power Saving}{104}{section.11.6}%
+\contentsline {subsection}{\numberline {11.6.1}Peripherien}{104}{subsection.11.6.1}%
+\contentsline {subsection}{\numberline {11.6.2}Pins}{105}{subsection.11.6.2}%
+\contentsline {section}{\numberline {11.7}Externe Interrupts}{105}{section.11.7}%
+\contentsline {chapter}{\numberline {12}Simulation}{107}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Altium}{107}{section.12.1}%
+\contentsline {subsection}{\numberline {12.1.1}Quellen}{107}{subsection.12.1.1}%
+\contentsline {subsection}{\numberline {12.1.2}Probes}{107}{subsection.12.1.2}%
+\contentsline {subsection}{\numberline {12.1.3}Simulation}{107}{subsection.12.1.3}%
+\contentsline {section}{\numberline {12.2}MicroCap}{110}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Komponentenauswahl}{110}{subsection.12.2.1}%
+\contentsline {subsection}{\numberline {12.2.2}Bauteile verbinden}{111}{subsection.12.2.2}%
+\contentsline {subsection}{\numberline {12.2.3}Bauteile konfigurieren}{111}{subsection.12.2.3}%
+\contentsline {subsection}{\numberline {12.2.4}Fixed Analog - Spannungsversorgung}{114}{subsection.12.2.4}%
+\contentsline {subsection}{\numberline {12.2.5}Simulationspunkte}{115}{subsection.12.2.5}%
+\contentsline {subsection}{\numberline {12.2.6}Simulation}{116}{subsection.12.2.6}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
