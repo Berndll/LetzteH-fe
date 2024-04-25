@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.31)  25 APR 2024 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.31)  25 APR 2024 23:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/jakobsimmer/Documents/schui/LetzteH-fe/main.tex
-(/Users/jakobsimmer/Documents/schui/LetzteH-fe/main.tex
+**/Users/jakobsimmer/Documents/schui/LetzteH-fe/ATmegaAusdruck/main.tex
+(/Users/jakobsimmer/Documents/schui/LetzteH-fe/ATmegaAusdruck/main.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrreprt.cls
@@ -1539,44 +1539,44 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count559
 \@quotereset=\count560
-(./main.aux (./CodeSnippets/singleEndedMessdauer.aux))
+(./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 132.
-LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 132.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 128.
+LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 128.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/ly1/ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-Package scrbase Info: activating english \abstractname on input line 132.
-Package scrbase Info: activating english \partname on input line 132.
-Package scrbase Info: activating english \chaptername on input line 132.
-Package scrbase Info: activating english \appendixname on input line 132.
-Package scrbase Info: activating english \figurename on input line 132.
-Package scrbase Info: activating english \tablename on input line 132.
-Package scrbase Info: activating english \contentsname on input line 132.
-Package scrbase Info: activating english \listfigurename on input line 132.
-Package scrbase Info: activating english \listtablename on input line 132.
-Package scrbase Info: activating english \bibname on input line 132.
-Package scrbase Info: activating english \indexname on input line 132.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+Package scrbase Info: activating english \abstractname on input line 128.
+Package scrbase Info: activating english \partname on input line 128.
+Package scrbase Info: activating english \chaptername on input line 128.
+Package scrbase Info: activating english \appendixname on input line 128.
+Package scrbase Info: activating english \figurename on input line 128.
+Package scrbase Info: activating english \tablename on input line 128.
+Package scrbase Info: activating english \contentsname on input line 128.
+Package scrbase Info: activating english \listfigurename on input line 128.
+Package scrbase Info: activating english \listtablename on input line 128.
+Package scrbase Info: activating english \bibname on input line 128.
+Package scrbase Info: activating english \indexname on input line 128.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1638,7 +1638,7 @@ Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 \c@lstlisting=\count567
-Package tocbasic Info: setting babel extension for `lol' on input line 132.
+Package tocbasic Info: setting babel extension for `lol' on input line 128.
 \scr@dte@lstlisting@maxnumwidth=\skip181
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
@@ -1653,7 +1653,7 @@ Package caption Info: End \AtBeginDocument code.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 132.
+ on input line 128.
 
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
@@ -1682,27 +1682,27 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 132.
-Package biblatex Info: Reference segment=0 on input line 132.
+Package biblatex Info: Reference section=0 on input line 128.
+Package biblatex Info: Reference segment=0 on input line 128.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 132.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 128.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-dictionary-german.trsl
 File: translations-basic-dictionary-german.trsl (german translation file `translations-basic-dictionary')
 )
-LaTeX Info: Redefining \celsius on input line 132.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 132.
+LaTeX Info: Redefining \celsius on input line 128.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 128.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 132.
-Package gensymb Info: Using \Omega for \ohm on input line 132.
+LaTeX Info: Redefining \ohm on input line 128.
+Package gensymb Info: Using \Omega for \ohm on input line 128.
 
 Package gensymb Warning: Not defining \micro.
 
-Package hyperref Info: Link coloring ON on input line 132.
+Package hyperref Info: Link coloring ON on input line 128.
 (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1714,109 +1714,317 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message adding:
 (scrreprt)             \usepackage{bookmark}
-(scrreprt)           before \begin{document} on input line 132.
+(scrreprt)           before \begin{document} on input line 128.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/local/texlive/2024/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 \BKM@id=\count568
-))
-\openout2 = `CodeSnippets/singleEndedMessdauer.aux'.
-
- (./CodeSnippets/singleEndedMessdauer.tex
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 4.
+)) (../Atmega/main.tex
+chapter 1.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 4.
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 1.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 4.
+(Font)              scaled to size 12.0pt on input line 1.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 1.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
+(Font)              scaled to size 24.88pt on input line 1.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 3.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
+(Font)              scaled to size 17.28pt on input line 3.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 4.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+)
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 6.
+(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 8.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 10.0pt on input line 6.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+(Font)              scaled to size 10.95pt on input line 8.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
+(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 9.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
+(Font)              scaled to size 6.0pt on input line 9.
+LaTeX Font Info:    Trying to load font information for TS1+SourceSansPro-TLF on input line 26.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/sourcesanspro/TS1SourceSansPro-TLF.fd
+File: TS1SourceSansPro-TLF.fd 2020/01/19 (autoinst) Font definitions for TS1/SourceSansPro-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/m/n' aliased to
+(Font)              `TS1/SourceSansPro-TLF/regular/n' on input line 26.
+LaTeX Font Info:    Font shape `TS1/SourceSansPro-TLF/regular/n' will be
+(Font)              scaled to size 12.0pt on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 10000) in paragraph at lines 7--9
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--13
-
- []
-
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 15.
-
-LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 15.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 8.0pt on input line 15.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 15.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 6.0pt on input line 15.
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--19
-
- []
-
-LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/sc' aliased to
-(Font)              `T1/SourceSansPro-TLF/regular/sc' on input line 20.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/sc' will be
-(Font)              scaled to size 12.0pt on input line 20.
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 21.
-
 ) [1
 
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/sourcesanspro/a_emkxm5.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/sourcesanspro/a_4jropk.enc}] [2
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/sourcesanspro/a_emkxm5.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/sourcesanspro/a_5ponh6.enc}]
+Overfull \hbox (10.84502pt too wide) in paragraph at lines 35--36
+\T1/SourceSansPro-TLF/regular/n/12 Der Takt des AT-Mega32u4 kann per Soft-ware ver-ringert wer-den und wird über das [][]\T1/pcr/m/n/12 CLKPR[]\T1/SourceSansPro-TLF/regular/n/12 -
+ []
+
+<Atmega/CLKPR.png, id=24, 455.45157pt x 76.78688pt>
+File: Atmega/CLKPR.png Graphic file (type png)
+<use Atmega/CLKPR.png>
+Package pdftex.def Info: Atmega/CLKPR.png  used on input line 38.
+(pdftex.def)             Requested size: 455.45045pt x 76.78668pt.
+
+Overfull \hbox (29.34122pt too wide) in paragraph at lines 38--39
+[][] 
+ []
+
+<Atmega/CLKPR-Table.png, id=26, 455.45157pt x 362.85562pt>
+File: Atmega/CLKPR-Table.png Graphic file (type png)
+<use Atmega/CLKPR-Table.png>
+Package pdftex.def Info: Atmega/CLKPR-Table.png  used on input line 41.
+(pdftex.def)             Requested size: 455.45045pt x 362.85474pt.
+
+Overfull \hbox (29.34122pt too wide) in paragraph at lines 41--42
+[][] 
+ []
+
+[2 <./Atmega/CLKPR.png> <./Atmega/CLKPR-Table.png>]
+<Atmega/PortPin-Config.png, id=34, 455.45157pt x 155.83218pt>
+File: Atmega/PortPin-Config.png Graphic file (type png)
+<use Atmega/PortPin-Config.png>
+Package pdftex.def Info: Atmega/PortPin-Config.png  used on input line 54.
+(pdftex.def)             Requested size: 455.45045pt x 155.8318pt.
+
+Overfull \hbox (1.5198pt too wide) in paragraph at lines 53--55
+\T1/SourceSansPro-TLF/regular/n/12 Die \T1/SourceSansPro-TLF/bold/n/12 General-Purpose-Input-Output\T1/SourceSansPro-TLF/regular/n/12 -Pins (GPIO-Pins) kön-nen fol-gen-den Sta-tus haben:
+ []
 
 
+Overfull \hbox (29.34122pt too wide) in paragraph at lines 53--55
+[] 
+ []
+
+[3 <./Atmega/PortPin-Config.png>]
+
+LaTeX Warning: Reference `' on page 4 undefined on input line 74.
 
 
-]
+Overfull \hbox (8.37424pt too wide) in paragraph at lines 82--84
+\T1/SourceSansPro-TLF/regular/n/12 Es wird pe-ri-odisch gemessen, wofür die Tak-tquelle eingestellt wer-den muss. (Siehe
+ []
+
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/b/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 135.
+(Font)              `T1/SourceSansPro-TLF/bold/n' on input line 86.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/bold/n' will be
-(Font)              scaled to size 24.88pt on input line 135.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/m/n' aliased to
-(Font)              `T1/SourceSansPro-TLF/regular/n' on input line 135.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-TLF/regular/n' will be
-(Font)              scaled to size 17.28pt on input line 135.
+(Font)              scaled to size 14.4pt on input line 86.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.135     \pagebreak
-                     [1] (./main.toc)
-\tf@toc=\write6
-\openout6 = `main.toc'.
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
+
+ []
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.139 
-       [2
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
-] (./main.tdo)
-\tf@tdo=\write7
-\openout7 = `main.tdo'.
+ []
 
- [3
+[4]
+<Atmega/AutoTrigger-Reg.png, id=63, 455.45157pt x 52.69687pt>
+File: Atmega/AutoTrigger-Reg.png Graphic file (type png)
+<use Atmega/AutoTrigger-Reg.png>
+Package pdftex.def Info: Atmega/AutoTrigger-Reg.png  used on input line 100.
+(pdftex.def)             Requested size: 455.45045pt x 52.69673pt.
+<Atmega/ADC-AutoTrigger-Select.png, id=64, 455.45157pt x 285.31593pt>
+File: Atmega/ADC-AutoTrigger-Select.png Graphic file (type png)
+<use Atmega/ADC-AutoTrigger-Select.png>
+Package pdftex.def Info: Atmega/ADC-AutoTrigger-Select.png  used on input line 102.
+(pdftex.def)             Requested size: 455.45045pt x 285.31523pt.
 
-] (./main.aux (./CodeSnippets/singleEndedMessdauer.aux))
+Overfull \hbox (29.34122pt too wide) in paragraph at lines 100--103
+[][]
+ []
+
+
+Overfull \hbox (29.34122pt too wide) in paragraph at lines 100--103
+[] 
+ []
+
+[5 <./Atmega/AutoTrigger-Reg.png> <./Atmega/ADC-AutoTrigger-Select.png>]
+<Atmega/ADLAR-1.png, id=72, 455.45157pt x 124.96687pt>
+File: Atmega/ADLAR-1.png Graphic file (type png)
+<use Atmega/ADLAR-1.png>
+Package pdftex.def Info: Atmega/ADLAR-1.png  used on input line 112.
+(pdftex.def)             Requested size: 455.45045pt x 124.96657pt.
+
+Overfull \hbox (58.71591pt too wide) in paragraph at lines 111--113
+[] 
+ []
+
+<Atmega/ADLAR-0.png, id=73, 455.45157pt x 120.45pt>
+File: Atmega/ADLAR-0.png Graphic file (type png)
+<use Atmega/ADLAR-0.png>
+Package pdftex.def Info: Atmega/ADLAR-0.png  used on input line 114.
+(pdftex.def)             Requested size: 455.45045pt x 120.44969pt.
+
+Overfull \hbox (58.71591pt too wide) in paragraph at lines 113--115
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+[6 <./Atmega/ADLAR-1.png> <./Atmega/ADLAR-0.png>]
+Overfull \hbox (0.55714pt too wide) in paragraph at lines 122--123
+\T1/SourceSansPro-TLF/regular/n/12 Die ADC Mess-dauer muss eingestellt wer-den: kurze Mess-dauern führen zu un-ge-naueren
+ []
+
+<Atmega/ADC-Control-Status.png, id=82, 455.45157pt x 88.83188pt>
+File: Atmega/ADC-Control-Status.png Graphic file (type png)
+<use Atmega/ADC-Control-Status.png>
+Package pdftex.def Info: Atmega/ADC-Control-Status.png  used on input line 124.
+(pdftex.def)             Requested size: 455.45045pt x 88.83165pt.
+<Atmega/ADC-Prescaler.png, id=83, 455.45157pt x 204.01219pt>
+File: Atmega/ADC-Prescaler.png Graphic file (type png)
+<use Atmega/ADC-Prescaler.png>
+Package pdftex.def Info: Atmega/ADC-Prescaler.png  used on input line 126.
+(pdftex.def)             Requested size: 455.45045pt x 204.01169pt.
+
+Overfull \hbox (29.34122pt too wide) in paragraph at lines 124--127
+[][]
+ []
+
+
+Overfull \hbox (29.34122pt too wide) in paragraph at lines 124--127
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+[7 <./Atmega/ADC-Control-Status.png> <./Atmega/ADC-Prescaler.png>] [8]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 179.
+ [9]
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+
+ []
+
+
+Overfull \hbox (2.60269pt too wide) in paragraph at lines 232--233
+\T1/SourceSansPro-TLF/regular/n/12 ex-terne In-ter-rupts (an den Pins [][]\T1/pcr/m/n/12 INT3:0[]\T1/SourceSansPro-TLF/regular/n/12 , [][]\T1/pcr/m/n/12 INT6[]\T1/SourceSansPro-TLF/regular/n/12 ) Pin-Change-Interrupts aufgeweckt wer-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 240--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
+
+ []
+
+<Atmega/EICRA-Reg.png, id=217, 455.20062pt x 96.36pt>
+File: Atmega/EICRA-Reg.png Graphic file (type png)
+<use Atmega/EICRA-Reg.png>
+Package pdftex.def Info: Atmega/EICRA-Reg.png  used on input line 304.
+(pdftex.def)             Requested size: 455.1995pt x 96.35974pt.
+<Atmega/EICRA-Description.png, id=218, 455.20062pt x 122.4575pt>
+File: Atmega/EICRA-Description.png Graphic file (type png)
+<use Atmega/EICRA-Description.png>
+Package pdftex.def Info: Atmega/EICRA-Description.png  used on input line 306.
+(pdftex.def)             Requested size: 455.1995pt x 122.45718pt.
+<Atmega/EIMSK-Table.png, id=219, 453.695pt x 87.82813pt>
+File: Atmega/EIMSK-Table.png Graphic file (type png)
+<use Atmega/EIMSK-Table.png>
+Package pdftex.def Info: Atmega/EIMSK-Table.png  used on input line 308.
+(pdftex.def)             Requested size: 453.6939pt x 87.8279pt.
+
+Overfull \hbox (58.46495pt too wide) in paragraph at lines 302--309
+[]
+ []
+
+
+Overfull \hbox (58.46495pt too wide) in paragraph at lines 302--309
+[]
+ []
+
+
+Overfull \hbox (56.95935pt too wide) in paragraph at lines 302--309
+[] 
+ []
+
+[13 <./Atmega/EICRA-Reg.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 310--313
+
+ []
+
+<Atmega/PCICR-Reg.png, id=233, 455.20062pt x 80.3pt>
+File: Atmega/PCICR-Reg.png Graphic file (type png)
+<use Atmega/PCICR-Reg.png>
+Package pdftex.def Info: Atmega/PCICR-Reg.png  used on input line 315.
+(pdftex.def)             Requested size: 455.1995pt x 80.29979pt.
+<Atmega/PCMSK0-Reg.png, id=234, 455.20062pt x 92.345pt>
+File: Atmega/PCMSK0-Reg.png Graphic file (type png)
+<use Atmega/PCMSK0-Reg.png>
+Package pdftex.def Info: Atmega/PCMSK0-Reg.png  used on input line 317.
+(pdftex.def)             Requested size: 455.1995pt x 92.34476pt.
+
+Overfull \hbox (58.46495pt too wide) in paragraph at lines 314--318
+[]
+ []
+
+
+Overfull \hbox (58.46495pt too wide) in paragraph at lines 314--318
+[] 
+ []
+
+) [14 <./Atmega/EICRA-Description.png> <./Atmega/EIMSK-Table.png> <./Atmega/PCICR-Reg.png> <./Atmega/PCMSK0-Reg.png>] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1824,18 +2032,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 73467 strings out of 474116
- 1830215 string characters out of 5743682
- 3229914 words of memory out of 5000000
- 94880 multiletter control sequences out of 15000+600000
- 642709 words of font info for 77 fonts, out of 8000000 for 9000
+ 74346 strings out of 474116
+ 1843813 string characters out of 5743682
+ 3311252 words of memory out of 5000000
+ 95609 multiletter control sequences out of 15000+600000
+ 632747 words of font info for 74 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 108i,7n,133p,10972b,2465s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (5 pages, 160207 bytes).
+ 108i,9n,133p,10987b,2546s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on main.pdf (14 pages, 793369 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 354 PDF objects out of 1000 (max. 8388607)
+ 292 compressed objects within 3 object streams
+ 154 named destinations out of 1000 (max. 500000)
+ 187 words of extra memory for PDF output out of 10000 (max. 10000000)
 
